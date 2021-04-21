@@ -5,6 +5,7 @@ window.killFeedText = () => {
     let text = killFeed.join("\n");
     return text;
 }
+window.minimapVis = true;
 
 window.getMaxModePlayers = (mode) => {
     switch (mode) {
@@ -1583,7 +1584,7 @@ webpackJsonp([0x0], {
                 var _0xed7f17 = _0x440d61['indexOf'](_0x4d3d5a);
                 _0x4e4124['globalCompositeOperation'] = 'source-over';
                 _0x4e4124['clearRect'](0x0, 0x0, _0x2191ed['width'], _0x2191ed['height']);
-                _0x4e4124['drawImage'](_0x280106, _0xed7f17 % 0x6 * 0x15e, Math['floor'](_0xed7f17 / 0x6) * 0xc3, 0x15e, 0xc3, 0x0, 0x0, 0x15e, 0xc3);
+                _0x4e4124['drawImage'](_0x280106, _0xed7f17 % 6 * 350, Math['floor'](_0xed7f17 / 6) * 195, 350, 195, 0, 0, 350, 195);
                 _0x4e4124['globalCompositeOperation'] = 'source-in';
                 _0x4e4124['drawImage'](_0x282ecd('red' + _0x334d4a), 0x0, 0xc3 / 0x2 - 0x15e / 0x2, 0x15e, 0x15e);
                 _0x17820e['drawImage'](_0x2191ed, 0x0, 0x15e / 0x2 - 0xc3 / 0x2);
@@ -1612,6 +1613,7 @@ webpackJsonp([0x0], {
                 _0x5ece8a[_0x5349e8][_0x11eb79] = _0xa0ce90;
                 return _0xa0ce90;
             }
+            //! come here
             var _0x5cc6c9 = ['scar', 'shotgun', 'bolt', 'deagle', 'drum', 'musket', 'heavy sniper', 'rifle', 'famas', 'smg', 'ump', 'scoped ar', 'tommy gun', 'rpg', 'ak47'];
             var _0x45100e = _0x5cc6c9['length'];
             for (var _0x4cd046 = 0x0; _0x4cd046 < _0x45100e; _0x4cd046++) {
@@ -2193,6 +2195,13 @@ webpackJsonp([0x0], {
                     if (_0x289f9b['keyCode'] == _0x43a009('Reload Page')) {
                         window.api.reload();
                     }
+
+                    if (_0x289f9b['keyCode'] == _0x43a009('Hide Minimap')) {
+                        window.minimapVis = !window.minimapVis;
+                        _0x6f2310['opacity'] = window.minimapVis ? 1 : 0;
+                    }
+
+                    //_0x6f2310['opacity'] = 0;
 
                     if (_0x289f9b['keyCode'] == _0x43a009('Move Left')) {
                         if (!_0x44f6c3['left']) {
@@ -3271,6 +3280,7 @@ webpackJsonp([0x0], {
             var _0x6f2310 = new _0x1e6a3f['image'](_0x282ecd('empty'), -0x96, 0x96, _0x28e179, _0x28e179);
             var _0x3099a8 = new _0x1e6a3f['rectangle'](0x0, 0x0, _0x28e179, _0x28e179, '#000', 0.5);
             _0x6f2310['addBelow'](_0x3099a8);
+            //! sussy
             _0x6f2310['addBelow'](new _0x1e6a3f['strokeRectangle'](0x0, 0x0, _0x28e179 + 0x2, _0x28e179 + 0x2, '#000', 0x4, 0.5));
             _0xda8531['add'](_0x6f2310);
             var _0xeeae32 = '#FFF';
@@ -3892,8 +3902,7 @@ webpackJsonp([0x0], {
                         });
                     }
                     if (_0x45937d['keyCode'] == _0x43a009('Map')) {
-                        if (!_0x5ea1e7)
-                            _0x5c2d09 = !_0x5c2d09;
+                        if (!_0x5ea1e7) _0x5c2d09 = !_0x5c2d09;
                     }
                     if (_0x45937d['keyCode'] == _0x43a009('Ask For Ammo')) {
                         _0x1e6a3f['currentPackets']['push']({
