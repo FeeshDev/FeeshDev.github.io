@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BR Wrap Renderer</title>
+</head>
+
+<body style="background-color: #2F3136;">
+    <div style="display: flex; flex-direction: row; justify-content: space-evenly; margin-top: 40px;">
+        <div id="display"
+            style="width: 900px; height:700px; display: grid; grid-template-columns: auto auto auto auto auto auto; grid-auto-rows: 150px; grid-auto-columns: 150px;">
+        </div>
+        <div style="width: 300px; background-color: #36393F; display: flex; flex-direction: column;">
+            <span style="color:white">Red part</span>
+            <input style="color:white" type="file" id="redpng" accept="image/*">
+            <span style="color:white">Green part</span>
+            <input style="color:white" type="file" id="greenpng" accept="image/*">
+            <input type="text" placeholder="wrapname" id="nameholder">
+            <input onclick="runRender()" type="button" value="Render Wrap">
+            <br>
+            <br>
+            <br>
+            <span id="builtin" style="color:white"></span>
+            <span id="addedwraps" style="color:white"></span>
+            <input type="text" placeholder="wrapname" id="reholder">
+            <input onclick="runReRender()" type="button" value="Re-Render Wrap">
+        </div>
+    </div>
+    <img id="greensheet" src="./greensheet.png" style="display: none;">
+    <img id="redsheet" src="./redsheet.png" style="display: none;">
+    <div id="wrapholders">
+    </div>
+    <script>
+        let original = ['scar', 'shotgun', 'bolt', 'deagle', 'autoshotgun', 'musket', 'heavy sniper', 'rifle', 'famas', 'smg', 'ump', 'scoped ar', 'tommy gun', 'rpg', 'ak47', 'combat'];
+        let length = original.length;
+        for (let i = 0; i < length; i++) {
+            original.push(`top${original[i]}`);
+        }
+
+        let buildInWraps = ["none", "default", "yt", "pewds", "rainbow", "retro", "lines", "hawaii"];
+        document.getElementById("builtin").innerHTML = `BuiltIn Wraps: ${buildInWraps.join(", ")}`;
+        window.extraWraps = [];
+        let wrapholder = document.getElementById("wrapholders");
+
+        buildInWraps.forEach(wrapname => {
+            let redimg = document.createElement("img");
+            redimg.src = `./wraps/red${wrapname}.png`;
+            redimg.id = `red${wrapname}`;
+            redimg.crossOrigin = "anonymous";
+            redimg.style.display = "none";
+
+            let greenimg = document.createElement("img");
+            greenimg.src = `./wraps/green${wrapname}.png`;
+            greenimg.id = `green${wrapname}`;
+            greenimg.crossOrigin = "anonymous";
+            greenimg.style.display = "none";
+
+            wrapholder.appendChild(redimg);
+            wrapholder.appendChild(greenimg);
+        });
+
+        addImageWithId = (id, src) => {
+            let img = document.createElement("img");
+            img.id = id;
+            img.src = src;
+            img.style.display = "none";
+
+            document.body.appendChild(img);
+        }
+
+        for (let i = 0; i < original.length; i++) {
+            let spaceless = original[i].replace(" ", "")
+            addImageWithId(`${original[i]}`, `./buildart/${spaceless}.png`);
+        }
+
+        window.getElemById = (id) => {
+            var elem = null;
+            elem = document['getElementById'](id);
+            return elem;
+        }
+
+        let canvas1 = document.createElement("canvas");
+        canvas1['width'] = 350;
+        canvas1['height'] = 350;
+        let ctx1 = canvas1.getContext('2d');
+
+        window.drawgun = (gun, redsheet, greensheet, gunlist, wrap) => {
+            let canvas = document['createElement']('canvas');
+            canvas['width'] = 350;
+            canvas['height'] = 350;
+            var ctx = canvas['getContext']('2d');
+            ctx['drawImage'](getElemById(gun), 0, 0, 350, 350);
+            var index = gunlist['indexOf'](gun);
+            ctx1['globalCompositeOperation'] = 'source-over';
+            ctx1['clearRect'](0x0, 0x0, canvas1['width'], canvas1['height']);
+            ctx1['drawImage'](redsheet, index % 6 * 350, Math['floor'](index / 6) * 195, 350, 195, 0, 0, 350, 195);
+            ctx1['globalCompositeOperation'] = 'source-in';
+            ctx1['drawImage'](getElemById(`red${wrap}`), 0x0, 0xc3 / 0x2 - 0x15e / 0x2, 0x15e, 0x15e);
+            ctx['drawImage'](canvas1, 0x0, 0x15e / 0x2 - 0xc3 / 0x2);
+            ctx1['globalCompositeOperation'] = 'source-over';
+            ctx1['clearRect'](0x0, 0x0, canvas1['width'], canvas1['height']);
+            ctx1['drawImage'](greensheet, index % 0x6 * 0x15e, Math['floor'](index / 0x6) * 0xc3, 0x15e, 0xc3, 0x0, 0x0, 0x15e, 0xc3);
+            ctx1['globalCompositeOperation'] = 'source-in';
+            ctx1['drawImage'](getElemById(`green${wrap}`), 0x0, 0xc3 / 0x2 - 0x15e / 0x2, 0x15e, 0x15e);
+            ctx['drawImage'](canvas1, 0x0, 0x15e / 0x2 - 0xc3 / 0x2);
+
+            let img = new Image();
+            img.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+
+            return img;
+        }
+
+        window.onload = () => {
+            draw(buildInWraps[0]);
+        }
+
+        window.runReRender = () => {
+            let name = document.getElementById("reholder");
+            if (!name.value) return alert("You need to choose an existing wrap name!");
+            let redWrapTest = document.getElementById(`red${name.value}`);
+            if (redWrapTest === null) return alert("This wrap doesn't exist!");
+            draw(name.value);
+            name.value = "";
+        }
+
+        window.runRender = () => {
+            let redpng = document.getElementById("redpng");
+            let greenpng = document.getElementById("greenpng");
+            let name = document.getElementById("nameholder");
+            if (redpng.files.length <= 0) return alert("Red file not filled in!");
+            if (greenpng.files.length <= 0) return alert("Green file not filled in!");
+            if (!name.value) return alert("Wrap needs a name!");
+            let redWrapTest = document.getElementById(`red${name.value}`);
+            if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
+
+
+            let redWrap = document.createElement("img");
+            redWrap.src = URL.createObjectURL(redpng.files[0]);
+            redWrap.id = `red${name.value}`;
+            redWrap.style.display = "none";
+            document.getElementById("wrapholders").appendChild(redWrap);
+
+            let greenWrap = document.createElement("img");
+            greenWrap.src = URL.createObjectURL(greenpng.files[0]);
+            greenWrap.id = `green${name.value}`;
+            greenWrap.style.display = "none";
+            document.getElementById("wrapholders").appendChild(greenWrap);
+
+            setTimeout(() => {
+                window.draw(name.value);
+                extraWraps.push(name.value);
+                name.value = "";
+                document.getElementById("addedwraps").innerHTML = `Added Wraps: ${extraWraps.join(", ")}`;
+                redpng.files = undefined;
+                greenpng.files = undefined;
+            }, 200);
+        }
+
+        window.draw = (wrap) => {
+            let display = document.getElementById("display");
+            display.textContent = '';
+            display.innerHTML = '';
+            for (let i = 0; i < original.length; i++) {
+
+                let x = i % 6 * 350;
+                let y = Math.floor(i / 6) * 350;
+
+                let gunimg = drawgun(original[i], getElemById("redsheet"), getElemById("greensheet"), original, wrap);
+
+                let newImg = document.createElement("img");
+                newImg.src = gunimg.src;
+                newImg.style.width = "150px";
+                newImg.style.height = "150px";
+                display.appendChild(newImg);
+            }
+        }
+    </script>
+</body>
+
+</html>
