@@ -25,6 +25,13 @@
             <span id="addedwraps" style="color:white"></span>
             <input type="text" placeholder="wrapname" id="reholder">
             <input onclick="runReRender()" type="button" value="Re-Render Wrap">
+            <br>
+            <br>
+            <br>
+            <span style="color:white">Made by:</span>
+            <span style="color:white">alez - coding, regreens, sheet generator</span>
+            <span style="color:white">theGiantSlug - regreens</span>
+
         </div>
     </div>
     <img id="greensheet" src="./greensheet.png" style="display: none;">
@@ -32,9 +39,10 @@
     <div id="wrapholders">
     </div>
     <script>
-        let original = ['wrap', 'scar', 'shotgun', 'bolt', 'deagle', 'autoshotgun', 'musket', 'heavy sniper', 'rifle', 'famas', 'smg', 'ump', 'scoped ar', 'tommy gun', 'rpg', 'ak47', 'combat'];
+        let original = ['wrap', 'scar', 'shotgun', 'bolt', 'deagle', 'autoshotgun', 'musket', 'heavy sniper', 'rifle', 'famas', 'smg', 'ump', 'scoped ar', 'tommy gun', 'rpg', 'ak47', 'combat', 'aug', 'lmg', 'burst shotgun'];
         let length = original.length;
-        for (let i = 1; i < length + 1; i++) {
+        for (let i = 0; i < length; i++) {
+            if (original[i] === 'wrap') continue;
             original.push(`top${original[i]}`);
         }
 
