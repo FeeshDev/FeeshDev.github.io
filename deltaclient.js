@@ -22,6 +22,25 @@ window.getMaxModePlayers = (mode) => {
     }
 }
 
+window.updateWrapList = () => {
+    let wraplist = document.getElementById("customwrapslist");
+    let wraps = JSON.parse(localStorage.customWraps);
+    wraplist.textContent = `Custom wraps added: ${wraps.join(", ").replace(/wrap_/g, "")}`;
+}
+
+window.getImageDataUrl = (img) => {
+    let canvastest = document.createElement("canvas");
+    canvastest.width = 350;
+    canvastest.height = 350;
+
+    let ctxtest = canvastest.getContext("2d");
+    ctxtest.drawImage(img, 0, 0);
+
+    let dataURL = canvastest.toDataURL("image/png");
+
+    return dataURL;
+}
+
 localStorage.deltaPartySize = "0";
 localStorage.deltaPlayers = "0";
 localStorage.deltaElims = "0";
@@ -185,6 +204,126 @@ webpackJsonp([0x0], {
                 socket.emit("gameState", "menu");
                 socket.emit("gameInfo", "mode", "prod");
             }, 300);
+
+            let ref2span = document.getElementById("ref2span");
+            let ps = ref2span.getElementsByTagName("p");
+            let mainp = ps[0];
+            mainp.innerHTML = "Delta Client v1.2.0<br>"+
+            "> New logo<br>"+
+            "> New changelog display<br>"+
+            "> Improved minimap hider<br>"+
+            "> Removed tool bar<br>"+
+            "> Added console and fullscreen keybinds<br>"+
+            "> All ingame guns now have wraps<br>"
+            //"> Custom client side wraps"
+
+            /*
+            let wrapManager = document.createElement("a");
+            wrapManager.classList.add("ref");
+            wrapManager.classList.add("a");
+            wrapManager.textContent = "Wrap Manager";
+            wrapManager.style.width = "200px"
+            wrapManager.onclick = () => {
+                updateWrapList();
+                showModal("wrapmanager");
+            }
+            ref2span.insertBefore(wrapManager, document.getElementById("more"))
+            */
+/*
+            let addWrap = document.createElement("a");
+            addWrap.classList.add("ref");
+            addWrap.classList.add("a");
+            addWrap.textContent = "Add Wrap";
+            addWrap.style.width = "180px";
+            addWrap.style.margin = "10px";
+            addWrap.onclick = () => {
+                let redpng = document.getElementById("redpng");
+                let greenpng = document.getElementById("greenpng");
+                let name = document.getElementById("nameholder");
+                if (redpng.files.length <= 0) return alert("Red file not filled in!");
+                if (greenpng.files.length <= 0) return alert("Green file not filled in!");
+                if (!name.value) return alert("Wrap needs a name!");
+                let redWrapTest = document.getElementById(`red${name.value}`);
+                if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
+                
+                let redWrap = document.createElement("img");
+                redWrap.src = URL.createObjectURL(redpng.files[0]);
+                redWrap.id = `red${name.value}`;
+                redWrap.style.display = "none";
+                document.getElementById("customwrapholders").appendChild(redWrap);
+
+                let greenWrap = document.createElement("img");
+                greenWrap.src = URL.createObjectURL(greenpng.files[0]);
+                greenWrap.id = `green${name.value}`;
+                greenWrap.style.display = "none";
+                document.getElementById("customwrapholders").appendChild(greenWrap);
+
+                let normal = JSON.parse(localStorage.customWraps);
+                normal.push(`wrap_${name.value}`);
+                localStorage.customWraps = JSON.stringify(normal);
+                updateWrapList();
+
+                localStorage[`wrap_red${name.value}`] = getImageDataUrl(redWrap);
+                localStorage[`wrap_green${name.value}`] = getImageDataUrl(redWrap);
+            }
+
+            let removeWrap = document.createElement("a");
+            removeWrap.classList.add("ref");
+            removeWrap.classList.add("a");
+            removeWrap.textContent = "Remove Wrap";
+            removeWrap.style.width = "180px";
+            removeWrap.style.margin = "10px";
+            removeWrap.onclick = () => {
+                console.log("remove wrap")
+            }
+
+        
+            modals.push("wrapmanager");
+            let fuckingModalThing = document.createElement("div");
+            fuckingModalThing.innerHTML = '<div id="wrapmanager" class="modal500x600 modal noselect" style="display: none; visibility: hidden; transform: scale(1);">'+
+            '<div class="modalexit"><p onclick="hideModal(\'wrapmanager\')" class="exit">x</p></div>'+
+            '<div class="modaltitle">Wrap Manager</div><div class="modalbreak"></div>'+
+            '<div id="customwrapslist" style="padding: 16px; font-size: 18px; height: 40px; color: #000">Custom wraps added: none</div>'+
+            '<div id="customwrapholders" style="display: none"></div>'+
+            '<div style="color: #000; padding: 20px 120px 20px 120px" class="column">'+
+            '<span style="padding: 16px;" >Red part</span>'+
+            '<input style="padding: 16px;" type="file" id="redpng" accept="image/*">'+
+            '<span style="padding: 16px;" >Green part</span>'+
+            '<input style="padding: 16px;" type="file" id="greenpng" accept="image/*">'+
+            '<input style="padding: 4px; margin: 12px" type="text" placeholder="wrapname" id="nameholder">'+
+            '<div id="wrapbuttons" class="row"></div>'+
+            '</div>'+
+            '</div>';
+            document.body.insertBefore(fuckingModalThing, document.getElementById("locker"));
+            document.getElementById("wrapbuttons").appendChild(addWrap);
+            document.getElementById("wrapbuttons").appendChild(removeWrap);
+*/
+
+/*
+            if (typeof (localStorage.customWraps) === "undefined") {
+                localStorage.customWraps = "['none']";
+            } else {
+                let wraps = JSON.parse(localStorage.customWraps);
+                
+                for (let i = 0; i < wraps.length; i++) {
+                    const wrap = wraps[i];
+                    if (wrap === 'none') continue;
+
+                    let redWrap = document.createElement("img");
+                    redWrap.src = localStorage[`wrap_red${wrap.replace("wrap_", "")}`];
+                    redWrap.id = `red${wrap.replace("wrap_", "")}`;
+                    redWrap.style.display = "none";
+                    document.getElementById("customwrapholders").appendChild(redWrap);
+
+                    let greenWrap = document.createElement("img");
+                    console.log(`wrap_green${wrap.replace("wrap_", "")}`)
+                    greenWrap.src = localStorage[`wrap_green${wrap.replace("wrap_", "")}`];
+                    greenWrap.id = `green${wrap.replace("wrap_", "")}`;
+                    greenWrap.style.display = "none";
+                    document.getElementById("customwrapholders").appendChild(greenWrap);
+                }
+            }
+            */
 
             try {
                 for (var _0x4cd046 = 0x0; _0x4cd046 < window['location']['ancestorOrigins']['length']; _0x4cd046++) {
@@ -1529,14 +1668,14 @@ webpackJsonp([0x0], {
                 222: '\''
             };
             //! CHANGES
-            var _0x5f0f7e = ['Pickup 1', 'Pickup 2', 'Jump', 'Build', 'Reload', 'Inventory', 'Map', 'Ask For Ammo', 'ADS', 'Fire', 'Weapon Slot 1', 'Weapon Slot 2', 'Weapon Slot 3', 'Weapon Slot 4', 'Weapon Slot 5', 'Weapon Slot 6', 'Move Up', 'Move Down', 'Move Left', 'Move Right', 'Sprint', 'Reload Page', 'Hide Minimap'];
+            var _0x5f0f7e = ['Pickup 1', 'Pickup 2', 'Jump', 'Build', 'Reload', 'Inventory', 'Map', 'Ask For Ammo', 'ADS', 'Fire', 'Weapon Slot 1', 'Weapon Slot 2', 'Weapon Slot 3', 'Weapon Slot 4', 'Weapon Slot 5', 'Weapon Slot 6', 'Move Up', 'Move Down', 'Move Left', 'Move Right', 'Sprint', 'Reload Page', 'Console', 'Fullscreen', 'Hide Minimap'];
             var _0x177111 = _0x591c01(_0x3ba0be);
             var _0x435a79 = {};
             for (var _0x4cd046 = 0x0; _0x4cd046 < _0x177111['length']; _0x4cd046++) {
                 _0x435a79[_0x3ba0be[_0x177111[_0x4cd046]]] = _0x177111[_0x4cd046];
             }
             //! CHANGES
-            var _0x452198 = ['E', 'F', 'Space', 'Q', 'R', 'Tab', 'M', 'B', 'C', 'V', '1', '2', '3', '4', '5', '6', 'W', 'S', 'A', 'D', 'Shift', 'F5', 'O'];
+            var _0x452198 = ['E', 'F', 'Space', 'Q', 'R', 'Tab', 'M', 'B', 'C', 'V', '1', '2', '3', '4', '5', '6', 'W', 'S', 'A', 'D', 'Shift', 'F5', 'F12', 'F11', 'O'];
             for (var _0x4cd046 = 0x0; _0x4cd046 < _0x452198['length']; _0x4cd046++) {
                 _0x452198[_0x4cd046] = _0x435a79[_0x452198[_0x4cd046]['toString']()];
             }
@@ -1614,13 +1753,13 @@ webpackJsonp([0x0], {
                 return _0xa0ce90;
             }
             //! come here
-            var _0x5cc6c9 = ['scar', 'shotgun', 'bolt', 'deagle', 'drum', 'musket', 'heavy sniper', 'rifle', 'famas', 'smg', 'ump', 'scoped ar', 'tommy gun', 'rpg', 'ak47'];
+            var _0x5cc6c9 = ['scar', 'shotgun', 'bolt', 'deagle', 'drum', 'musket', 'heavy sniper', 'rifle', 'famas', 'smg', 'ump', 'scoped ar', 'tommy gun', 'rpg', 'ak47', 'combat', 'aug', 'silencedpistol', 'lmg', 'burst shotgun'];
             var _0x45100e = _0x5cc6c9['length'];
             for (var _0x4cd046 = 0x0; _0x4cd046 < _0x45100e; _0x4cd046++) {
                 _0x5cc6c9['push']('top' + _0x5cc6c9[_0x4cd046]);
             }
             window['updateSkins'] = function () {
-                _0x34ffd4 = ['empty'];
+                _0x34ffd4 = ['empty', 'pewds', 'retro'];
                 if (_0x2d15ee() && localStorage['ytskin']) {
                     _0x34ffd4['push']('yt');
                 }
@@ -1646,7 +1785,7 @@ webpackJsonp([0x0], {
                 }
                 for (var _0x116d10 = 0x0; _0x116d10 < _0x34ffd4['length']; _0x116d10++) {
                     var _0x505c12 = document['getElementById']('wskin' + _0x34ffd4[_0x116d10]);
-                    var _0x97f41b = _0x36ec46(_0x34ffd4[_0x116d10], 'scar');
+                    var _0x97f41b = _0x36ec46(_0x34ffd4[_0x116d10], 'scar'); //locker item
                     try {
                         _0x97f41b['style']['width'] = _0x5e83e0;
                         _0x97f41b['style']['height'] = _0x538528;
@@ -1682,7 +1821,7 @@ webpackJsonp([0x0], {
                     if (_0x2d15ee()) {
                         localStorage['weaponSkin'] = _0x295586;
                     }
-                    _0x4cd541['weapon']['image'] = _0x36ec46(_0x295586, 'scar');
+                    _0x4cd541['weapon']['image'] = _0x36ec46(_0x295586, 'scar'); //handheld update
                 } catch (_0x108862) { }
             }
             function _0x23a634() {
@@ -2196,9 +2335,42 @@ webpackJsonp([0x0], {
                         window.api.reload();
                     }
 
+                    if (_0x289f9b['keyCode'] == _0x43a009('Console')) {
+                        window.api.console();
+                    }
+
+                    if (_0x289f9b['keyCode'] == _0x43a009('Fullscreen')) {
+                        window.api.fullscreen();
+                    }
+
                     if (_0x289f9b['keyCode'] == _0x43a009('Hide Minimap')) {
                         window.minimapVis = !window.minimapVis;
-                        _0x6f2310['opacity'] = window.minimapVis ? 1 : 0;
+                        console.log(_0x4a27d9)
+                        if (window.minimapVis) {
+                            console.log("Minimap Shown")
+                            _0x3e303f.position.y = _0x3e303f.position.y + 250; // storm icons
+                            _0x4a27d9.position.y = _0x4a27d9.position.y; // text
+
+                            _0x49e998.position.y = _0x49e998.position.y + 250;  // players icon
+                            _0x4918d8.position.y = _0x4918d8.position.y; // players
+
+                            _0x3e88d5.position.y = _0x3e88d5.position.y + 250; // killsicon
+                            _0x2db1b4.position.y = _0x2db1b4.position.y; //kills
+
+                            _0x6f2310['opacity'] = 1;
+                        } else {
+                            console.log("Minimap Hidden")
+                            _0x3e303f.position.y = _0x3e303f.position.y - 250; // storm icons
+                            _0x4a27d9.position.y = _0x4a27d9.position.y; // text
+
+                            _0x49e998.position.y = _0x49e998.position.y - 250;  // players icon
+                            _0x4918d8.position.y = _0x4918d8.position.y; // players
+
+                            _0x3e88d5.position.y = _0x3e88d5.position.y - 250; // killsicon
+                            _0x2db1b4.position.y = _0x2db1b4.position.y; //kills
+
+                            _0x6f2310['opacity'] = 0;
+                        }
                     }
 
                     //_0x6f2310['opacity'] = 0;
@@ -3298,9 +3470,11 @@ webpackJsonp([0x0], {
             _0x36654a['opacity'] = 0x0;
             var _0x3e303f = new _0x1e6a3f['image'](_0x282ecd('waitingIcon'), -_0x28e179 / 0x2 + _0x3618de / 0x2 - 0x96, _0x28e179 / 0x2 + _0x3618de / 0x2 + 0x96 + 0xa, _0x3618de, _0x3618de);
             _0xda8531['add'](_0x3e303f);
+
             var _0x4a27d9 = new _0x1e6a3f['text']('0:00', _0x3618de / 0x2 + 0x5, 0x0, _0xeeae32, 'Arial Black', _0x3618de - 0x6);
             _0x4a27d9['align'] = 'left';
             _0x3e303f['add'](_0x4a27d9);
+
             var _0x49e998 = new _0x1e6a3f['image'](_0x282ecd('playersIcon'), -_0x28e179 / 0x2 + _0x3618de / 0x2 + 0x6b - 0x96, _0x28e179 / 0x2 + _0x3618de / 0x2 + 0x96 + 0xa, _0x3618de, _0x3618de);
             _0xda8531['add'](_0x49e998);
             var _0x4918d8 = new _0x1e6a3f['text']('50', _0x3618de / 0x2 + 0x5, 0x0, _0xeeae32, 'Arial Black', _0x3618de - 0x6);
@@ -4009,6 +4183,7 @@ webpackJsonp([0x0], {
             var _0x566c7b = _0x1e6a3f['prerender'](new _0x1e6a3f['circle'](_0x359b85, _0x4e9cbd, 0xa, '#B38638', 0x1), 0x14)['image'];
             var _0x560753 = _0x1e6a3f['prerender'](new _0x1e6a3f['circle'](0x0, 0x0, 0xc, '#000', 0x1), 0x18)['image'];
             _0x1e6a3f['addType']('player', function (_0x1cda6c, _0x20f51f) {
+                //console.log(_0x20f51f)
                 _0x1cda6c['visual'] = new _0x1e6a3f['object']();
                 _0x1cda6c['firstPacket'] = !![];
                 _0x1cda6c['actualRotation'] = 0x0;
@@ -9937,6 +10112,7 @@ webpackJsonp([0x0], {
                     'position': new _0x5eac64['Vector2'](0x0, 0x0)
                 }
             };
+            window.me = _0x5eac64['me'];
             _0x5eac64['ws'] = {
                 'readyState': -0x1,
                 'send': function () { },
@@ -10054,6 +10230,12 @@ webpackJsonp([0x0], {
                     for (var _0x417d04 = 0x0; _0x417d04 < _0x5eac64['objects']['length']; _0x417d04++) {
                         if (_0x5eac64['objects'][_0x417d04]['id'] == _0x22aa61['id']) {
                             _0x5eac64['me'] = _0x5eac64['objects'][_0x417d04];
+                            if (_0x5eac64['spectating']) {
+                                _0x5eac64['me'].weaponSkin = "";
+                            } else {
+                                _0x5eac64['me'].weaponSkin = localStorage.weaponSkin;
+                            }
+                            window.me = _0x5eac64['me'];
                         }
                     }
                 },
