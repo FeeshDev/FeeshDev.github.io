@@ -254,6 +254,8 @@ webpackJsonp([0x0], {
                 let redWrapTest = document.getElementById(`red${name.value}`);
                 if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
                 
+                name.value.replace(" ", "");
+
                 let redWrap = document.createElement("img");
                 redWrap.src = redpng.value;
                 redWrap.id = `red${name.value}`;
