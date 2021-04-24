@@ -1,6 +1,7 @@
 //! CHANGES
 console.log("Delta Client Injected!")
 window.killFeed = [];
+window.customskins = [];
 window.killFeedText = () => {
     let text = killFeed.join("\n");
     return text;
@@ -28,18 +29,21 @@ window.updateWrapList = () => {
     wraplist.textContent = `Custom wraps added: ${wraps.join(", ").replace(/wrap_/g, "")}`;
 }
 
-window.getImageDataUrl = (img) => {
-    let canvastest = document.createElement("canvas");
-    canvastest.width = 350;
-    canvastest.height = 350;
-
-    let ctxtest = canvastest.getContext("2d");
-    ctxtest.drawImage(img, 0, 0);
-
-    let dataURL = canvastest.toDataURL("image/png");
-
-    return dataURL;
-}
+window.fpsManager = {
+    startTime: 0,
+    frameNumber: 0,
+    getFPS: () => {
+        fpsManager.frameNumber++;
+        let date = new Date().getTime(),
+            math = (date - fpsManager.startTime) / 1000,
+            fps = Math.floor(fpsManager.frameNumber / math);
+        if (math > 1) {
+            fpsManager.startTime = new Date().getTime();
+            fpsManager.frameNumber = 0;
+        }
+        return fps;
+    }
+};
 
 localStorage.deltaPartySize = "0";
 localStorage.deltaPlayers = "0";
@@ -81,6 +85,7 @@ webpackJsonp([0x0], {
         window['_requestAnimationFrame'] = window['requestAnimationFrame'];
         window['requestAnimationFrame'] = function (_0x3ab4a3) {
             setTimeout(function () {
+                fpsmeter.text = `FPS: ${window.fpsManager.getFPS()}`;
                 window['_requestAnimationFrame'](_0x3ab4a3);
             }, 0x0);
         };
@@ -208,16 +213,19 @@ webpackJsonp([0x0], {
             let ref2span = document.getElementById("ref2span");
             let ps = ref2span.getElementsByTagName("p");
             let mainp = ps[0];
-            mainp.innerHTML = "Delta Client v1.2.0<br>"+
+            mainp.innerHTML = ""+
+            "Delta Client v1.2.1<br>"+
+            "> FPS meter<br>"+
+            "> Custom client side wraps<br>"+
+            "Delta Client v1.2.0<br>"+
             "> New logo<br>"+
             "> New changelog display<br>"+
             "> Improved minimap hider<br>"+
             "> Removed tool bar<br>"+
             "> Added console and fullscreen keybinds<br>"+
             "> All ingame guns now have wraps<br>"
-            //"> Custom client side wraps"
 
-            /*
+            
             let wrapManager = document.createElement("a");
             wrapManager.classList.add("ref");
             wrapManager.classList.add("a");
@@ -228,8 +236,8 @@ webpackJsonp([0x0], {
                 showModal("wrapmanager");
             }
             ref2span.insertBefore(wrapManager, document.getElementById("more"))
-            */
-/*
+            
+
             let addWrap = document.createElement("a");
             addWrap.classList.add("ref");
             addWrap.classList.add("a");
@@ -240,20 +248,20 @@ webpackJsonp([0x0], {
                 let redpng = document.getElementById("redpng");
                 let greenpng = document.getElementById("greenpng");
                 let name = document.getElementById("nameholder");
-                if (redpng.files.length <= 0) return alert("Red file not filled in!");
-                if (greenpng.files.length <= 0) return alert("Green file not filled in!");
+                if (!redpng.value) return alert("Red link not filled in!");
+                if (!greenpng.value) return alert("Green link not filled in!");
                 if (!name.value) return alert("Wrap needs a name!");
                 let redWrapTest = document.getElementById(`red${name.value}`);
                 if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
                 
                 let redWrap = document.createElement("img");
-                redWrap.src = URL.createObjectURL(redpng.files[0]);
+                redWrap.src = redpng.value;
                 redWrap.id = `red${name.value}`;
                 redWrap.style.display = "none";
                 document.getElementById("customwrapholders").appendChild(redWrap);
 
                 let greenWrap = document.createElement("img");
-                greenWrap.src = URL.createObjectURL(greenpng.files[0]);
+                greenWrap.src = greenpng.value;
                 greenWrap.id = `green${name.value}`;
                 greenWrap.style.display = "none";
                 document.getElementById("customwrapholders").appendChild(greenWrap);
@@ -263,8 +271,15 @@ webpackJsonp([0x0], {
                 localStorage.customWraps = JSON.stringify(normal);
                 updateWrapList();
 
-                localStorage[`wrap_red${name.value}`] = getImageDataUrl(redWrap);
-                localStorage[`wrap_green${name.value}`] = getImageDataUrl(redWrap);
+                localStorage[`wrap_red${name.value}`] = redWrap.src;
+                localStorage[`wrap_green${name.value}`] = greenWrap.src;
+                window.customskins.push(name.value);
+                _0x5ece8a[name.value] = {};
+
+                alert(`Wrap "${name.value}" added succesfully.`);
+                redpng.value = "";
+                greenpng.value = "";
+                name.value = "";
             }
 
             let removeWrap = document.createElement("a");
@@ -274,7 +289,28 @@ webpackJsonp([0x0], {
             removeWrap.style.width = "180px";
             removeWrap.style.margin = "10px";
             removeWrap.onclick = () => {
-                console.log("remove wrap")
+                let name = document.getElementById("nameholder");
+                if (!name.value) return alert("You need to choose an existing wrap name!");
+                let redWrapTest = document.getElementById(`red${name.value}`);
+                if (redWrapTest === null) return alert("This wrap doesn't exist!");
+                
+                let normal = JSON.parse(localStorage.customWraps);
+                const index = normal.indexOf(`wrap_${name.value}`);
+                normal.splice(index, 1);
+                localStorage.customWraps = JSON.stringify(normal);
+                updateWrapList();
+
+                localStorage.removeItem(`wrap_red${name.value}`);
+                localStorage.removeItem(`wrap_green${name.value}`);
+                document.getElementById(`red${name.value}`).remove();
+                document.getElementById(`green${name.value}`).remove();
+                if (localStorage.weaponSkin === name.value) localStorage.weaponSkin = "empty";
+                const index2 = window.customskins.indexOf(name.value);
+                window.customskins.splice(index2, 1);
+
+                alert(`Wrap "${name.value}" removed succesfully.`);
+
+                name.value = "";
             }
 
         
@@ -286,10 +322,11 @@ webpackJsonp([0x0], {
             '<div id="customwrapslist" style="padding: 16px; font-size: 18px; height: 40px; color: #000">Custom wraps added: none</div>'+
             '<div id="customwrapholders" style="display: none"></div>'+
             '<div style="color: #000; padding: 20px 120px 20px 120px" class="column">'+
-            '<span style="padding: 16px;" >Red part</span>'+
-            '<input style="padding: 16px;" type="file" id="redpng" accept="image/*">'+
-            '<span style="padding: 16px;" >Green part</span>'+
-            '<input style="padding: 16px;" type="file" id="greenpng" accept="image/*">'+
+            '<span style="padding: 16px;" >Red part link</span>'+
+            '<input style="padding: 4px; margin: 12px" id="redpng">'+
+            '<span style="padding: 16px;" >Green part link</span>'+
+            '<input style="padding: 4px; margin: 12px" id="greenpng">'+
+            '<span style="padding: 16px;" >Wrap name</span>'+
             '<input style="padding: 4px; margin: 12px" type="text" placeholder="wrapname" id="nameholder">'+
             '<div id="wrapbuttons" class="row"></div>'+
             '</div>'+
@@ -297,17 +334,15 @@ webpackJsonp([0x0], {
             document.body.insertBefore(fuckingModalThing, document.getElementById("locker"));
             document.getElementById("wrapbuttons").appendChild(addWrap);
             document.getElementById("wrapbuttons").appendChild(removeWrap);
-*/
-
-/*
-            if (typeof (localStorage.customWraps) === "undefined") {
-                localStorage.customWraps = "['none']";
+            
+            if (typeof ( JSON.parse(localStorage.customWraps)) === "undefined") {
+                localStorage.customWraps = '["none"]';
             } else {
                 let wraps = JSON.parse(localStorage.customWraps);
                 
                 for (let i = 0; i < wraps.length; i++) {
                     const wrap = wraps[i];
-                    if (wrap === 'none') continue;
+                    if (wrap === 'none' || wrap === 'empty') continue;
 
                     let redWrap = document.createElement("img");
                     redWrap.src = localStorage[`wrap_red${wrap.replace("wrap_", "")}`];
@@ -316,14 +351,17 @@ webpackJsonp([0x0], {
                     document.getElementById("customwrapholders").appendChild(redWrap);
 
                     let greenWrap = document.createElement("img");
-                    console.log(`wrap_green${wrap.replace("wrap_", "")}`)
                     greenWrap.src = localStorage[`wrap_green${wrap.replace("wrap_", "")}`];
                     greenWrap.id = `green${wrap.replace("wrap_", "")}`;
                     greenWrap.style.display = "none";
                     document.getElementById("customwrapholders").appendChild(greenWrap);
+
+                    console.log(wrap.replace("wrap_", ""))
+
+                    window.customskins.push(wrap.replace("wrap_", ""));
+                    console.log(window.customskins)
                 }
-            }
-            */
+            }    
 
             try {
                 for (var _0x4cd046 = 0x0; _0x4cd046 < window['location']['ancestorOrigins']['length']; _0x4cd046++) {
@@ -1737,6 +1775,16 @@ webpackJsonp([0x0], {
             }
             var _0x5ece8a = {};
             var _0x43d749 = ['empty', 'pewds', 'hawaii', 'lines', 'rainbow', 'retro', 'yt'];
+
+            let wraps = JSON.parse(localStorage.customWraps);
+                
+            for (let i = 0; i < wraps.length; i++) {
+                const wrap = wraps[i];
+                if (wrap === 'none' || wrap === 'empty') continue;
+
+                _0x43d749.push(wrap.replace("wrap_", ""));
+            }
+
             var _0x34ffd4 = ['empty', 'pewds', 'retro', 'yt'];
             for (var _0x4cd046 = 0x0; _0x4cd046 < _0x43d749['length']; _0x4cd046++) {
                 _0x5ece8a[_0x43d749[_0x4cd046]] = {};
@@ -1763,9 +1811,9 @@ webpackJsonp([0x0], {
                 if (_0x2d15ee() && localStorage['ytskin']) {
                     _0x34ffd4['push']('yt');
                 }
-                if (window['skins'] !== undefined) {
-                    for (var _0x116d10 = 0x0; _0x116d10 < window['skins']['length']; _0x116d10++) {
-                        _0x34ffd4['push'](window['skins'][_0x116d10]);
+                if (window['customskins'] !== undefined) {
+                    for (var _0x116d10 = 0x0; _0x116d10 < window['customskins']['length']; _0x116d10++) {
+                        _0x34ffd4['push'](window['customskins'][_0x116d10]);
                     }
                 }
                 var _0x121175 = _0x282ecd('lockerdata');
@@ -2345,7 +2393,6 @@ webpackJsonp([0x0], {
 
                     if (_0x289f9b['keyCode'] == _0x43a009('Hide Minimap')) {
                         window.minimapVis = !window.minimapVis;
-                        console.log(_0x4a27d9)
                         if (window.minimapVis) {
                             console.log("Minimap Shown")
                             _0x3e303f.position.y = _0x3e303f.position.y + 250; // storm icons
@@ -3489,6 +3536,9 @@ webpackJsonp([0x0], {
             var _0x2db1b4 = new _0x1e6a3f['text']('0', _0x3618de / 0x2 + 0x5, 0x0, _0xeeae32, 'Arial Black', _0x3618de - 0x6);
             _0x2db1b4['align'] = 'left';
             _0x3e88d5['add'](_0x2db1b4);
+            window.fpsmeter = new _0x1e6a3f['text']('FPS: 0', _0x3618de / 0x2 - 84, 38, _0xeeae32, 'Arial Black', _0x3618de - 0x6);
+            fpsmeter['align'] = 'left';
+            _0x3e88d5['add'](fpsmeter);
             var _0x1e0bb8 = document['createElement']('canvas');
             var _0x5eb5f3 = _0x1e0bb8['getContext']('2d');
             _0x1e0bb8['width'] = _0x1e0bb8['height'] = 0x1f4;
