@@ -358,10 +358,7 @@ webpackJsonp([0x0], {
                     greenWrap.style.display = "none";
                     document.getElementById("customwrapholders").appendChild(greenWrap);
 
-                    console.log(wrap.replace("wrap_", ""))
-
-                    window.customskins.push(wrap.replace("wrap_", ""));
-                    console.log(window.customskins)
+                    window.customskins.push(wrap.replace("wrap_", "").replaceAll(" ", ""));
                 }
             }    
 
@@ -1783,6 +1780,8 @@ webpackJsonp([0x0], {
             for (let i = 0; i < wraps.length; i++) {
                 const wrap = wraps[i];
                 if (wrap === 'none' || wrap === 'empty') continue;
+
+                wrap.replaceAll(" ", "")
 
                 _0x43d749.push(wrap.replace("wrap_", ""));
             }
