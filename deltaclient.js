@@ -329,7 +329,7 @@ webpackJsonp([0x0], {
             '<span style="padding: 16px;" >Green part link</span>'+
             '<input style="padding: 4px; margin: 12px" id="greenpng">'+
             '<span style="padding: 16px;" >Wrap name</span>'+
-            '<input style="padding: 4px; margin: 12px" type="text" placeholder="wrapname" id="nameholder">'+
+            '<input onkeypress="return event.charCode != 32" style="padding: 4px; margin: 12px" type="text" placeholder="wrapname" id="nameholder">'+
             '<div id="wrapbuttons" class="row"></div>'+
             '</div>'+
             '</div>';
