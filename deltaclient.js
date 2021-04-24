@@ -253,32 +253,32 @@ webpackJsonp([0x0], {
                 if (!name.value) return alert("Wrap needs a name!");
                 let redWrapTest = document.getElementById(`red${name.value}`);
                 if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
-                
-                name.value.replace(" ", "");
+
+                let wrapname = name.value.replaceAll(" ", "");
 
                 let redWrap = document.createElement("img");
                 redWrap.src = redpng.value;
-                redWrap.id = `red${name.value}`;
+                redWrap.id = `red${wrapname}`;
                 redWrap.style.display = "none";
                 document.getElementById("customwrapholders").appendChild(redWrap);
 
                 let greenWrap = document.createElement("img");
                 greenWrap.src = greenpng.value;
-                greenWrap.id = `green${name.value}`;
+                greenWrap.id = `green${wrapname}`;
                 greenWrap.style.display = "none";
                 document.getElementById("customwrapholders").appendChild(greenWrap);
 
                 let normal = JSON.parse(localStorage.customWraps);
-                normal.push(`wrap_${name.value}`);
+                normal.push(`wrap_${wrapname}`);
                 localStorage.customWraps = JSON.stringify(normal);
                 updateWrapList();
 
-                localStorage[`wrap_red${name.value}`] = redWrap.src;
-                localStorage[`wrap_green${name.value}`] = greenWrap.src;
-                window.customskins.push(name.value);
-                _0x5ece8a[name.value] = {};
+                localStorage[`wrap_red${wrapname}`] = redWrap.src;
+                localStorage[`wrap_green${wrapname}`] = greenWrap.src;
+                window.customskins.push(wrapname);
+                _0x5ece8a[wrapname] = {};
 
-                alert(`Wrap "${name.value}" added succesfully.`);
+                alert(`Wrap "${wrapname}" added succesfully.`);
                 redpng.value = "";
                 greenpng.value = "";
                 name.value = "";
@@ -1794,8 +1794,12 @@ webpackJsonp([0x0], {
                 if (_0x5349e8 == 'empty') {
                     return _0x282ecd(_0x11eb79);
                 }
-                if (_0x5ece8a[_0x5349e8][_0x11eb79] !== undefined) {
-                    return _0x5ece8a[_0x5349e8][_0x11eb79];
+                try {
+                    if (_0x5ece8a[_0x5349e8][_0x11eb79] !== undefined) {
+                        return _0x5ece8a[_0x5349e8][_0x11eb79];
+                    }
+                } catch (e) {
+
                 }
                 var _0xa0ce90 = _0x460220(_0x11eb79, _0x282ecd('redsheet'), _0x282ecd('greensheet'), _0x5cc6c9, _0x5349e8);
                 _0x5ece8a[_0x5349e8][_0x11eb79] = _0xa0ce90;
