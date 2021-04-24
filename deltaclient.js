@@ -335,7 +335,7 @@ webpackJsonp([0x0], {
             document.getElementById("wrapbuttons").appendChild(addWrap);
             document.getElementById("wrapbuttons").appendChild(removeWrap);
             
-            if (localStorage.customWraps === "" || typeof (JSON.parse(localStorage.customWraps)) === "undefined") {
+            if (!localStorage.customWraps || localStorage.customWraps === "" || typeof (JSON.parse(localStorage.customWraps)) === "undefined") {
                 localStorage.customWraps = '["none"]';
             } else {
                 let wraps = JSON.parse(localStorage.customWraps);
