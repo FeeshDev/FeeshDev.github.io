@@ -1,4 +1,5 @@
 //! CHANGES
+
 console.log("Delta Client Injected!")
 window.killFeed = [];
 window.customskins = [];
@@ -7,6 +8,11 @@ window.killFeedText = () => {
     return text;
 }
 window.minimapVis = true;
+
+
+if (!localStorage.rp || localStorage.rp === "") {
+    localStorage.rp = "-1";
+}
 
 window.getMaxModePlayers = (mode) => {
     switch (mode) {
@@ -24,9 +30,13 @@ window.getMaxModePlayers = (mode) => {
 }
 
 window.updateWrapList = () => {
-    let wraplist = document.getElementById("customwrapslist");
-    let wraps = JSON.parse(localStorage.customWraps);
-    wraplist.textContent = `Custom wraps added: ${wraps.join(", ").replace(/wrap_/g, "")}`;
+    try {
+        let wraplist = document.getElementById("customwrapslist");
+        let wraps = JSON.parse(localStorage.customWraps);
+        wraplist.textContent = `Custom wraps added: ${wraps.join(", ").replaceAll("wrap_", "")}`;
+    } catch (e) {
+        alert(`There was an issue updating wraps: ${e}`)
+    }
 }
 
 window.fpsManager = {
@@ -204,20 +214,36 @@ webpackJsonp([0x0], {
         window['onload'] = function () {
             //! CHANGES
             setTimeout(() => {
-                if (typeof (io) == "undefined" || !io) window.api.reload();
-                window.socket = io("http://localhost:3344");
-                socket.emit("gameState", "menu");
-                socket.emit("gameInfo", "mode", "prod");
+                if (localStorage.rp === "-2") {
+                    if (typeof (io) == "undefined" || !io) window.api.reload();
+                    window.socket = io("http://localhost:3344");
+                    socket.emit("gameState", "menu");
+                    socket.emit("gameInfo", "mode", "prod");
+                } else {
+                    window.api.baserp();
+                }
             }, 300);
 
             let ref2span = document.getElementById("ref2span");
             let ps = ref2span.getElementsByTagName("p");
             let mainp = ps[0];
+            mainp.style.height = "240px";
+            mainp.style.width = "630px";
+            mainp.style.overflowY = "scroll";
             mainp.innerHTML = ""+
-            "Delta Client v1.2.1<br>"+
+            "Delta Client v1.3.0 - Stability Update<br>"+
+            "> Download the new installer <a target='_blank' href='https://github.com/FeeshDev/DeltaClient/releases/tag/1.3.0'>here</a><br>"+
+            "> Added warnings for wrap manager<br>"+
+            "> Added extra errors checks for wrap manager<br>"+
+            "> Made Dynamic Presence toggleable<br>"+
+            "> Added overflow scroll to changelog<br>"+
+            "> Initial page loading improvements<br>"+
+            "> Fixed dev tools opening<br>"+
+            "> In case page doesn't load, space can be used for console and \"r\" for reloading<br>"+
+            "<br>Delta Client v1.2.1<br>"+
             "> FPS meter<br>"+
             "> Custom client side wraps<br>"+
-            "Delta Client v1.2.0<br>"+
+            "<br>Delta Client v1.2.0<br>"+
             "> New logo<br>"+
             "> New changelog display<br>"+
             "> Improved minimap hider<br>"+
@@ -245,43 +271,48 @@ webpackJsonp([0x0], {
             addWrap.style.width = "180px";
             addWrap.style.margin = "10px";
             addWrap.onclick = () => {
-                let redpng = document.getElementById("redpng");
-                let greenpng = document.getElementById("greenpng");
-                let name = document.getElementById("nameholder");
-                if (!redpng.value) return alert("Red link not filled in!");
-                if (!greenpng.value) return alert("Green link not filled in!");
-                if (!name.value) return alert("Wrap needs a name!");
-                let redWrapTest = document.getElementById(`red${name.value}`);
-                if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
-
-                let wrapname = name.value.replaceAll(" ", "");
-
-                let redWrap = document.createElement("img");
-                redWrap.src = redpng.value;
-                redWrap.id = `red${wrapname}`;
-                redWrap.style.display = "none";
-                document.getElementById("customwrapholders").appendChild(redWrap);
-
-                let greenWrap = document.createElement("img");
-                greenWrap.src = greenpng.value;
-                greenWrap.id = `green${wrapname}`;
-                greenWrap.style.display = "none";
-                document.getElementById("customwrapholders").appendChild(greenWrap);
-
-                let normal = JSON.parse(localStorage.customWraps);
-                normal.push(`wrap_${wrapname}`);
-                localStorage.customWraps = JSON.stringify(normal);
-                updateWrapList();
-
-                localStorage[`wrap_red${wrapname}`] = redWrap.src;
-                localStorage[`wrap_green${wrapname}`] = greenWrap.src;
-                window.customskins.push(wrapname);
-                _0x5ece8a[wrapname] = {};
-
-                alert(`Wrap "${wrapname}" added succesfully.`);
-                redpng.value = "";
-                greenpng.value = "";
-                name.value = "";
+                try {
+                    let redpng = document.getElementById("redpng");
+                    let greenpng = document.getElementById("greenpng");
+                    let name = document.getElementById("nameholder");
+                    if (!redpng.value) return alert("Red link not filled in!");
+                    if (!greenpng.value) return alert("Green link not filled in!");
+                    if (!name.value) return alert("Wrap needs a name!");
+                    let redWrapTest = document.getElementById(`red${name.value}`);
+                    if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
+    
+                    let wrapname = name.value.replaceAll(" ", "");
+    
+                    let redWrap = document.createElement("img");
+                    redWrap.src = redpng.value;
+                    redWrap.id = `red${wrapname}`;
+                    redWrap.style.display = "none";
+                    document.getElementById("customwrapholders").appendChild(redWrap);
+    
+                    let greenWrap = document.createElement("img");
+                    greenWrap.src = greenpng.value;
+                    greenWrap.id = `green${wrapname}`;
+                    greenWrap.style.display = "none";
+                    document.getElementById("customwrapholders").appendChild(greenWrap);
+    
+                    
+                    let normal = JSON.parse(localStorage.customWraps);
+                    normal.push(`wrap_${wrapname}`);
+                    localStorage.customWraps = JSON.stringify(normal);
+                    updateWrapList();
+    
+                    localStorage[`wrap_red${wrapname}`] = redWrap.src;
+                    localStorage[`wrap_green${wrapname}`] = greenWrap.src;
+                    window.customskins.push(wrapname);
+                    _0x5ece8a[wrapname] = {};
+    
+                    alert(`Wrap "${wrapname}" added succesfully.`);
+                    redpng.value = "";
+                    greenpng.value = "";
+                    name.value = "";
+                } catch (e) {
+                    alert(`There was an issue creating the wrap: ${e}`)
+                }
             }
 
             let removeWrap = document.createElement("a");
@@ -291,28 +322,32 @@ webpackJsonp([0x0], {
             removeWrap.style.width = "180px";
             removeWrap.style.margin = "10px";
             removeWrap.onclick = () => {
-                let name = document.getElementById("nameholder");
-                if (!name.value) return alert("You need to choose an existing wrap name!");
-                let redWrapTest = document.getElementById(`red${name.value}`);
-                if (redWrapTest === null) return alert("This wrap doesn't exist!");
-                
-                let normal = JSON.parse(localStorage.customWraps);
-                const index = normal.indexOf(`wrap_${name.value}`);
-                normal.splice(index, 1);
-                localStorage.customWraps = JSON.stringify(normal);
-                updateWrapList();
-
-                localStorage.removeItem(`wrap_red${name.value}`);
-                localStorage.removeItem(`wrap_green${name.value}`);
-                document.getElementById(`red${name.value}`).remove();
-                document.getElementById(`green${name.value}`).remove();
-                if (localStorage.weaponSkin === name.value) localStorage.weaponSkin = "empty";
-                const index2 = window.customskins.indexOf(name.value);
-                window.customskins.splice(index2, 1);
-
-                alert(`Wrap "${name.value}" removed succesfully.`);
-
-                name.value = "";
+                try {
+                    let name = document.getElementById("nameholder");
+                    if (!name.value) return alert("You need to choose an existing wrap name!");
+                    let redWrapTest = document.getElementById(`red${name.value}`);
+                    if (redWrapTest === null) return alert("This wrap doesn't exist!");
+                    
+                    let normal = JSON.parse(localStorage.customWraps);
+                    const index = normal.indexOf(`wrap_${name.value}`);
+                    normal.splice(index, 1);
+                    localStorage.customWraps = JSON.stringify(normal);
+                    updateWrapList();
+    
+                    localStorage.removeItem(`wrap_red${name.value}`);
+                    localStorage.removeItem(`wrap_green${name.value}`);
+                    document.getElementById(`red${name.value}`).remove();
+                    document.getElementById(`green${name.value}`).remove();
+                    if (localStorage.weaponSkin === name.value) localStorage.weaponSkin = "empty";
+                    const index2 = window.customskins.indexOf(name.value);
+                    window.customskins.splice(index2, 1);
+    
+                    alert(`Wrap "${name.value}" removed succesfully.`);
+    
+                    name.value = "";
+                } catch (e) {
+                    alert(`There was an issue creating the wrap: ${e}`)
+                }
             }
 
         
@@ -320,16 +355,16 @@ webpackJsonp([0x0], {
             let fuckingModalThing = document.createElement("div");
             fuckingModalThing.innerHTML = '<div id="wrapmanager" class="modal500x600 modal noselect" style="display: none; visibility: hidden; transform: scale(1);">'+
             '<div class="modalexit"><p onclick="hideModal(\'wrapmanager\')" class="exit">x</p></div>'+
-            '<div class="modaltitle">Wrap Manager</div><div class="modalbreak"></div>'+
+            '<div style="color: red; height: unset !important; font-size: 25px" class="modaltitle">Wrap Manager <br>Danger zone</div><div class="modalbreak"></div>'+
             '<div id="customwrapslist" style="padding: 16px; font-size: 18px; height: 40px; color: #000">Custom wraps added: none</div>'+
             '<div id="customwrapholders" style="display: none"></div>'+
             '<div style="color: #000; padding: 20px 120px 20px 120px" class="column">'+
             '<span style="padding: 16px;" >Red part link</span>'+
-            '<input style="padding: 4px; margin: 12px" id="redpng">'+
+            '<input style="padding: 4px; background-color: gray; margin: 12px" placeholder="Direct link to red" id="redpng">'+
             '<span style="padding: 16px;" >Green part link</span>'+
-            '<input style="padding: 4px; margin: 12px" id="greenpng">'+
+            '<input style="padding: 4px; background-color: gray; margin: 12px" placeholder="Direct link to green" id="greenpng">'+
             '<span style="padding: 16px;" >Wrap name</span>'+
-            '<input onkeypress="return event.charCode != 32" style="padding: 4px; margin: 12px" type="text" placeholder="wrapname" id="nameholder">'+
+            '<input onkeypress="return event.charCode != 32" style="padding: 4px; background-color: gray; margin: 12px" type="text" placeholder="wrapname" id="nameholder">'+
             '<div id="wrapbuttons" class="row"></div>'+
             '</div>'+
             '</div>';
@@ -340,25 +375,29 @@ webpackJsonp([0x0], {
             if (!localStorage.customWraps || localStorage.customWraps === "" || typeof (JSON.parse(localStorage.customWraps)) === "undefined") {
                 localStorage.customWraps = '["none"]';
             } else {
-                let wraps = JSON.parse(localStorage.customWraps);
+                try {
+                    let wraps = JSON.parse(localStorage.customWraps);
                 
-                for (let i = 0; i < wraps.length; i++) {
-                    const wrap = wraps[i];
-                    if (wrap === 'none' || wrap === 'empty') continue;
-
-                    let redWrap = document.createElement("img");
-                    redWrap.src = localStorage[`wrap_red${wrap.replace("wrap_", "")}`];
-                    redWrap.id = `red${wrap.replace("wrap_", "")}`;
-                    redWrap.style.display = "none";
-                    document.getElementById("customwrapholders").appendChild(redWrap);
-
-                    let greenWrap = document.createElement("img");
-                    greenWrap.src = localStorage[`wrap_green${wrap.replace("wrap_", "")}`];
-                    greenWrap.id = `green${wrap.replace("wrap_", "")}`;
-                    greenWrap.style.display = "none";
-                    document.getElementById("customwrapholders").appendChild(greenWrap);
-
-                    window.customskins.push(wrap.replace("wrap_", "").replaceAll(" ", ""));
+                    for (let i = 0; i < wraps.length; i++) {
+                        const wrap = wraps[i];
+                        if (wrap === 'none' || wrap === 'empty') continue;
+    
+                        let redWrap = document.createElement("img");
+                        redWrap.src = localStorage[`wrap_red${wrap.replace("wrap_", "")}`];
+                        redWrap.id = `red${wrap.replace("wrap_", "")}`;
+                        redWrap.style.display = "none";
+                        document.getElementById("customwrapholders").appendChild(redWrap);
+    
+                        let greenWrap = document.createElement("img");
+                        greenWrap.src = localStorage[`wrap_green${wrap.replace("wrap_", "")}`];
+                        greenWrap.id = `green${wrap.replace("wrap_", "")}`;
+                        greenWrap.style.display = "none";
+                        document.getElementById("customwrapholders").appendChild(greenWrap);
+    
+                        window.customskins.push(wrap.replace("wrap_", "").replaceAll(" ", ""));
+                    }
+                } catch (e) {
+                    alert(`There was an issue loading wraps: ${e}`)
                 }
             }    
 
@@ -1737,6 +1776,8 @@ webpackJsonp([0x0], {
             _0x338c38 += '<div style=\'margin-bottom: 20px;\'></div>';
             _0x4e35cb += '<div style=\'height: 60px;\'><p style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>Mouse Lock</p></div>';
             _0x338c38 += '<div style=\'height: 60px;\'><select id=\'mouseLockSetting\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; font-weight: bold; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 220px; height: 47px; font-size: 20px; text-align-last: center;\'><option value=\'-2\'>On</option><option selected value=\'-1\'>Off</option></select></div>';
+            _0x4e35cb += '<div style=\'height: 60px;\'><p style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>Rich Presence</p></div>';
+            _0x338c38 += '<div style=\'height: 80px;\'><select id=\'richPresenceSetting\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; margin-top: 22px; font-weight: bold; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 220px; font-size: 20px; text-align-last: center;\'><option value=\'-2\'>On</option><option selected value=\'-1\'>Off</option></select></div>';
             _0x4e35cb += '<div style=\'height: 60px;\'><p style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>Region</p></div>';
             _0x338c38 += '<div style=\'height: 80px;\'><select id=\'regionSetting\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; margin-top: 22px; font-weight: bold; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 220px; font-size: 20px; text-align-last: center;\'><option selected value=\'0\'>Auto</option><option value=\'2\'>North America</option><option value=\'9\'>Europe</option></select></div>';
             _0x4e35cb += '<div style=\'height: 60px;\'><p style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>Controller</p></div>';
@@ -1775,15 +1816,18 @@ webpackJsonp([0x0], {
             var _0x5ece8a = {};
             var _0x43d749 = ['empty', 'pewds', 'hawaii', 'lines', 'rainbow', 'retro', 'yt'];
 
-            let wraps = JSON.parse(localStorage.customWraps);
-                
-            for (let i = 0; i < wraps.length; i++) {
-                const wrap = wraps[i];
-                if (wrap === 'none' || wrap === 'empty') continue;
-
-                wrap.replaceAll(" ", "")
-
-                _0x43d749.push(wrap.replace("wrap_", ""));
+            try {
+                let wraps = JSON.parse(localStorage.customWraps);
+                for (let i = 0; i < wraps.length; i++) {
+                    const wrap = wraps[i];
+                    if (wrap === 'none' || wrap === 'empty') continue;
+    
+                    wrap.replaceAll(" ", "")
+    
+                    _0x43d749.push(wrap.replace("wrap_", ""));
+                }
+            } catch (e) {
+                alert(`There was an error loading wraps: ${e}`)
             }
 
             var _0x34ffd4 = ['empty', 'pewds', 'retro', 'yt'];
@@ -1921,6 +1965,17 @@ webpackJsonp([0x0], {
                     localStorage['controlChoice'] = _0x369ac8;
                 }
             }
+            function updatePresenceSetting() {
+                console['log']('Updating RP');
+                if (richPresence == -0x1) {
+                    document['exitPointerLock']();
+                }
+                document['getElementById']('richPresenceSetting')['selectedIndex'] = Number(richPresence) + 0x2;
+                console['log'](Number(richPresence) + 0x2);
+                if (_0x2d15ee()) {
+                    localStorage['rp'] = richPresence;
+                }
+            }
             function _0x5d8f96() {
                 console['log']('Updating mouse');
                 if (_0x34b775 == -0x1) {
@@ -1946,6 +2001,12 @@ webpackJsonp([0x0], {
                 }
             }
             if (!_0x2f32c0) { }
+            //! CHANGED
+            document['getElementById']('richPresenceSetting')['onchange'] = function () {
+                richPresence = document['getElementById']('richPresenceSetting')['value'];
+                updatePresenceSetting();
+                window.api.reload();
+            };
             document['getElementById']('mouseLockSetting')['onchange'] = function () {
                 _0x34b775 = document['getElementById']('mouseLockSetting')['value'];
                 _0x5d8f96();
@@ -2002,6 +2063,10 @@ webpackJsonp([0x0], {
                     if (localStorage['controlChoice'] !== undefined) {
                         _0x369ac8 = localStorage['controlChoice'];
                         _0x13e869();
+                    }
+                    if (localStorage['rp'] !== undefined && (localStorage['rp'] == -0x2 || localStorage['rp'] == -0x1)) {
+                        richPresence = localStorage['rp'];
+                        updatePresenceSetting();
                     }
                     if (localStorage['mouse'] !== undefined && (localStorage['mouse'] == -0x2 || localStorage['mouse'] == -0x1)) {
                         _0x34b775 = localStorage['mouse'];
