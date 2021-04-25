@@ -9,9 +9,26 @@ window.killFeedText = () => {
 }
 window.minimapVis = true;
 
+if (!localStorage.reloadAtts || localStorage.reloadAtts === "") {
+    localStorage.reloadAtts = 0;
+}
+
+localStorage.reloadAtts = parseInt(localStorage.reloadAtts) + 1;
+
+if (parseInt(localStorage.reloadAtts) >= 7) {
+    localStorage.rp = "-1";
+    alert("Rich Presence has been disabled due to page not loading for 7 times. Page will be reloaded in a few seconds with RP disabled.");
+    setTimeout(() => {
+        window.api.reload()
+    }, 500);
+}
 
 if (!localStorage.rp || localStorage.rp === "") {
     localStorage.rp = "-1";
+}
+
+if (!localStorage.volume || localStorage.volume === "") {
+    localStorage.volume = 100;
 }
 
 window.getMaxModePlayers = (mode) => {
@@ -217,9 +234,11 @@ webpackJsonp([0x0], {
                 if (localStorage.rp === "-2") {
                     if (typeof (io) == "undefined" || !io) window.api.reload();
                     window.socket = io("http://localhost:3344");
+                    localStorage.reloadAtts = 0;
                     socket.emit("gameState", "menu");
                     socket.emit("gameInfo", "mode", "prod");
                 } else {
+                    localStorage.reloadAtts = 0;
                     window.api.baserp();
                 }
             }, 300);
@@ -231,7 +250,10 @@ webpackJsonp([0x0], {
             mainp.style.width = "630px";
             mainp.style.overflowY = "scroll";
             mainp.innerHTML = ""+
-            "Delta Client v1.3.0 - Stability Update<br>"+
+            "Delta Client v1.3.1<br>"+
+            "> Volume slider<br>"+
+            "> RP disables automatically if loading fails multiple times<br>"+
+            "<br>Delta Client v1.3.0 - Stability Update<br>"+
             "> Download the new installer <a target='_blank' href='https://github.com/FeeshDev/DeltaClient/releases/tag/1.3.0'>here</a><br>"+
             "> Added warnings for wrap manager<br>"+
             "> Added extra errors checks for wrap manager<br>"+
@@ -1782,6 +1804,8 @@ webpackJsonp([0x0], {
             _0x338c38 += '<div style=\'height: 80px;\'><select id=\'regionSetting\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; margin-top: 22px; font-weight: bold; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 220px; font-size: 20px; text-align-last: center;\'><option selected value=\'0\'>Auto</option><option value=\'2\'>North America</option><option value=\'9\'>Europe</option></select></div>';
             _0x4e35cb += '<div style=\'height: 60px;\'><p style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>Controller</p></div>';
             _0x338c38 += '<div style=\'height: 85px;\'><select id=\'controlSetting\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; margin-top: 22px; font-weight: bold; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 220px; font-size: 20px; text-align-last: center;\'><option selected value=\'0\'>KB/Controller</option><option value=\'1\'>Keyboard Only</option></select></div>';
+            _0x4e35cb += '<div style=\'height: 60px;\'><p id=\'volumeSettingName\' style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>Volume</p></div>';
+            _0x338c38 += '<div style=\'height: 85px;\'><input id=\'volumeSetting\' type=\'range\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; margin-top: 22px; font-weight: bold; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 220px; font-size: 20px; text-align-last: center;\'></div>';
             for (var _0x4cd046 = 0x0; _0x4cd046 < _0x5f0f7e['length']; _0x4cd046++) {
                 _0x4e35cb += '<div style=\'height: 60px;\'><p style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>' + _0x5f0f7e[_0x4cd046] + '</p></div>';
                 _0x338c38 += '<div style=\'height: 60px;\'><p id=\'key' + _0x4cd046 + '\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; font-weight: bold; margin-top: 20px; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 200px;\'>' + _0x3ba0be[_0x3aa99f[_0x4cd046]] + '</p></div>';
@@ -1967,13 +1991,19 @@ webpackJsonp([0x0], {
             }
             function updatePresenceSetting() {
                 console['log']('Updating RP');
-                if (richPresence == -0x1) {
-                    document['exitPointerLock']();
-                }
                 document['getElementById']('richPresenceSetting')['selectedIndex'] = Number(richPresence) + 0x2;
                 console['log'](Number(richPresence) + 0x2);
                 if (_0x2d15ee()) {
                     localStorage['rp'] = richPresence;
+                }
+            }
+            function updateVolumeSetting() {
+                console['log']('Updating Volume');
+                document['getElementById']('volumeSetting')['value'] = volume;
+                console['log'](volume);
+                document.getElementById("volumeSettingName").textContent = `Volume ${volume}%`
+                if (_0x2d15ee()) {
+                    localStorage['volume'] = volume;
                 }
             }
             function _0x5d8f96() {
@@ -2010,6 +2040,14 @@ webpackJsonp([0x0], {
             document['getElementById']('mouseLockSetting')['onchange'] = function () {
                 _0x34b775 = document['getElementById']('mouseLockSetting')['value'];
                 _0x5d8f96();
+            };
+            document['getElementById']('volumeSetting')['oninput'] = function () {
+                volume = document['getElementById']('volumeSetting')['value'];
+                updateVolumeSetting();
+            };
+            document['getElementById']('volumeSetting')['onchange'] = function () {
+                volume = document['getElementById']('volumeSetting')['value'];
+                updateVolumeSetting();
             };
             document['getElementById']('regionSetting')['onchange'] = function () {
                 window['cachedRegion'] = document['getElementById']('regionSetting')['value'];
@@ -2067,6 +2105,10 @@ webpackJsonp([0x0], {
                     if (localStorage['rp'] !== undefined && (localStorage['rp'] == -0x2 || localStorage['rp'] == -0x1)) {
                         richPresence = localStorage['rp'];
                         updatePresenceSetting();
+                    }
+                    if (localStorage['volume'] !== undefined && (parseInt(localStorage['volume']) >= 0 && parseInt(localStorage['volume']) <= 100)) {
+                        volume = localStorage['volume'];
+                        updateVolumeSetting();
                     }
                     if (localStorage['mouse'] !== undefined && (localStorage['mouse'] == -0x2 || localStorage['mouse'] == -0x1)) {
                         _0x34b775 = localStorage['mouse'];
@@ -2146,7 +2188,8 @@ webpackJsonp([0x0], {
                 if (!_0x47bd49) {
                     return;
                 }
-                var _0x4b88c2 = _0x1a81ed(_0x4e754d, _0x1e17d0);
+                //! CHANGED
+                var _0x4b88c2 = _0x1a81ed(_0x4e754d, _0x1e17d0) * (window.volume/100);
                 if (_0x4b88c2 <= 0x0 && !_0x22ee47) {
                     return null;
                 }
