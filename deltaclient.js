@@ -116,7 +116,7 @@ webpackJsonp([0x0], {
                 window['_requestAnimationFrame'](_0x3ab4a3);
             }, 0x0);
         };
-        var _0x5898ef = ['prod', 'duos', 'squads', 'close'];
+        var _0x5898ef = ['prod', 'duos', 'squads'];
         var _0x4cf6b0 = [0x1, 0x2, 0x4, 0x1];
         var _0x436a42 = window['location']['hostname'] + ':8081';
         var _0x39cfaa = ['dj'];
