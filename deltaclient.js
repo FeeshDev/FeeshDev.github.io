@@ -1,6 +1,7 @@
 //! CHANGES
 
 console.log("Delta Client Injected!")
+
 window.killFeed = [];
 window.customskins = [];
 window.killFeedText = () => {
@@ -11,6 +12,10 @@ window.minimapVis = true;
 
 if (!localStorage.reloadAtts || localStorage.reloadAtts === "") {
     localStorage.reloadAtts = 0;
+}
+
+if (!localStorage.extraUtils || localStorage.extraUtils === "") {
+    localStorage.extraUtils = 0;
 }
 
 localStorage.reloadAtts = parseInt(localStorage.reloadAtts) + 1;
@@ -251,10 +256,10 @@ webpackJsonp([0x0], {
             mainp.style.overflowY = "scroll";
             mainp.innerHTML = ""+
             "Delta Client v1.3.1<br>"+
-            "> Download the new installer <a target='_blank' href='https://github.com/FeeshDev/DeltaClient/releases/tag/1.3.1'>here</a><br>"+
             "> Volume slider<br>"+
             "> RP disables automatically if loading fails multiple times<br>"+
             "<br>Delta Client v1.3.0 - Stability Update<br>"+
+            "> Download the new installer <a target='_blank' href='https://github.com/FeeshDev/DeltaClient/releases/tag/1.3.0'>here</a><br>"+
             "> Added warnings for wrap manager<br>"+
             "> Added extra errors checks for wrap manager<br>"+
             "> Made Dynamic Presence toggleable<br>"+
@@ -4459,20 +4464,69 @@ webpackJsonp([0x0], {
                 _0x1cda6c['shield'] = _0x20f51f['shield'];
                 _0x1cda6c['selectedWeapon'] = _0x20f51f['selectedWeapon'];
                 _0x1cda6c['healthbar'] = new _0x1e6a3f['rectangle'](0x0, 0x32, _0x1cda6c['health'], 0xe, '#0D0');
-                _0x1cda6c['healthbar']['width'] = 0x0;
+                _0x1cda6c['healthbar']['width'] = 0;
                 _0x1cda6c['underHealthbar'] = new _0x1e6a3f['rectangle'](0x0, 0x4, _0x1cda6c['health'], 0xe, '#0A0');
                 _0x1cda6c['healthbar']['addBelow'](_0x1cda6c['underHealthbar']);
                 _0x1cda6c['shieldbar'] = new _0x1e6a3f['rectangle'](0x0, 0x2b + 0x7 / 0x2, _0x1cda6c['shield'], 0x7, '#48F');
-                _0x1cda6c['shieldbar']['width'] = 0x0;
+                _0x1cda6c['shieldbar']['width'] = 0;
                 _0x1cda6c['hasGroundItem'] = ![];
                 _0x1cda6c['name'] = _0x20f51f['name'];
                 var _0x4bf88a = '#CCC';
+                
+                let xBarOffset = 20;
+
+                _0x1cda6c['minihealthbar'] = new _0x1e6a3f['rectangle'](xBarOffset, 73, 70, 14, '#0D0');
+                _0x1cda6c['minihealthbar'].opacity = 0;
+                _0x1cda6c['underminihealthbar'] = new _0x1e6a3f['rectangle'](xBarOffset, 73, 74, 18, '#000');
+                _0x1cda6c['underminihealthbar'].opacity = 0;
+                _0x1cda6c['aboveunderminihealthbar'] = new _0x1e6a3f['strokeRectangle'](xBarOffset, 73, 70, 14, '#000', 2);
+                _0x1cda6c['aboveunderminihealthbar'].opacity = 0;
+
+                _0x1cda6c['minishieldbar'] = new _0x1e6a3f['rectangle'](xBarOffset, 53, 70, 14, '#48F');
+                _0x1cda6c['minishieldbar'].opacity = 0;
+                _0x1cda6c['underminishieldbar'] = new _0x1e6a3f['rectangle'](xBarOffset, 53, 74, 18, '#000');
+                _0x1cda6c['underminishieldbar'].opacity = 0;
+                _0x1cda6c['aboveunderminishieldbar'] = new _0x1e6a3f['strokeRectangle'](xBarOffset, 53, 70, 14, '#000', 2);
+                _0x1cda6c['aboveunderminishieldbar'].opacity = 0;
+                //_0x1cda6c['minihealthbar']['width'] = 10;
+
+                _0x1cda6c['healthnumber'] = new _0x1e6a3f['text'](100, -20, 75, _0x4bf88a, _0x556614, 20, '');
+                _0x1cda6c['healthnumber']['opacity'] = 0;
+                _0x1cda6c['healthnumber']['align'] = 'right';
+                _0x1cda6c['healthnumberstroke'] = new _0x1e6a3f['strokeText'](100, 2, 0x0, '#000', _0x556614, 20, '');
+                _0x1cda6c['healthnumberstroke']['lineWidth'] = 0x4;
+                _0x1cda6c['healthnumberstroke']['align'] = 'right';
+                _0x1cda6c['healthnumber']['addBelow'](_0x1cda6c['healthnumberstroke']);
+
+                _0x1cda6c['shieldnumber'] = new _0x1e6a3f['text'](100, -20, 55, _0x4bf88a, _0x556614, 20, '');
+                _0x1cda6c['shieldnumber']['opacity'] = 0;
+                _0x1cda6c['shieldnumber']['align'] = 'right';
+                _0x1cda6c['shieldnumberstroke'] = new _0x1e6a3f['strokeText'](100, 2, 0x0, '#000', _0x556614, 20, '');
+                _0x1cda6c['shieldnumberstroke']['lineWidth'] = 0x4;
+                _0x1cda6c['shieldnumberstroke']['align'] = 'right';
+                _0x1cda6c['shieldnumber']['addBelow'](_0x1cda6c['shieldnumberstroke']);
+
                 _0x1cda6c['nametag'] = new _0x1e6a3f['text'](_0x1cda6c['name'], 0x0, -0x41, _0x4bf88a, _0x556614, 0x19, '');
+                
                 _0x1cda6c['nametagstroke'] = new _0x1e6a3f['strokeText'](_0x1cda6c['name'], 0x0, 0x0, '#000', _0x556614, 0x19, '');
                 _0x1cda6c['nametagstroke']['lineWidth'] = 0x4;
                 _0x1cda6c['nametag']['addBelow'](_0x1cda6c['nametagstroke']);
-                _0x1cda6c['nametag']['opacity'] = 0x0;
+                _0x1cda6c['nametag']['opacity'] = 0;
+
+
+                _0x1cda6c['ui']['add'](_0x1cda6c['healthnumber']);
+                _0x1cda6c['ui']['add'](_0x1cda6c['underminihealthbar']);
+                _0x1cda6c['ui']['add'](_0x1cda6c['aboveunderminihealthbar']);
+                _0x1cda6c['ui']['add'](_0x1cda6c['minihealthbar']);
+
+                _0x1cda6c['ui']['add'](_0x1cda6c['shieldnumber']);
+                _0x1cda6c['ui']['add'](_0x1cda6c['underminishieldbar']);
+                _0x1cda6c['ui']['add'](_0x1cda6c['aboveunderminishieldbar']);
+                _0x1cda6c['ui']['add'](_0x1cda6c['minishieldbar']);
+
+
                 _0x1cda6c['ui']['add'](_0x1cda6c['nametag']);
+
                 _0x1cda6c['speech'] = new _0x1e6a3f['object']();
                 _0x1cda6c['speech']['position'] = new _0x1e6a3f['Vector2'](0x0, -0x64);
                 var _0x672a26 = 0x50;
@@ -4743,10 +4797,38 @@ webpackJsonp([0x0], {
                 }
                 _0x339e86['extraRotationTicks'] += _0x5d1384 * _0x1e6a3f['clientDetails']['dt'] / 0xdc;
                 var _0x16679d = Math['sin'](_0x339e86['extraRotationTicks']);
+
+                //!do stuff here
+
                 _0x339e86['foot1']['position']['x'] = -_0x16679d * 0xf + 0x2;
                 _0x339e86['foot2']['position']['x'] = _0x16679d * 0xf + 0x2;
                 _0x339e86['flash']['opacity'] = Math['max'](_0x339e86['flash']['opacity'] - _0x1e6a3f['clientDetails']['dt'] / 0xa, 0x0);
                 _0x339e86['ui']['rotation'] = -_0x339e86['visual']['rotation'];
+
+                _0x339e86.nametag.opacity = localStorage.extraUtils == "1" ? 1 : 0;
+
+                _0x339e86.healthnumber.opacity = localStorage.extraUtils == "1" ? 1 : 0;
+                _0x339e86.minihealthbar.opacity = localStorage.extraUtils == "1" ? 1 : 0;
+                _0x339e86.underminihealthbar.opacity = localStorage.extraUtils == "1" ? 0.4 : 0;
+                _0x339e86.aboveunderminihealthbar.opacity = localStorage.extraUtils == "1" ? 0.4 : 0;
+
+                _0x339e86.shieldnumber.opacity = localStorage.extraUtils == "1" ? 1 : 0;
+                _0x339e86.minishieldbar.opacity = localStorage.extraUtils == "1" ? 1 : 0;
+                _0x339e86.underminishieldbar.opacity = localStorage.extraUtils == "1" ? 0.4 : 0;
+                _0x339e86.aboveunderminishieldbar.opacity = localStorage.extraUtils == "1" ? 0.4 : 0;
+
+                _0x339e86.healthnumber.text = _0x339e86.health;
+                _0x339e86.shieldnumber.text = _0x339e86.shield;
+
+                _0x339e86.healthnumberstroke.text = _0x339e86.health;
+                _0x339e86.shieldnumberstroke.text = _0x339e86.shield;
+
+                _0x339e86.minihealthbar.width = 70 * (_0x339e86.health / 100);
+                _0x339e86.minihealthbar.position.x = _0x339e86.minihealthbar.width / 2 - 15;
+
+                _0x339e86.minishieldbar.width = 70 * (_0x339e86.shield / 100);
+                _0x339e86.minishieldbar.position.x = _0x339e86.minishieldbar.width / 2 - 15;
+
                 _0x339e86['healthbar']['width'] += (_0x339e86['health'] - _0x339e86['healthbar']['width']) * 0.1 * _0x1e6a3f['clientDetails']['dt'];
                 _0x339e86['shieldbar']['width'] += (_0x339e86['shield'] - _0x339e86['shieldbar']['width']) * 0.1 * _0x1e6a3f['clientDetails']['dt'];
                 _0x339e86['underHealthbar']['width'] = _0x339e86['healthbar']['width'] = Math['min'](Math['max'](_0x339e86['healthbar']['width'], 0x0), 0x64);
@@ -8719,10 +8801,11 @@ webpackJsonp([0x0], {
             });
             _0x1e6a3f['addPacketType']('forceSpectate', function (_0x2d961d) {
                 console['log']('Forcing spectate');
+                localStorage.extraUtils = 1;
                 //! CHANGES
                 if (typeof (socket) !== "undefined") socket.emit("gameState", "spec");
                 _0x553bd8 = !![];
-                _0x7bebb1['opacity'] = 0x0;
+                _0x7bebb1['opacity'] = 0;
             });
             var _0x2c628e = 0x0;
             var _0x256d8d = 0.1;
