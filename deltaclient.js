@@ -8805,7 +8805,6 @@ webpackJsonp([0x0], {
             });
             _0x1e6a3f['addPacketType']('forceSpectate', function (_0x2d961d) {
                 console['log']('Forcing spectate');
-                localStorage.extraUtils = 1;
                 //! CHANGES
                 if (typeof (socket) !== "undefined") socket.emit("gameState", "spec");
                 _0x553bd8 = !![];
