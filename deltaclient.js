@@ -14,6 +14,10 @@ if (!localStorage.reloadAtts || localStorage.reloadAtts === "") {
     localStorage.reloadAtts = 0;
 }
 
+if (!localStorage.weaponSkin || localStorage.weaponSkin === "") {
+    localStorage.weaponSkin = "empty";
+}
+
 if (!localStorage.extraUtils || localStorage.extraUtils === "") {
     localStorage.extraUtils = 0;
 }
