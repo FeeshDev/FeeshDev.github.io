@@ -260,7 +260,7 @@ webpackJsonp([0x0], {
             mainp.style.overflowY = "scroll";
             mainp.innerHTML = "" +
                 "Delta Client v1.3.2<br>" +
-                "> Fixed teammate names no showing<br>" +
+                "> Fixed teammate names not showing<br>" +
                 "<br>Delta Client v1.3.1<br>" +
                 "> Volume slider<br>" +
                 "> RP disables automatically if loading fails multiple times<br>" +
