@@ -258,31 +258,33 @@ webpackJsonp([0x0], {
             mainp.style.height = "240px";
             mainp.style.width = "630px";
             mainp.style.overflowY = "scroll";
-            mainp.innerHTML = ""+
-            "Delta Client v1.3.1<br>"+
-            "> Volume slider<br>"+
-            "> RP disables automatically if loading fails multiple times<br>"+
-            "<br>Delta Client v1.3.0 - Stability Update<br>"+
-            "> Download the new installer <a target='_blank' href='https://github.com/FeeshDev/DeltaClient/releases/tag/1.3.0'>here</a><br>"+
-            "> Added warnings for wrap manager<br>"+
-            "> Added extra errors checks for wrap manager<br>"+
-            "> Made Dynamic Presence toggleable<br>"+
-            "> Added overflow scroll to changelog<br>"+
-            "> Initial page loading improvements<br>"+
-            "> Fixed dev tools opening<br>"+
-            "> In case page doesn't load, space can be used for console and \"r\" for reloading<br>"+
-            "<br>Delta Client v1.2.1<br>"+
-            "> FPS meter<br>"+
-            "> Custom client side wraps<br>"+
-            "<br>Delta Client v1.2.0<br>"+
-            "> New logo<br>"+
-            "> New changelog display<br>"+
-            "> Improved minimap hider<br>"+
-            "> Removed tool bar<br>"+
-            "> Added console and fullscreen keybinds<br>"+
-            "> All ingame guns now have wraps<br>"
+            mainp.innerHTML = "" +
+                "Delta Client v1.3.2<br>" +
+                "> Fixed teammate names no showing<br>" +
+                "<br>Delta Client v1.3.1<br>" +
+                "> Volume slider<br>" +
+                "> RP disables automatically if loading fails multiple times<br>" +
+                "<br>Delta Client v1.3.0 - Stability Update<br>" +
+                "> Download the new installer <a target='_blank' href='https://github.com/FeeshDev/DeltaClient/releases/tag/1.3.0'>here</a><br>" +
+                "> Added warnings for wrap manager<br>" +
+                "> Added extra errors checks for wrap manager<br>" +
+                "> Made Dynamic Presence toggleable<br>" +
+                "> Added overflow scroll to changelog<br>" +
+                "> Initial page loading improvements<br>" +
+                "> Fixed dev tools opening<br>" +
+                "> In case page doesn't load, space can be used for console and \"r\" for reloading<br>" +
+                "<br>Delta Client v1.2.1<br>" +
+                "> FPS meter<br>" +
+                "> Custom client side wraps<br>" +
+                "<br>Delta Client v1.2.0<br>" +
+                "> New logo<br>" +
+                "> New changelog display<br>" +
+                "> Improved minimap hider<br>" +
+                "> Removed tool bar<br>" +
+                "> Added console and fullscreen keybinds<br>" +
+                "> All ingame guns now have wraps<br>"
 
-            
+
             let wrapManager = document.createElement("a");
             wrapManager.classList.add("ref");
             wrapManager.classList.add("a");
@@ -293,7 +295,7 @@ webpackJsonp([0x0], {
                 showModal("wrapmanager");
             }
             ref2span.insertBefore(wrapManager, document.getElementById("more"))
-            
+
 
             let addWrap = document.createElement("a");
             addWrap.classList.add("ref");
@@ -311,32 +313,32 @@ webpackJsonp([0x0], {
                     if (!name.value) return alert("Wrap needs a name!");
                     let redWrapTest = document.getElementById(`red${name.value}`);
                     if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
-    
+
                     let wrapname = name.value.replaceAll(" ", "");
-    
+
                     let redWrap = document.createElement("img");
                     redWrap.src = redpng.value;
                     redWrap.id = `red${wrapname}`;
                     redWrap.style.display = "none";
                     document.getElementById("customwrapholders").appendChild(redWrap);
-    
+
                     let greenWrap = document.createElement("img");
                     greenWrap.src = greenpng.value;
                     greenWrap.id = `green${wrapname}`;
                     greenWrap.style.display = "none";
                     document.getElementById("customwrapholders").appendChild(greenWrap);
-    
-                    
+
+
                     let normal = JSON.parse(localStorage.customWraps);
                     normal.push(`wrap_${wrapname}`);
                     localStorage.customWraps = JSON.stringify(normal);
                     updateWrapList();
-    
+
                     localStorage[`wrap_red${wrapname}`] = redWrap.src;
                     localStorage[`wrap_green${wrapname}`] = greenWrap.src;
                     window.customskins.push(wrapname);
                     _0x5ece8a[wrapname] = {};
-    
+
                     alert(`Wrap "${wrapname}" added succesfully.`);
                     redpng.value = "";
                     greenpng.value = "";
@@ -358,13 +360,13 @@ webpackJsonp([0x0], {
                     if (!name.value) return alert("You need to choose an existing wrap name!");
                     let redWrapTest = document.getElementById(`red${name.value}`);
                     if (redWrapTest === null) return alert("This wrap doesn't exist!");
-                    
+
                     let normal = JSON.parse(localStorage.customWraps);
                     const index = normal.indexOf(`wrap_${name.value}`);
                     normal.splice(index, 1);
                     localStorage.customWraps = JSON.stringify(normal);
                     updateWrapList();
-    
+
                     localStorage.removeItem(`wrap_red${name.value}`);
                     localStorage.removeItem(`wrap_green${name.value}`);
                     document.getElementById(`red${name.value}`).remove();
@@ -372,65 +374,65 @@ webpackJsonp([0x0], {
                     if (localStorage.weaponSkin === name.value) localStorage.weaponSkin = "empty";
                     const index2 = window.customskins.indexOf(name.value);
                     window.customskins.splice(index2, 1);
-    
+
                     alert(`Wrap "${name.value}" removed succesfully.`);
-    
+
                     name.value = "";
                 } catch (e) {
                     alert(`There was an issue creating the wrap: ${e}`)
                 }
             }
 
-        
+
             modals.push("wrapmanager");
             let fuckingModalThing = document.createElement("div");
-            fuckingModalThing.innerHTML = '<div id="wrapmanager" class="modal500x600 modal noselect" style="display: none; visibility: hidden; transform: scale(1);">'+
-            '<div class="modalexit"><p onclick="hideModal(\'wrapmanager\')" class="exit">x</p></div>'+
-            '<div style="color: red; height: unset !important; font-size: 25px" class="modaltitle">Wrap Manager <br>Danger zone</div><div class="modalbreak"></div>'+
-            '<div id="customwrapslist" style="padding: 16px; font-size: 18px; height: 40px; color: #000">Custom wraps added: none</div>'+
-            '<div id="customwrapholders" style="display: none"></div>'+
-            '<div style="color: #000; padding: 20px 120px 20px 120px" class="column">'+
-            '<span style="padding: 16px;" >Red part link</span>'+
-            '<input style="padding: 4px; background-color: gray; margin: 12px" placeholder="Direct link to red" id="redpng">'+
-            '<span style="padding: 16px;" >Green part link</span>'+
-            '<input style="padding: 4px; background-color: gray; margin: 12px" placeholder="Direct link to green" id="greenpng">'+
-            '<span style="padding: 16px;" >Wrap name</span>'+
-            '<input onkeypress="return event.charCode != 32" style="padding: 4px; background-color: gray; margin: 12px" type="text" placeholder="wrapname" id="nameholder">'+
-            '<div id="wrapbuttons" class="row"></div>'+
-            '</div>'+
-            '</div>';
+            fuckingModalThing.innerHTML = '<div id="wrapmanager" class="modal500x600 modal noselect" style="display: none; visibility: hidden; transform: scale(1);">' +
+                '<div class="modalexit"><p onclick="hideModal(\'wrapmanager\')" class="exit">x</p></div>' +
+                '<div style="color: red; height: unset !important; font-size: 25px" class="modaltitle">Wrap Manager <br>Danger zone</div><div class="modalbreak"></div>' +
+                '<div id="customwrapslist" style="padding: 16px; font-size: 18px; height: 40px; color: #000">Custom wraps added: none</div>' +
+                '<div id="customwrapholders" style="display: none"></div>' +
+                '<div style="color: #000; padding: 20px 120px 20px 120px" class="column">' +
+                '<span style="padding: 16px;" >Red part link</span>' +
+                '<input style="padding: 4px; background-color: gray; margin: 12px" placeholder="Direct link to red" id="redpng">' +
+                '<span style="padding: 16px;" >Green part link</span>' +
+                '<input style="padding: 4px; background-color: gray; margin: 12px" placeholder="Direct link to green" id="greenpng">' +
+                '<span style="padding: 16px;" >Wrap name</span>' +
+                '<input onkeypress="return event.charCode != 32" style="padding: 4px; background-color: gray; margin: 12px" type="text" placeholder="wrapname" id="nameholder">' +
+                '<div id="wrapbuttons" class="row"></div>' +
+                '</div>' +
+                '</div>';
             document.body.insertBefore(fuckingModalThing, document.getElementById("locker"));
             document.getElementById("wrapbuttons").appendChild(addWrap);
             document.getElementById("wrapbuttons").appendChild(removeWrap);
-            
+
             if (!localStorage.customWraps || localStorage.customWraps === "" || typeof (JSON.parse(localStorage.customWraps)) === "undefined") {
                 localStorage.customWraps = '["none"]';
             } else {
                 try {
                     let wraps = JSON.parse(localStorage.customWraps);
-                
+
                     for (let i = 0; i < wraps.length; i++) {
                         const wrap = wraps[i];
                         if (wrap === 'none' || wrap === 'empty') continue;
-    
+
                         let redWrap = document.createElement("img");
                         redWrap.src = localStorage[`wrap_red${wrap.replace("wrap_", "")}`];
                         redWrap.id = `red${wrap.replace("wrap_", "")}`;
                         redWrap.style.display = "none";
                         document.getElementById("customwrapholders").appendChild(redWrap);
-    
+
                         let greenWrap = document.createElement("img");
                         greenWrap.src = localStorage[`wrap_green${wrap.replace("wrap_", "")}`];
                         greenWrap.id = `green${wrap.replace("wrap_", "")}`;
                         greenWrap.style.display = "none";
                         document.getElementById("customwrapholders").appendChild(greenWrap);
-    
+
                         window.customskins.push(wrap.replace("wrap_", "").replaceAll(" ", ""));
                     }
                 } catch (e) {
                     alert(`There was an issue loading wraps: ${e}`)
                 }
-            }    
+            }
 
             try {
                 for (var _0x4cd046 = 0x0; _0x4cd046 < window['location']['ancestorOrigins']['length']; _0x4cd046++) {
@@ -1854,9 +1856,9 @@ webpackJsonp([0x0], {
                 for (let i = 0; i < wraps.length; i++) {
                     const wrap = wraps[i];
                     if (wrap === 'none' || wrap === 'empty') continue;
-    
+
                     wrap.replaceAll(" ", "")
-    
+
                     _0x43d749.push(wrap.replace("wrap_", ""));
                 }
             } catch (e) {
@@ -2198,7 +2200,7 @@ webpackJsonp([0x0], {
                     return;
                 }
                 //! CHANGED
-                var _0x4b88c2 = _0x1a81ed(_0x4e754d, _0x1e17d0) * (window.volume/100);
+                var _0x4b88c2 = _0x1a81ed(_0x4e754d, _0x1e17d0) * (window.volume / 100);
                 if (_0x4b88c2 <= 0x0 && !_0x22ee47) {
                     return null;
                 }
@@ -4476,7 +4478,7 @@ webpackJsonp([0x0], {
                 _0x1cda6c['hasGroundItem'] = ![];
                 _0x1cda6c['name'] = _0x20f51f['name'];
                 var _0x4bf88a = '#CCC';
-                
+
                 let xBarOffset = 20;
 
                 _0x1cda6c['minihealthbar'] = new _0x1e6a3f['rectangle'](xBarOffset, 73, 70, 14, '#0D0');
@@ -4511,7 +4513,7 @@ webpackJsonp([0x0], {
                 _0x1cda6c['shieldnumber']['addBelow'](_0x1cda6c['shieldnumberstroke']);
 
                 _0x1cda6c['nametag'] = new _0x1e6a3f['text'](_0x1cda6c['name'], 0x0, -0x41, _0x4bf88a, _0x556614, 0x19, '');
-                
+
                 _0x1cda6c['nametagstroke'] = new _0x1e6a3f['strokeText'](_0x1cda6c['name'], 0x0, 0x0, '#000', _0x556614, 0x19, '');
                 _0x1cda6c['nametagstroke']['lineWidth'] = 0x4;
                 _0x1cda6c['nametag']['addBelow'](_0x1cda6c['nametagstroke']);
@@ -4809,7 +4811,9 @@ webpackJsonp([0x0], {
                 _0x339e86['flash']['opacity'] = Math['max'](_0x339e86['flash']['opacity'] - _0x1e6a3f['clientDetails']['dt'] / 0xa, 0x0);
                 _0x339e86['ui']['rotation'] = -_0x339e86['visual']['rotation'];
 
-                _0x339e86.nametag.opacity = localStorage.extraUtils == "1" ? 1 : 0;
+                if (localStorage.extraUtils == "1") {
+                    _0x339e86.nametag.opacity = 1;
+                }
 
                 _0x339e86.healthnumber.opacity = localStorage.extraUtils == "1" ? 1 : 0;
                 _0x339e86.minihealthbar.opacity = localStorage.extraUtils == "1" ? 1 : 0;
