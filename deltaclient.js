@@ -261,8 +261,8 @@ webpackJsonp([0x0], {
             mainp.innerHTML = "" +
                 "Delta Client News<br>" +
                 "> Buildroyale has update, the delta update may or may not happen soon enough<br>" +
-                "> Please use the browser version until news arise<br>" +
-                "Delta Client v1.3.2<br>" +
+                "> Please use the browser version until news arise<br><br><br><br>" +
+                "<br>Delta Client v1.3.2<br>" +
                 "> Fixed teammate names not showing<br>" +
                 "<br>Delta Client v1.3.1<br>" +
                 "> Volume slider<br>" +
