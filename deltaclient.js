@@ -260,7 +260,7 @@ webpackJsonp([0x0], {
             mainp.style.overflowY = "scroll";
             mainp.innerHTML = "" +
                 "==== Delta Client News ====<br>" +
-                "> Buildroyale has update, the delta update may or may not happen soon enough<br>" +
+                "> Buildroyale has updated, the delta update may or may not happen soon enough<br>" +
                 "> Please use the browser version until news arise<br><br><br><br><br><br>" +
                 "<br>Delta Client v1.3.2<br>" +
                 "> Fixed teammate names not showing<br>" +
