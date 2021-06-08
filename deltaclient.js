@@ -105,7 +105,7 @@ webpackJsonp([0x0], {
                                 }
                                 _0x15e5b4 = _0x5c49ce['region'];
                                 onRegionGet(_0x15e5b4);
-                            } else {}
+                            } else { }
                         };
                         var _0x5275aa = 'https://' + _0x5a3bad(_0x5c49ce['ip']) + ':' + _0x1caa4d(_0x5c49ce) + '/ping';
                         _0x335e2b['open']('GET', _0x5275aa, !![]);
@@ -153,7 +153,7 @@ webpackJsonp([0x0], {
                         document['getElementById']('more')['style']['visibility'] = 'hidden';
                     }
                 }
-            } catch (_0x523879) {}
+            } catch (_0x523879) { }
             try {
                 if (_0x21dcd8) {
                     var _0x5ac3ca = window['CrazyGames']['CrazySDK']['getInstance']();
@@ -166,8 +166,8 @@ webpackJsonp([0x0], {
                         'size': '300x250'
                     }]);
                 }
-            } catch (_0x420f04) {}
-            if (_0x223ed9() && !localStorage['ytskin']) {}
+            } catch (_0x420f04) { }
+            if (_0x223ed9() && !localStorage['ytskin']) { }
 
             function _0x36e333(_0x14bbdd) {
                 var _0x4ab7b9 = document['getElementById'](_0x14bbdd)['style'];
@@ -232,7 +232,7 @@ webpackJsonp([0x0], {
                 _0x41bee7['push'](_0x3a9ac5);
                 return _0x3a9ac5;
             }
-            try {} catch (_0x2d1a0a) {}
+            try { } catch (_0x2d1a0a) { }
             if (_0x4d72a3 && !gameWrapper['enabled'] && !_0x21dcd8) {
                 aiptag['cmd']['display']['push'](function () {
                     aipDisplayTag['display']('buildroyale-io_300x250');
@@ -327,7 +327,7 @@ webpackJsonp([0x0], {
             window['mobilecheck'] = function () {
                 var _0x33d7c6 = ![];
                 (function (_0x46f403) {
-                    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i ['test'](_0x46f403) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i ['test'](_0x46f403['substr'](0x0, 0x4))) _0x33d7c6 = !![];
+                    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i['test'](_0x46f403) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i['test'](_0x46f403['substr'](0x0, 0x4))) _0x33d7c6 = !![];
                 }(navigator['userAgent'] || navigator['vendor'] || window['opera']));
                 return _0x33d7c6;
             };
@@ -647,7 +647,7 @@ webpackJsonp([0x0], {
                             } else {
                                 document['getElementById']('playlist' + _0x4e2c4b)['style']['opacity'] = 0x1;
                             }
-                        } catch (_0x5c3c5a) {}
+                        } catch (_0x5c3c5a) { }
                     }
                     _0x36e333('scene0');
                     _0x36e333('scene1');
@@ -683,7 +683,7 @@ webpackJsonp([0x0], {
             var _0x30f8e2 = 0x0;
             var _0x239cea = 0xa;
 
-            function _0x213cf7() {}
+            function _0x213cf7() { }
 
             function _0x198256() {
                 if (_0x309482 == null) {
@@ -719,7 +719,7 @@ webpackJsonp([0x0], {
                     var _0x4ee6ba = Math['floor'](Math['random']() * _0x5b1c4e['length']);
                     _0x5f070d = _0x5b1c4e[_0x4ee6ba];
                 }
-                _0x309482 = new _0x117b6e['socket']('wss://build_matchmaking_' + _0x5f070d + '.buildroyale.io/ws', _0x2972b7, function () {}, function () {
+                _0x309482 = new _0x117b6e['socket']('wss://build_matchmaking_' + _0x5f070d + '.buildroyale.io/ws', _0x2972b7, function () { }, function () {
                     if (_0x309482 != null) {
                         _0x309482['close']();
                         _0x309482 = null;
@@ -769,7 +769,7 @@ webpackJsonp([0x0], {
                     var _0x135d59 = _0x37b79f['responseText'];
                     var _0x25bf27 = '<p style=\'margin-bottom: 14px;\'>';
                     _0x25bf27 += _0x135d59 + ' Builders Playing';
-                    if (_0x2e0123 == 'build_prod') {} else if (_0x2e0123 == 'build_snipers') {
+                    if (_0x2e0123 == 'build_prod') { } else if (_0x2e0123 == 'build_snipers') {
                         _0x25bf27 += ' Sniper Showdown';
                     } else if (_0x2e0123 == 'build_gold') {
                         _0x25bf27 += ' Solid Gold';
@@ -927,7 +927,7 @@ webpackJsonp([0x0], {
             }
             _0x2fc60e['start'](function (_0x15d9e0, _0x2e3442) {
                 var _0x47bf69 = _0x4d72a3 ? 'wss:' : 'ws:';
-                if (_0x4d72a3) {} else {}
+                if (_0x4d72a3) { } else { }
             });
 
             function _0x585f8c(_0x1004c4) {
@@ -966,12 +966,12 @@ webpackJsonp([0x0], {
             var _0xfffd07 = {
                 'gameId': 'a8df29ec79604c758&c637459ec9203',
                 'userId': '6F381FEC-FDB4-41A2-9F3C-147A4121B75B-s1',
-                'pauseGame': function () {},
+                'pauseGame': function () { },
                 'resumeGame': function () {
                     if (_0x42aa48) window['globalFinish']();
                 },
-                'onInit': function (_0x245f96) {},
-                'onError': function (_0x391d68) {}
+                'onInit': function (_0x245f96) { },
+                'onError': function (_0x391d68) { }
             };
             var _0x2b70a6 = {
                 'GameDistribution': function () {
@@ -1195,7 +1195,7 @@ webpackJsonp([0x0], {
             }
             try {
                 _0x52811c('nameBox')['value'] = _0x478d6e('name');
-            } catch (_0xc33ec0) {}
+            } catch (_0xc33ec0) { }
 
             function _0xa5959a() {
                 var _0x2a238c = 0x0;
@@ -1385,7 +1385,7 @@ webpackJsonp([0x0], {
             };
             var _0x2aa99f = [];
             var _0x54a994 = '#fcff00';
-            var _0x452345 = /^((?!chrome|android).)*safari/i ['test'](navigator['userAgent']);
+            var _0x452345 = /^((?!chrome|android).)*safari/i['test'](navigator['userAgent']);
 
             function _0x585f8c(_0xfe071b) {
                 var _0x125715 = [];
@@ -1515,7 +1515,7 @@ webpackJsonp([0x0], {
             }
             var _0x305b1e = '';
             var _0xed356a = '';
-            if (!_0x452345) {}
+            if (!_0x452345) { }
             _0xed356a += '<div style=\'margin-bottom: 20px;\'></div>';
             _0x305b1e += '<div style=\'height: 60px;\'><p style=\'font-family: sans-serif; font-weight: bold; margin: 20px; padding: 15px;\'>Mouse Lock</p></div>';
             _0xed356a += '<div style=\'height: 60px;\'><select id=\'mouseLockSetting\' class=\'bind keybindbutton\' style=\'font-family: sans-serif; font-weight: bold; margin-left: auto; margin-right: auto; padding: 7px; border: solid 3px #000; width: 220px; height: 47px; font-size: 20px; text-align-last: center;\'><option value=\'-2\'>On</option><option selected value=\'-1\'>Off</option></select></div>';
@@ -1672,22 +1672,22 @@ webpackJsonp([0x0], {
                     let _0xce7d14 = 'cosmetics/';
                     var _0xbce995 = 0x0;
                     switch (_0x1e2f5d(_0x8af192[_0x2afa1f])) {
-                    case 'skin':
-                        _0x81681d = _0x59cf81;
-                        _0xce7d14 += 'body/';
-                        _0xbce995 = 0xf;
-                        break;
-                    case 'pickaxe':
-                        _0x81681d = _0x177405;
-                        _0xce7d14 += 'pickaxe/';
-                        _0xbce995 = -0x28;
-                        break;
-                    case 'wrap':
-                        _0x81681d = _0x5ec54b;
-                        _0xce7d14 += 'combos/';
-                        break;
-                    default:
-                        break;
+                        case 'skin':
+                            _0x81681d = _0x59cf81;
+                            _0xce7d14 += 'body/';
+                            _0xbce995 = 0xf;
+                            break;
+                        case 'pickaxe':
+                            _0x81681d = _0x177405;
+                            _0xce7d14 += 'pickaxe/';
+                            _0xbce995 = -0x28;
+                            break;
+                        case 'wrap':
+                            _0x81681d = _0x5ec54b;
+                            _0xce7d14 += 'combos/';
+                            break;
+                        default:
+                            break;
                     }
                     _0xea45b5['src'] = _0xce7d14 + _0x8af192[_0x2afa1f] + '.png?' + _0x505915;
                     _0xea45b5['style']['transform'] = 'rotate(' + _0xbce995 + 'deg)';
@@ -1710,32 +1710,32 @@ webpackJsonp([0x0], {
                         _0x43e5ae['src'] = _0xce7d14 + _0x50b8c8 + '.png?' + _0x505915;
                         var _0x301138 = _0x28f688;
                         switch (_0x50a542) {
-                        case 'skin':
-                            _0x28f688['playerImage']['image'] = _0x43e5ae;
-                            var _0x3abacd = document['createElement']('img');
-                            _0x3abacd['src'] = 'cosmetics/head/' + _0x50b8c8 + '.png';
-                            _0x28f688['head']['image'] = _0x3abacd;
-                            _0x344d3a['skin'] = _0x50b8c8;
-                            break;
-                        case 'pickaxe':
-                            _0x28f688['weapon']['image'] = _0x43e5ae;
-                            _0x301138['weapon']['position']['x'] = 0x18;
-                            _0x301138['weapon']['position']['y'] = 0xa;
-                            _0x301138['weapon']['rotation'] = Math['PI'] / 0x2 + 0.01;
-                            _0x301138['weapon']['size'] = 0x1;
-                            _0x301138['hand1']['position']['x'] = _0x301138['handXOffset'];
-                            _0x301138['hand2']['position']['x'] = _0x301138['handXOffset'] - 0x5;
-                            _0x344d3a['pickaxe'] = _0x50b8c8;
-                            break;
-                        case 'wrap':
-                            _0x301138['weapon']['image'] = _0x3c7d0a(_0x50b8c8, 'scar');
-                            _0x301138['weapon']['position']['x'] = 0x18;
-                            _0x301138['weapon']['position']['y'] = -0xd;
-                            _0x301138['weapon']['rotation'] = Math['PI'] / 0x2 + 0.2;
-                            _0x301138['hand1']['position']['x'] = _0x301138['handXOffset'];
-                            _0x301138['hand2']['position']['x'] = _0x301138['handXOffset'] + 0x4;
-                            _0x344d3a['wrap'] = _0x50b8c8;
-                            break;
+                            case 'skin':
+                                _0x28f688['playerImage']['image'] = _0x43e5ae;
+                                var _0x3abacd = document['createElement']('img');
+                                _0x3abacd['src'] = 'cosmetics/head/' + _0x50b8c8 + '.png';
+                                _0x28f688['head']['image'] = _0x3abacd;
+                                _0x344d3a['skin'] = _0x50b8c8;
+                                break;
+                            case 'pickaxe':
+                                _0x28f688['weapon']['image'] = _0x43e5ae;
+                                _0x301138['weapon']['position']['x'] = 0x18;
+                                _0x301138['weapon']['position']['y'] = 0xa;
+                                _0x301138['weapon']['rotation'] = Math['PI'] / 0x2 + 0.01;
+                                _0x301138['weapon']['size'] = 0x1;
+                                _0x301138['hand1']['position']['x'] = _0x301138['handXOffset'];
+                                _0x301138['hand2']['position']['x'] = _0x301138['handXOffset'] - 0x5;
+                                _0x344d3a['pickaxe'] = _0x50b8c8;
+                                break;
+                            case 'wrap':
+                                _0x301138['weapon']['image'] = _0x3c7d0a(_0x50b8c8, 'scar');
+                                _0x301138['weapon']['position']['x'] = 0x18;
+                                _0x301138['weapon']['position']['y'] = -0xd;
+                                _0x301138['weapon']['rotation'] = Math['PI'] / 0x2 + 0.2;
+                                _0x301138['hand1']['position']['x'] = _0x301138['handXOffset'];
+                                _0x301138['hand2']['position']['x'] = _0x301138['handXOffset'] + 0x4;
+                                _0x344d3a['wrap'] = _0x50b8c8;
+                                break;
                         }
                     };
                     _0x81681d['appendChild'](_0x1c49d3);
@@ -1786,7 +1786,7 @@ webpackJsonp([0x0], {
                         localStorage['weaponSkin'] = _0x420126;
                     }
                     _0x28f688['weapon']['image'] = _0x3c7d0a(_0x420126, 'scar');
-                } catch (_0x2f532b) {}
+                } catch (_0x2f532b) { }
             }
 
             function _0x1e2f5d(_0x105470) {
@@ -1905,17 +1905,17 @@ webpackJsonp([0x0], {
                     var _0x108ec0 = 'cosmetics/';
                     var _0x243c8c = 0x0;
                     switch (_0x19c868) {
-                    case 'skin':
-                        _0x108ec0 += 'body/';
-                        _0x243c8c = 0xf;
-                        break;
-                    case 'wrap':
-                        _0x108ec0 += 'combos/';
-                        break;
-                    case 'pickaxe':
-                        _0x108ec0 += 'pickaxe/';
-                        _0x243c8c = -0x28;
-                        break;
+                        case 'skin':
+                            _0x108ec0 += 'body/';
+                            _0x243c8c = 0xf;
+                            break;
+                        case 'wrap':
+                            _0x108ec0 += 'combos/';
+                            break;
+                        case 'pickaxe':
+                            _0x108ec0 += 'pickaxe/';
+                            _0x243c8c = -0x28;
+                            break;
                     }
                     var _0x1e326f = _0x108ec0 + _0x184eef['reward'] + '.png';
                     var _0x368568 = '<img style=\"transform:rotate(' + _0x243c8c + 'deg)\" src=\"' + _0x1e326f + '\">';
@@ -1925,7 +1925,7 @@ webpackJsonp([0x0], {
                     }
                     _0x4a3ed3['innerHTML'] = '\x0a\x09\x09\x09<div class=\"challenge\" id=\"challenge_' + _0x184eef['id'] + '\">\x0a\x09\x09\x09\x09<div class=\"challenge_info milestone\">\x0a\x09\x09\x09\x09\x09<div class=\"challenge_title\">\x0a\x09\x09\x09\x09\x09\x09' + _0x184eef['name'] + '\x0a\x09\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09\x09<div class=\"challenge_progressbar\">\x0a\x09\x09\x09\x09\x09\x09<div style=\"width: 69%\" id=\"challenge_' + _0x184eef['id'] + '_progress\" class=\"challenge_progress\"></div>\x0a\x09\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09\x09<div class=\"challenge_amtleft\" id=\"challenge_' + _0x184eef['id'] + '_amtleft\">\x0a\x09\x09\x09\x09\x09\x096969 Until Next Reward\x0a\x09\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09<div class=\"challenge_reward challenge_weapon\">\x0a\x09\x09\x09\x09\x09' + _0x368568 + '\x0a\x09\x09\x09\x09</div>\x0a\x09\x09\x09</div>\x0a\x09\x09\x09';
                     document['getElementById']('challengedata')['appendChild'](_0x4a3ed3);
-                } else {}
+                } else { }
             };
             window['updateChallenges'] = () => {
                 window['userChallengeData']['forEach'](_0x4efb0e => {
@@ -2014,7 +2014,7 @@ webpackJsonp([0x0], {
                     }
                     window['grass'] = [];
                 }
-                if (!_0x452345) {}
+                if (!_0x452345) { }
                 if (_0x223ed9()) {
                     localStorage['graphics'] = _0x5272a6;
                 }
@@ -2052,7 +2052,7 @@ webpackJsonp([0x0], {
                     localStorage['region'] = window['cachedRegion'];
                 }
             }
-            if (!_0x452345) {}
+            if (!_0x452345) { }
             document['getElementById']('mouseLockSetting')['onchange'] = function () {
                 _0x60b1ef = document['getElementById']('mouseLockSetting')['value'];
                 _0x1755fb();
@@ -2109,7 +2109,7 @@ webpackJsonp([0x0], {
                 if (_0x223ed9()) {
                     if (localStorage['graphics'] !== undefined && (localStorage['graphics'] == 0x0 || localStorage['graphics'] == 0x1)) {
                         _0x5272a6 = localStorage['graphics'];
-                        if (_0x452345) {}
+                        if (_0x452345) { }
                     }
                     if (localStorage['controlChoice'] !== undefined) {
                         _0x53cafc = localStorage['controlChoice'];
@@ -2133,7 +2133,7 @@ webpackJsonp([0x0], {
                         var _0x39aefd = [];
                         try {
                             _0x39aefd = JSON['parse'](localStorage['binds']);
-                        } catch (_0x111734) {}
+                        } catch (_0x111734) { }
                         for (var _0x3b854e = 0x0; _0x3b854e < _0x39aefd['length']; _0x3b854e++) {
                             if (_0x489511['indexOf'](_0x39aefd[_0x3b854e]['toString']()) != -0x1) {
                                 _0x29875c[_0x3b854e] = Number(_0x39aefd[_0x3b854e]);
@@ -2189,7 +2189,7 @@ webpackJsonp([0x0], {
                         _0x267038 = !![];
                     });
                 }
-            } catch (_0x14019e) {}
+            } catch (_0x14019e) { }
 
             function _0x496a8f(_0x3a1ccf, _0x55cb81, _0x158ed2, _0x23a8c4) {
                 if (!_0x267038) {
@@ -2488,8 +2488,8 @@ webpackJsonp([0x0], {
             _0x34a800['clearScreen'] = ![];
             _0x34a800['ctx']['imageSmoothingEnabled'] = !![];
             _0x34a800['c']['style']['backgroundColor'] = window['groundColor'];
-            _0x34a800['c']['requestPointerLock'] = _0x34a800['c']['requestPointerLock'] || _0x34a800['c']['mozRequestPointerLock'] || function () {};
-            document['exitPointerLock'] = document['exitPointerLock'] || document['mozExitPointerLock'] || function () {};
+            _0x34a800['c']['requestPointerLock'] = _0x34a800['c']['requestPointerLock'] || _0x34a800['c']['mozRequestPointerLock'] || function () { };
+            document['exitPointerLock'] = document['exitPointerLock'] || document['mozExitPointerLock'] || function () { };
             _0x34a800['c']['addEventListener']('click', function (_0x5e5f1f) {
                 if (!_0x117b6e['spectating'] && !_0x34ea3f['locked']) {
                     if (_0x60b1ef == -0x2 && !_0x454358) {
@@ -3217,7 +3217,7 @@ webpackJsonp([0x0], {
                                 } else {
                                     _0x53f0ab();
                                 }
-                                if (_0x60b1ef == -0x2) {}
+                                if (_0x60b1ef == -0x2) { }
                             }
                         }
                         if (_0x4ca114[0x4]) {
@@ -3254,7 +3254,7 @@ webpackJsonp([0x0], {
                         }
                     }
                     var _0x323944 = 0x3;
-                    if (_0x3cc5b2[0x3] == 0x0) {}
+                    if (_0x3cc5b2[0x3] == 0x0) { }
                     if (Math['abs'](_0x3cc5b2[0x2]) > _0x1ba639 || Math['abs'](_0x3cc5b2[_0x323944]) > _0x1ba639) {
                         _0x34ea3f['x'] = _0x3cc5b2[0x2] * 0x12c;
                         _0x34ea3f['y'] = _0x3cc5b2[_0x323944] * 0x12c;
@@ -3907,7 +3907,7 @@ webpackJsonp([0x0], {
             var _0x415669 = new _0x117b6e['rectangle'](0x0, 0x0, _0x248e15, _0x1faf57, '#FFFFFF');
             _0x415669['add'](new _0x117b6e['rectangle'](0x0, 0x0, _0x1faf57, _0x248e15, '#FFFFFF'));
             _0x415669 = _0x117b6e['prerender'](_0x415669, 0x80, 0x80)['image'];
-            var _0x117962 = _0x108583('H', function () {}, _0x573e81 * 0.85, _0x415669, 0x5f * 0.89);
+            var _0x117962 = _0x108583('H', function () { }, _0x573e81 * 0.85, _0x415669, 0x5f * 0.89);
             _0x117962['enabled'] = ![];
             _0x117962['opacity'] = 0x0;
             _0x117962['position']['x'] = -_0x573e81 * 5.7 - 0x1e;
@@ -4264,7 +4264,7 @@ webpackJsonp([0x0], {
                                             _0x6203d7 = _0x1debb8;
                                         }
                                         if (_0x1debb8 == _0x41f41d - 0x31 && _0x1debb8 == _0x6203d7) {
-                                            for (var _0x56eb25 = Math['max'](_0x6203d7 - 0x1, 0x0); _0x117b6e['me']['weaponSlots'][Math['max'](_0x56eb25, 0x0)]['type'] != 'empty' && _0x56eb25 >= 0x0; _0x56eb25--) {}
+                                            for (var _0x56eb25 = Math['max'](_0x6203d7 - 0x1, 0x0); _0x117b6e['me']['weaponSlots'][Math['max'](_0x56eb25, 0x0)]['type'] != 'empty' && _0x56eb25 >= 0x0; _0x56eb25--) { }
                                             _0x6203d7 = Math['max'](_0x56eb25, 0x0);
                                             _0x117b6e['currentPackets']['push']({
                                                 'type': 'selectChange',
@@ -5623,7 +5623,7 @@ webpackJsonp([0x0], {
                     _0xbed9f0['text'] = _0x396722['name'];
                     _0x1e4c4d['text'] = _0x396722['name'];
                 }
-                if (_0x117b6e['spectating']) {}
+                if (_0x117b6e['spectating']) { }
                 if (_0x396722 == _0x117b6e['me'] && _0x4900b6['close'] !== undefined) {
                     if (_0x4900b6['closeR'] === undefined) {
                         _0x396722['hasGroundItem'] = ![];
@@ -5791,138 +5791,138 @@ webpackJsonp([0x0], {
                 var _0x280b98;
                 var _0x13b8c4 = 0x5;
                 switch (_0x1df0a7['bulletType']) {
-                case 'shotgun':
-                case 'heavy':
-                case 'drum':
-                case 'combat':
-                case 'burst shotgun':
-                    _0x280b98 = new _0x117b6e['image'](_0x52811c('shotgunbullet'), 0x0, 0x0, 0xa, 0xa);
-                    _0x13b8c4 = 0x5;
-                    if (_0x1df0a7['bulletType'] == 'shotgun') {
-                        if (_0x5f3362 > 0x0 && _0x1df0a7['isPreview'] === undefined) {
-                            _0x496a8f(_0x1df0a7['bulletType'], _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
-                            _0x5f3362 = 0x0;
+                    case 'shotgun':
+                    case 'heavy':
+                    case 'drum':
+                    case 'combat':
+                    case 'burst shotgun':
+                        _0x280b98 = new _0x117b6e['image'](_0x52811c('shotgunbullet'), 0x0, 0x0, 0xa, 0xa);
+                        _0x13b8c4 = 0x5;
+                        if (_0x1df0a7['bulletType'] == 'shotgun') {
+                            if (_0x5f3362 > 0x0 && _0x1df0a7['isPreview'] === undefined) {
+                                _0x496a8f(_0x1df0a7['bulletType'], _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
+                                _0x5f3362 = 0x0;
+                            }
+                        } else {
+                            if (_0x9da206 > 0x0 && _0x1df0a7['isPreview'] === undefined) {
+                                _0x496a8f(_0x1df0a7['bulletType'], _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
+                                _0x9da206 = 0x0;
+                            }
                         }
-                    } else {
-                        if (_0x9da206 > 0x0 && _0x1df0a7['isPreview'] === undefined) {
-                            _0x496a8f(_0x1df0a7['bulletType'], _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
-                            _0x9da206 = 0x0;
+                        _0x280b98['rotation'] = Math['PI'] / 0x2;
+                        break;
+                    case 'snowball':
+                        _0x280b98 = new _0x117b6e['image'](_0x52811c('snowball'), 0x0, 0x0, 0x3c, 0x3c);
+                        _0x13b8c4 = 0x4;
+                        var _0x1115f9 = _0x1df0a7['bulletType'];
+                        if (_0x58db8d['indexOf'](_0x1115f9) < 0x0) {
+                            _0x1115f9 = 'ar';
                         }
-                    }
-                    _0x280b98['rotation'] = Math['PI'] / 0x2;
-                    break;
-                case 'snowball':
-                    _0x280b98 = new _0x117b6e['image'](_0x52811c('snowball'), 0x0, 0x0, 0x3c, 0x3c);
-                    _0x13b8c4 = 0x4;
-                    var _0x1115f9 = _0x1df0a7['bulletType'];
-                    if (_0x58db8d['indexOf'](_0x1115f9) < 0x0) {
-                        _0x1115f9 = 'ar';
-                    }
-                    if (_0x1df0a7['isPreview'] === undefined) {
-                        _0x496a8f(_0x1115f9, _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
-                    }
-                    _0x280b98['rotation'] = Math['PI'] / 0x2;
-                    _0x1df0a7['ticksAlive'] = 0x0;
-                    break;
-                    break;
-                case 'rpg':
-                    _0x280b98 = new _0x117b6e['image'](_0x52811c('rocket'), 0x0, 0x0, 0xa0, 0xa0);
-                    _0x13b8c4 = 0x5;
-                    if (_0x1df0a7['isPreview'] === undefined) {
-                        _0x496a8f('explosion0', _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
-                    }
-                    _0x280b98['rotation'] = Math['PI'];
-                    _0x1df0a7['ticksAlive'] = 0x0;
-                    _0x1df0a7['t'] = 0x0;
-                    _0x1df0a7['explosion'] = new _0x117b6e['object']();
-                    _0x1df0a7['ring'] = new _0x117b6e['arc'](0x0, 0x0, 0x64, '#AAA', Math['PI'] * 0x2, 0x0, 0x50);
-                    _0x1df0a7['explosion']['add'](_0x1df0a7['ring']);
-                    _0x1df0a7['particles'] = 0x3;
-                    _0x1df0a7['particleArray'] = [];
-                    _0x1df0a7['particleContainer'] = new _0x117b6e['object']();
-                    _0x1df0a7['explosion']['add'](_0x1df0a7['particleContainer']);
-                    var _0x2ff2d2 = 0xa0;
-                    var _0x28e43c = new _0x117b6e['image'](_0x1384f1, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
-                    _0x1df0a7['particleArray']['push'](_0x28e43c);
-                    for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
-                        var _0x4cadf9 = new _0x117b6e['object']();
-                        _0x28e43c['parent'] = null;
-                        _0x4cadf9['add'](_0x28e43c);
-                        _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
-                        _0x4cadf9['size'] = Math['random']() * 0.2 + 0x1;
-                        _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
-                    }
-                    _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
-                    _0x1df0a7['particles'] = 0x5;
-                    _0x2ff2d2 = 0x82;
-                    _0x28e43c = new _0x117b6e['image'](_0x2bfb93, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
-                    _0x1df0a7['particleArray']['push'](_0x28e43c);
-                    for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
-                        var _0x4cadf9 = new _0x117b6e['object']();
-                        _0x28e43c['parent'] = null;
-                        _0x4cadf9['add'](_0x28e43c);
-                        _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['PI'] / _0x1df0a7['particles'] + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
-                        _0x4cadf9['size'] = Math['random']() * 0.2 + 0x1;
-                        _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
-                    }
-                    _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
-                    _0x1df0a7['particles'] = 0x8;
-                    _0x2ff2d2 = 0x64;
-                    _0x28e43c = new _0x117b6e['image'](_0x5bb21a, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
-                    _0x1df0a7['particleArray']['push'](_0x28e43c);
-                    for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
-                        var _0x4cadf9 = new _0x117b6e['object']();
-                        _0x28e43c['parent'] = null;
-                        _0x4cadf9['add'](_0x28e43c);
-                        _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
-                        _0x4cadf9['size'] = Math['random']() * 0.2 + 0x1;
-                        _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
-                    }
-                    _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
-                    _0x2ff2d2 = 0x64;
-                    _0x1df0a7['particles'] = 0xa;
-                    _0x28e43c = new _0x117b6e['image'](_0x85fc3, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
-                    _0x1df0a7['particleArray']['push'](_0x28e43c);
-                    for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
-                        var _0x4cadf9 = new _0x117b6e['object']();
-                        _0x28e43c['parent'] = null;
-                        _0x4cadf9['add'](_0x28e43c);
-                        _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['PI'] / _0x1df0a7['particles'] + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
-                        _0x4cadf9['size'] = Math['random']() * 0.3 + 0.9;
-                        _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
-                    }
-                    _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
-                    _0x1df0a7['line'] = new _0x117b6e['rectangle'](0x0, 0x64, 0x8, 0x8c, '#FFF', 0.4);
-                    _0x1df0a7['lines'] = 0xa;
-                    for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['lines']; _0xa60dbb++) {
-                        var _0x14c311 = new _0x117b6e['object']();
-                        _0x1df0a7['line']['parent'] = null;
-                        _0x14c311['add'](_0x1df0a7['line']);
-                        _0x14c311['rotation'] = 0x2 * Math['PI'] / _0x1df0a7['lines'] * _0xa60dbb + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['lines'] * 0.3;
-                        _0x14c311['size'] = 0x1 - Math['random']() * 0.2;
-                        _0x1df0a7['explosion']['add'](_0x14c311);
-                    }
-                    _0x1df0a7['visual']['add'](_0x1df0a7['explosion']);
-                    _0x1df0a7['explosion']['opacity'] = 0x0;
-                    _0x1df0a7['explosion']['size'] = 0.8;
-                    _0x1df0a7['exploded'] = ![];
-                    break;
-                    break;
-                default:
-                    _0x280b98 = _0x4e4cc2();
-                    _0x13b8c4 = 0x4;
-                    var _0x1115f9 = _0x1df0a7['bulletType'];
-                    if (_0x1115f9 == 'scoped ar') {
-                        _0x1115f9 = 'scoped-ar';
-                    }
-                    if (_0x58db8d['indexOf'](_0x1115f9) < 0x0) {
-                        _0x1115f9 = 'ar';
-                    }
-                    if (_0x1df0a7['isPreview'] === undefined) {
-                        _0x496a8f(_0x1115f9, _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
-                    }
-                    _0x280b98['rotation'] = Math['PI'] / 0x2;
-                    break;
+                        if (_0x1df0a7['isPreview'] === undefined) {
+                            _0x496a8f(_0x1115f9, _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
+                        }
+                        _0x280b98['rotation'] = Math['PI'] / 0x2;
+                        _0x1df0a7['ticksAlive'] = 0x0;
+                        break;
+                        break;
+                    case 'rpg':
+                        _0x280b98 = new _0x117b6e['image'](_0x52811c('rocket'), 0x0, 0x0, 0xa0, 0xa0);
+                        _0x13b8c4 = 0x5;
+                        if (_0x1df0a7['isPreview'] === undefined) {
+                            _0x496a8f('explosion0', _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
+                        }
+                        _0x280b98['rotation'] = Math['PI'];
+                        _0x1df0a7['ticksAlive'] = 0x0;
+                        _0x1df0a7['t'] = 0x0;
+                        _0x1df0a7['explosion'] = new _0x117b6e['object']();
+                        _0x1df0a7['ring'] = new _0x117b6e['arc'](0x0, 0x0, 0x64, '#AAA', Math['PI'] * 0x2, 0x0, 0x50);
+                        _0x1df0a7['explosion']['add'](_0x1df0a7['ring']);
+                        _0x1df0a7['particles'] = 0x3;
+                        _0x1df0a7['particleArray'] = [];
+                        _0x1df0a7['particleContainer'] = new _0x117b6e['object']();
+                        _0x1df0a7['explosion']['add'](_0x1df0a7['particleContainer']);
+                        var _0x2ff2d2 = 0xa0;
+                        var _0x28e43c = new _0x117b6e['image'](_0x1384f1, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
+                        _0x1df0a7['particleArray']['push'](_0x28e43c);
+                        for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
+                            var _0x4cadf9 = new _0x117b6e['object']();
+                            _0x28e43c['parent'] = null;
+                            _0x4cadf9['add'](_0x28e43c);
+                            _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
+                            _0x4cadf9['size'] = Math['random']() * 0.2 + 0x1;
+                            _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
+                        }
+                        _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
+                        _0x1df0a7['particles'] = 0x5;
+                        _0x2ff2d2 = 0x82;
+                        _0x28e43c = new _0x117b6e['image'](_0x2bfb93, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
+                        _0x1df0a7['particleArray']['push'](_0x28e43c);
+                        for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
+                            var _0x4cadf9 = new _0x117b6e['object']();
+                            _0x28e43c['parent'] = null;
+                            _0x4cadf9['add'](_0x28e43c);
+                            _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['PI'] / _0x1df0a7['particles'] + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
+                            _0x4cadf9['size'] = Math['random']() * 0.2 + 0x1;
+                            _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
+                        }
+                        _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
+                        _0x1df0a7['particles'] = 0x8;
+                        _0x2ff2d2 = 0x64;
+                        _0x28e43c = new _0x117b6e['image'](_0x5bb21a, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
+                        _0x1df0a7['particleArray']['push'](_0x28e43c);
+                        for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
+                            var _0x4cadf9 = new _0x117b6e['object']();
+                            _0x28e43c['parent'] = null;
+                            _0x4cadf9['add'](_0x28e43c);
+                            _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
+                            _0x4cadf9['size'] = Math['random']() * 0.2 + 0x1;
+                            _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
+                        }
+                        _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
+                        _0x2ff2d2 = 0x64;
+                        _0x1df0a7['particles'] = 0xa;
+                        _0x28e43c = new _0x117b6e['image'](_0x85fc3, 0x0, 0x0, _0x2ff2d2, _0x2ff2d2, 0.6);
+                        _0x1df0a7['particleArray']['push'](_0x28e43c);
+                        for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['particles']; _0xa60dbb++) {
+                            var _0x4cadf9 = new _0x117b6e['object']();
+                            _0x28e43c['parent'] = null;
+                            _0x4cadf9['add'](_0x28e43c);
+                            _0x4cadf9['rotation'] = Math['PI'] * 0x2 / _0x1df0a7['particles'] * _0xa60dbb + Math['PI'] / _0x1df0a7['particles'] + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['particles'] * 0.5;
+                            _0x4cadf9['size'] = Math['random']() * 0.3 + 0.9;
+                            _0x1df0a7['particleContainer']['addBelow'](_0x4cadf9);
+                        }
+                        _0x28e43c['rotation'] = Math['random']() * Math['PI'] * 0x2;
+                        _0x1df0a7['line'] = new _0x117b6e['rectangle'](0x0, 0x64, 0x8, 0x8c, '#FFF', 0.4);
+                        _0x1df0a7['lines'] = 0xa;
+                        for (var _0xa60dbb = 0x0; _0xa60dbb < _0x1df0a7['lines']; _0xa60dbb++) {
+                            var _0x14c311 = new _0x117b6e['object']();
+                            _0x1df0a7['line']['parent'] = null;
+                            _0x14c311['add'](_0x1df0a7['line']);
+                            _0x14c311['rotation'] = 0x2 * Math['PI'] / _0x1df0a7['lines'] * _0xa60dbb + Math['random']() * Math['PI'] * 0x2 / _0x1df0a7['lines'] * 0.3;
+                            _0x14c311['size'] = 0x1 - Math['random']() * 0.2;
+                            _0x1df0a7['explosion']['add'](_0x14c311);
+                        }
+                        _0x1df0a7['visual']['add'](_0x1df0a7['explosion']);
+                        _0x1df0a7['explosion']['opacity'] = 0x0;
+                        _0x1df0a7['explosion']['size'] = 0.8;
+                        _0x1df0a7['exploded'] = ![];
+                        break;
+                        break;
+                    default:
+                        _0x280b98 = _0x4e4cc2();
+                        _0x13b8c4 = 0x4;
+                        var _0x1115f9 = _0x1df0a7['bulletType'];
+                        if (_0x1115f9 == 'scoped ar') {
+                            _0x1115f9 = 'scoped-ar';
+                        }
+                        if (_0x58db8d['indexOf'](_0x1115f9) < 0x0) {
+                            _0x1115f9 = 'ar';
+                        }
+                        if (_0x1df0a7['isPreview'] === undefined) {
+                            _0x496a8f(_0x1115f9, _0x117b6e['me']['visual']['position'], new _0x117b6e['Vector2'](_0x981186['x'], _0x981186['y']));
+                        }
+                        _0x280b98['rotation'] = Math['PI'] / 0x2;
+                        break;
                 }
                 _0x1df0a7['visual']['add'](_0x280b98);
                 _0x1df0a7['trail'] = _0x63937d(_0x13b8c4);
@@ -6145,7 +6145,7 @@ webpackJsonp([0x0], {
                     _0x835b38['bg']['add'](_0x484a9f);
                     _0x835b38['ticksSinceParticles'] = 0x0;
                 }
-            }, function (_0x507706, _0x58d21d) {}, function (_0xdc119f) {
+            }, function (_0x507706, _0x58d21d) { }, function (_0xdc119f) {
                 _0xdc119f['done'] = !![];
                 return !![];
             });
@@ -6181,14 +6181,14 @@ webpackJsonp([0x0], {
                 var _0x2728f0 = 'empty';
                 if (_0x376aa2['mat'] !== undefined) {
                     switch (_0x376aa2['mat']) {
-                    case 0x0:
-                        _0x2728f0 = 'wood';
-                        break;
-                    case 0x1:
-                        _0x2728f0 = 'brick';
-                        break;
-                    case 0x2:
-                        _0x2728f0 = 'metal';
+                        case 0x0:
+                            _0x2728f0 = 'wood';
+                            break;
+                        case 0x1:
+                            _0x2728f0 = 'brick';
+                            break;
+                        case 0x2:
+                            _0x2728f0 = 'metal';
                     }
                 } else if (_0x376aa2['ammo'] !== undefined) {
                     _0x2728f0 = 'stack' + _0x376aa2['ammo'];
@@ -6222,7 +6222,7 @@ webpackJsonp([0x0], {
                     _0x5d1138['visual']['opacity'] = Math['min'](_0x5d1138['visual']['opacity'], 0x1);
                 }
                 _0x5d1138['ticksSinceParticles'] += _0x117b6e['clientDetails']['dt'];
-            }, function (_0x59b73d, _0x36b451) {}, function (_0x545e5f) {
+            }, function (_0x59b73d, _0x36b451) { }, function (_0x545e5f) {
                 _0x545e5f['done'] = !![];
                 return !![];
             });
@@ -6251,17 +6251,17 @@ webpackJsonp([0x0], {
                         }
                     }
                 }
-            }, function (_0x3fc3de, _0x1e1287) {}, function (_0x3f885d) {
+            }, function (_0x3fc3de, _0x1e1287) { }, function (_0x3f885d) {
                 _0x3f885d['done'] = !![];
                 return !![];
             });
             _0x117b6e['addType']('house', function (_0x12f0a3, _0x284acc) {
                 _0x12f0a3['visual'] = new _0x117b6e['object']();
-            }, function (_0x35c7b4) {}, function (_0x3739b5, _0x56753b) {}, function (_0x249441) {});
+            }, function (_0x35c7b4) { }, function (_0x3739b5, _0x56753b) { }, function (_0x249441) { });
             _0x117b6e['addType']('ball', function (_0x5b8391, _0x40ef80) {
                 _0x5b8391['visual'] = new _0x117b6e['image'](_0x52811c(_0x40ef80['name']), 0x0, 0x0, 0x46, 0x46);
                 _0x2a3fa5['addBelow'](_0x5b8391['visual']);
-            }, function (_0x12d92e) {}, function (_0x2c5108, _0x5513d6) {}, function (_0x2faeee) {});
+            }, function (_0x12d92e) { }, function (_0x2c5108, _0x5513d6) { }, function (_0x2faeee) { });
             _0x117b6e['addType']('baller', function (_0x350c39, _0x2aae00) {
                 _0x350c39['visual'] = new _0x117b6e['image'](_0x52811c('baller0'), 0x0, 0x0, 0xfa, 0xfa);
                 _0x350c39['grapple'] = new _0x117b6e['image'](_0x52811c('grapple'), 0x0, 0x0, 0x28, 0x28);
@@ -6666,7 +6666,7 @@ webpackJsonp([0x0], {
                     for (var _0x3bad83 = 0x0; _0x3bad83 < _0x27a0ac; _0x3bad83++) {
                         var _0x233bc6 = (Math['random']() - 0.5) * 0x4;
                         var _0x20ec92 = (Math['random']() - 0.5) * 0x4;
-                        if (_0x595d79) {}
+                        if (_0x595d79) { }
                         var _0x94af97 = _0x117b6e['customCustomParticle']('leaf', _0xdb5cd4, (Math['floor'](Math['random']() * 0x2) - 0.5) * 0.07, 0x1, _0x233bc6, _0x20ec92);
                         if (_0x94af97 === undefined) {
                             console['log']('SOMEHOW GOT UNDEFINED');
@@ -6835,7 +6835,7 @@ webpackJsonp([0x0], {
                 if (_0x26a43b['opacity'] != 0x1) {
                     _0x34a800['render'](_0x39d88c);
                 }
-                if (!_0x117b6e['spectating'] && _0x595d79) {}
+                if (!_0x117b6e['spectating'] && _0x595d79) { }
                 if (_0x5525d5) {
                     _0x34a800['render'](_0xb4e088);
                 }
@@ -6859,7 +6859,7 @@ webpackJsonp([0x0], {
                         }
                         var _0x3491db = document['getElementById']('deathscreentopleft')['style']['visibility'];
                         _0x2baa30('deathscreentopleft');
-                        if (!_0x3491db) {}
+                        if (!_0x3491db) { }
                         if (_0x34ea3f['locked']) {
                             document['exitPointerLock']();
                         }
@@ -6882,10 +6882,10 @@ webpackJsonp([0x0], {
                         for (var _0x3f5398 = 0x0; _0x3f5398 < _0x19dd05['length']; _0x3f5398++) {
                             _0x1bb0dd = _0x424b3d;
                             var _0x370601 = 0x1 / (_0x34a800['ratio'] / _0x34a800['qualitySize']);
-                            if (window['innerWidth'] >= 0x556 && window['innerWidth'] < 0x780 && _0x19dd05[_0x3f5398] != 'nameBox') {}
+                            if (window['innerWidth'] >= 0x556 && window['innerWidth'] < 0x780 && _0x19dd05[_0x3f5398] != 'nameBox') { }
                             _0x370601 /= _0x117b6e['devicePixelRatio'];
                             if (window['innerWidth'] < 0x3e8 || _0x643dd1) {
-                                if (_0x19dd05[_0x3f5398] == 'nameBox') {} else {
+                                if (_0x19dd05[_0x3f5398] == 'nameBox') { } else {
                                     _0x370601 *= 1.5;
                                 }
                             }
@@ -7161,7 +7161,7 @@ webpackJsonp([0x0], {
                     });
                     _0x34ea3f['rightChanged'] = ![];
                 }
-                if (!_0x117b6e['spectating']) {}
+                if (!_0x117b6e['spectating']) { }
                 _0x30d763['position']['x'] = -_0x2a3fa5['camera']['position']['x'] % 0x32 + _0x2a3fa5['camera']['position']['x'];
                 _0x30d763['position']['y'] = -_0x2a3fa5['camera']['position']['y'] % 0x32 + _0x2a3fa5['camera']['position']['y'];
                 if (_0x4f1972 > 0x64 && _0x117b6e['me']['steadying'] !== undefined) {
@@ -7475,7 +7475,7 @@ webpackJsonp([0x0], {
                 _0x2f3604['opacity'] = _0x1d1278;
             }
             var _0x76df5d = [];
-            for (var _0x441ab1 = 0x0; _0x441ab1 < _0x1d7b20['belowObjects']['length']; _0x441ab1++) {}
+            for (var _0x441ab1 = 0x0; _0x441ab1 < _0x1d7b20['belowObjects']['length']; _0x441ab1++) { }
             var _0x3f47c6 = document['createElement']('canvas');
             var _0x5aa379 = _0x3f47c6['getContext']('2d');
             var _0x3d5eb7 = 0x780 + 0x64;
@@ -8340,7 +8340,7 @@ webpackJsonp([0x0], {
                             'slot2': _0x36ab4b
                         });
                         if (_0x36ab4b == _0x6203d7) {
-                            for (var _0x2373e4 = Math['max'](_0x6203d7 - 0x1, 0x0); _0x117b6e['me']['weaponSlots'][Math['max'](_0x2373e4, 0x0)]['type'] != 'empty' && _0x2373e4 >= 0x0; _0x2373e4--) {}
+                            for (var _0x2373e4 = Math['max'](_0x6203d7 - 0x1, 0x0); _0x117b6e['me']['weaponSlots'][Math['max'](_0x2373e4, 0x0)]['type'] != 'empty' && _0x2373e4 >= 0x0; _0x2373e4--) { }
                             _0x6203d7 = Math['max'](_0x2373e4, 0x0);
                             _0x117b6e['currentPackets']['push']({
                                 'type': 'selectChange',
@@ -8533,12 +8533,12 @@ webpackJsonp([0x0], {
                 'passive': ![]
             });
             document['addEventListener']('visibilitychange', function () {
-                if (document['hidden']) {} else {
+                if (document['hidden']) { } else {
                     _0x33b098['shift'] = ![];
                     _0x33b098['changedKeys']['push']('shift');
                 }
             });
-            _0x117b6e['addPacketType']('email', function (_0x29bdfc) {});
+            _0x117b6e['addPacketType']('email', function (_0x29bdfc) { });
             _0x117b6e['addPacketType']('players', function (_0x4dec55) {
                 if (_0x4dec55['players'] !== undefined) {
                     _0x35d9b8['text'] = _0x4dec55['players'];
@@ -8620,7 +8620,7 @@ webpackJsonp([0x0], {
                 }
                 if (ga !== undefined) {
                     ga('send', 'event', 'Game', 'play');
-                } else {}
+                } else { }
                 _0x117b6e['spectating'] = !![];
                 _0x419d90 = Date['now']();
                 _0x5525d5 = ![];
@@ -8956,7 +8956,7 @@ webpackJsonp([0x0], {
                 console['warn']('Failed to initialize ctx, creating stub ctx');
                 _0x156e82 = {};
                 for (var _0x20a39a of _0x5db8c9) {
-                    _0x156e82[_0x20a39a] = function () {};
+                    _0x156e82[_0x20a39a] = function () { };
                 }
                 _0x156e82['measureText'] = function () {
                     return {
@@ -9355,10 +9355,10 @@ webpackJsonp([0x0], {
                 if (_0x258c71 === undefined) return null;
                 var _0x578ca2 = new WebSocket(_0x258c71);
                 _0x578ca2['binaryType'] = 'arraybuffer';
-                _0x578ca2['onmessage'] = _0x1ff269 || function () {};
-                _0x578ca2['onopen'] = _0x5f5431 || function () {};
-                _0x578ca2['onclose'] = _0x393d83 || function () {};
-                _0x578ca2['onerror'] = _0x143ac2 || function () {};
+                _0x578ca2['onmessage'] = _0x1ff269 || function () { };
+                _0x578ca2['onopen'] = _0x5f5431 || function () { };
+                _0x578ca2['onclose'] = _0x393d83 || function () { };
+                _0x578ca2['onerror'] = _0x143ac2 || function () { };
                 return _0x578ca2;
             };
             _0x1d1aec['resize'] = function (_0x283ae8) {
@@ -9431,7 +9431,7 @@ webpackJsonp([0x0], {
                         this['belowObjects']['unshift'](_0x11a4ee);
                     },
                     'remove': function (_0x29bf29) {
-                        if (_0x29bf29['type'] == 'text' && _0x29bf29['canvas'] !== undefined) {}
+                        if (_0x29bf29['type'] == 'text' && _0x29bf29['canvas'] !== undefined) { }
                         while (this['objects']['indexOf'](_0x29bf29) != -0x1) {
                             this['objects']['splice'](this['objects']['indexOf'](_0x29bf29), 0x1);
                             _0x29bf29['parent'] = null;
@@ -9522,7 +9522,7 @@ webpackJsonp([0x0], {
             _0x1d1aec['image'] = function (_0x17af87, _0x5296eb, _0x427fd1, _0x421adb, _0x4c46fb, _0x47cc1c) {
                 var _0x2b6f73 = new _0x1d1aec['object']();
                 _0x2b6f73['image'] = _0x17af87 || null;
-                if (_0x2b6f73['image'] == null || _0x2b6f73 === undefined) {}
+                if (_0x2b6f73['image'] == null || _0x2b6f73 === undefined) { }
                 _0x2b6f73['position'] = new _0x1d1aec['Vector2'](_0x5296eb || 0x0, _0x427fd1 || 0x0);
                 _0x2b6f73['width'] = _0x421adb || 0x64;
                 _0x2b6f73['height'] = _0x4c46fb || 0x64;
@@ -9670,17 +9670,17 @@ webpackJsonp([0x0], {
                     _0x26e985 *= 0x2;
                     try {
                         switch (_0x21d50b['align']) {
-                        case 'right':
-                            _0x4d2b3b['drawImage'](this['canvas'], -this['canvas']['width'] / _0x26e985, -this['canvas']['height'] / 0x2 / _0x26e985, this['canvas']['width'] / _0x26e985, this['canvas']['height'] / _0x26e985);
-                            break;
-                        case 'left':
-                            _0x4d2b3b['drawImage'](this['canvas'], 0x0, -this['canvas']['height'] / 0x2 / _0x26e985, this['canvas']['width'] / _0x26e985, this['canvas']['height'] / _0x26e985);
-                            break;
-                        default:
-                            _0x4d2b3b['drawImage'](this['canvas'], -this['canvas']['width'] / 0x2 / _0x26e985, -this['canvas']['height'] / 0x2 / _0x26e985, this['canvas']['width'] / _0x26e985, this['canvas']['height'] / _0x26e985);
-                            break;
+                            case 'right':
+                                _0x4d2b3b['drawImage'](this['canvas'], -this['canvas']['width'] / _0x26e985, -this['canvas']['height'] / 0x2 / _0x26e985, this['canvas']['width'] / _0x26e985, this['canvas']['height'] / _0x26e985);
+                                break;
+                            case 'left':
+                                _0x4d2b3b['drawImage'](this['canvas'], 0x0, -this['canvas']['height'] / 0x2 / _0x26e985, this['canvas']['width'] / _0x26e985, this['canvas']['height'] / _0x26e985);
+                                break;
+                            default:
+                                _0x4d2b3b['drawImage'](this['canvas'], -this['canvas']['width'] / 0x2 / _0x26e985, -this['canvas']['height'] / 0x2 / _0x26e985, this['canvas']['width'] / _0x26e985, this['canvas']['height'] / _0x26e985);
+                                break;
                         }
-                    } catch (_0x92ab37) {}
+                    } catch (_0x92ab37) { }
                 };
                 return _0x21d50b;
             };
@@ -9743,17 +9743,17 @@ webpackJsonp([0x0], {
                     }
                     try {
                         switch (_0x2f6f3d['align']) {
-                        case 'right':
-                            _0x3c191b['drawImage'](this['canvas'], -this['canvas']['width'] / _0x261706, -this['canvas']['height'] / 0x2 / _0x261706, this['canvas']['width'] / _0x261706, this['canvas']['height'] / _0x261706);
-                            break;
-                        case 'left':
-                            _0x3c191b['drawImage'](this['canvas'], -this['lineWidth'] / _0x261706, -this['canvas']['height'] / 0x2 / _0x261706, this['canvas']['width'] / _0x261706, this['canvas']['height'] / _0x261706);
-                            break;
-                        default:
-                            _0x3c191b['drawImage'](this['canvas'], -this['canvas']['width'] / 0x2 / _0x261706, -this['canvas']['height'] / 0x2 / _0x261706, this['canvas']['width'] / _0x261706, this['canvas']['height'] / _0x261706);
-                            break;
+                            case 'right':
+                                _0x3c191b['drawImage'](this['canvas'], -this['canvas']['width'] / _0x261706, -this['canvas']['height'] / 0x2 / _0x261706, this['canvas']['width'] / _0x261706, this['canvas']['height'] / _0x261706);
+                                break;
+                            case 'left':
+                                _0x3c191b['drawImage'](this['canvas'], -this['lineWidth'] / _0x261706, -this['canvas']['height'] / 0x2 / _0x261706, this['canvas']['width'] / _0x261706, this['canvas']['height'] / _0x261706);
+                                break;
+                            default:
+                                _0x3c191b['drawImage'](this['canvas'], -this['canvas']['width'] / 0x2 / _0x261706, -this['canvas']['height'] / 0x2 / _0x261706, this['canvas']['width'] / _0x261706, this['canvas']['height'] / _0x261706);
+                                break;
                         }
-                    } catch (_0x3d7ca2) {}
+                    } catch (_0x3d7ca2) { }
                 };
                 return _0x2f6f3d;
             };
@@ -10249,8 +10249,8 @@ webpackJsonp([0x0], {
             };
             _0x1d1aec['ws'] = {
                 'readyState': -0x1,
-                'send': function () {},
-                'close': function () {}
+                'send': function () { },
+                'close': function () { }
             };
             _0x1d1aec['connecting'] = ![];
             _0x1d1aec['spectating'] = !![];
@@ -10293,7 +10293,7 @@ webpackJsonp([0x0], {
             _0x1d1aec['fromBuffer'] = function (_0x5b8387) {
                 try {
                     return String['fromCharCode']['apply'](null, new Uint8Array(_0x5b8387));
-                } catch (_0x481ff0) {}
+                } catch (_0x481ff0) { }
             };
             _0x1d1aec['selfExists'] = function () {
                 if (!_0x1d1aec['hasEnvs']) {
@@ -10343,7 +10343,7 @@ webpackJsonp([0x0], {
                     }
                 });
             };
-            _0x1d1aec['onGetEnvs'] = function (_0x14cb75) {};
+            _0x1d1aec['onGetEnvs'] = function (_0x14cb75) { };
             _0x1d1aec['customSign'] = function (_0x1c9f25) {
                 return Math['sign'](_0x1c9f25);
                 return Math['sign'](Math['round'](_0x1c9f25 / 0xa));
@@ -10450,7 +10450,7 @@ webpackJsonp([0x0], {
                     _0x43fddd['actualNew']['rotation'] = _0x43fddd['new']['rotation'];
                     _0x43fddd['new']['position']['x'] = _0x1d1aec['normalLerp'](_0x43fddd['old']['position']['x'] + (_0x43fddd['new']['position']['x'] - _0x43fddd['actualOld']['position']['x']) * _0x10efaa, _0x43fddd['new']['position']['x'], _0x159f78);
                     _0x43fddd['new']['position']['y'] = _0x1d1aec['normalLerp'](_0x43fddd['old']['position']['y'] + (_0x43fddd['new']['position']['y'] - _0x43fddd['actualOld']['position']['y']) * _0x5f33e6, _0x43fddd['new']['position']['y'], _0x3af302);
-                    if (_0x43fddd == _0x1d1aec['me']) {}
+                    if (_0x43fddd == _0x1d1aec['me']) { }
                     if (isNaN(_0x43fddd['old']['position']['x'])) {
                         _0x43fddd['old']['position']['x'] = _0x43fddd['new']['position']['x'];
                         _0x43fddd['actualOld']['position']['x'] = _0x43fddd['new']['position']['x'];
@@ -10612,14 +10612,14 @@ webpackJsonp([0x0], {
             _0x1d1aec['addType'] = function (_0x1be9d1, _0x6a2a46, _0x1c03d5, _0x2a58d0, _0x5cd0d3) {
                 _0x1d1aec['types'][_0x1be9d1] = {
                     'create': _0x6a2a46,
-                    'tickUpdate': _0x1c03d5 || function (_0xfbd5a2) {},
-                    'updatePacket': _0x2a58d0 || function (_0x38eccd, _0x1bdab3) {},
-                    'remove': _0x5cd0d3 || function (_0x4dd0ca) {}
+                    'tickUpdate': _0x1c03d5 || function (_0xfbd5a2) { },
+                    'updatePacket': _0x2a58d0 || function (_0x38eccd, _0x1bdab3) { },
+                    'remove': _0x5cd0d3 || function (_0x4dd0ca) { }
                 };
             };
             _0x1d1aec['addType']('spectator', function (_0x2f1afe, _0x5f551f) {
                 _0x2f1afe['visual'] = new _0x1d1aec['object']();
-            }, function () {}, function () {});
+            }, function () { }, function () { });
             return _0x1d1aec;
         };
         _0x56b778['exports']['requestFrame'] = function (_0x41c1d7) {
@@ -10786,7 +10786,7 @@ webpackJsonp([0x0], {
                             if (onRegionGet !== undefined) {
                                 onRegionGet(_0x7b5b17['region']);
                             }
-                        } else {}
+                        } else { }
                     };
                     var _0x14549a = 'https://' + _0x461743['serverAddress'](_0x7b5b17['ip'], !![]) + ':' + _0x461743['serverPort'](_0x7b5b17) + '/ping';
                     _0x4c4f20['open']('GET', _0x14549a, !![]);
@@ -10816,8 +10816,8 @@ webpackJsonp([0x0], {
                 return _0x317665['playerCount'] - _0x450ef8['playerCount'];
             });
             if (_0x4dece3['filter'](function (_0xcaf3e1) {
-                    return _0xcaf3e1['playerCount'] < _0xf15e2d;
-                })['length'] > 0x0) {
+                return _0xcaf3e1['playerCount'] < _0xf15e2d;
+            })['length'] > 0x0) {
                 _0x4dece3 = _0x4dece3['filter'](function (_0x2602ba) {
                     return _0x2602ba['playerCount'] < _0xf15e2d;
                 });
