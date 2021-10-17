@@ -681,6 +681,30 @@ class uiManager {
         return del;
     }
 
+    popDialog = (swingDirection, title) => {
+        let _confirmBox = new this.game.rectangle(0, 0, 600, 200, "#000", 0.7);
+        let confirmBox = new this.dynamicElement(_confirmBox, "center", "center");
+        this.scene.addDynamic(confirmBox);
+
+        confirmBox.transitionTime = 0.1;
+        confirmBox.easeType = "easeOutExpo";
+        confirmBox.hidden = {
+            size: 1
+        }
+        confirmBox.shown = {
+            size: 2
+        }
+
+        let _confirm = new this.game.text(title, 0, 30, "#fff", "Oswald", 32, "", 1);
+        let confirm = new this.dynamicElement(_confirm, "top", "center");
+        confirmBox.addElement(confirm);
+
+        return confirmBox;
+        //let width = this.game.measureText(_confirm.text, _confirm.font, _confirm.fontSize).width;
+
+        //confirmBox.setWidth(width + 40, false, false);
+    }
+
     generateHealthBar = entity => {
         entity.hasHealthBar = true;
         entity.barShowTimer = 0;

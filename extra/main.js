@@ -21,6 +21,8 @@ window.onload = () => {
     let detailsBox = new manager.dynamicElement(_detailsBox, "bottom", "left");
     screen.addDynamic(detailsBox);
 
+    window.main = manager.popDialog("vertical", "test");
+
     const loopFunction = () => { }
 
     function main() {
