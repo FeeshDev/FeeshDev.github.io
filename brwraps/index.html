@@ -47,21 +47,21 @@
             original.push(`top${original[i]}`);
         }
 
-        let buildInWraps = ["none", "default", "yt", "pewds", "rainbow", "retro", "lines", "hawaii"];
+        let buildInWraps = ["none", "default", "pewds", "flames", "camo", "wood", "water"];
         document.getElementById("builtin").innerHTML = `BuiltIn Wraps: ${buildInWraps.join(", ")}`;
         window.extraWraps = [];
         let wrapholder = document.getElementById("wrapholders");
 
         buildInWraps.forEach(wrapname => {
             let redimg = document.createElement("img");
-            redimg.src = `./wraps/red${wrapname}.png`;
-            redimg.id = `red${wrapname}`;
+            redimg.src = `./wraps/${wrapname}1.png`;
+            redimg.id = `${wrapname}1`;
             redimg.crossOrigin = "anonymous";
             redimg.style.display = "none";
 
             let greenimg = document.createElement("img");
-            greenimg.src = `./wraps/green${wrapname}.png`;
-            greenimg.id = `green${wrapname}`;
+            greenimg.src = `./wraps/${wrapname}0.png`;
+            greenimg.id = `${wrapname}0`;
             greenimg.crossOrigin = "anonymous";
             greenimg.style.display = "none";
 
@@ -105,13 +105,13 @@
             ctx1['clearRect'](0x0, 0x0, canvas1['width'], canvas1['height']);
             ctx1['drawImage'](redsheet, index % 6 * 350, Math['floor'](index / 6) * 195, 350, 195, 0, 0, 350, 195);
             ctx1['globalCompositeOperation'] = 'source-in';
-            ctx1['drawImage'](getElemById(`red${wrap}`), 0x0, 0xc3 / 0x2 - 0x15e / 0x2, 0x15e, 0x15e);
+            ctx1['drawImage'](getElemById(`${wrap}1`), 0x0, 0xc3 / 0x2 - 0x15e / 0x2, 0x15e, 0x15e);
             ctx['drawImage'](canvas1, 0x0, 0x15e / 0x2 - 0xc3 / 0x2);
             ctx1['globalCompositeOperation'] = 'source-over';
             ctx1['clearRect'](0x0, 0x0, canvas1['width'], canvas1['height']);
             ctx1['drawImage'](greensheet, index % 0x6 * 0x15e, Math['floor'](index / 0x6) * 0xc3, 0x15e, 0xc3, 0x0, 0x0, 0x15e, 0xc3);
             ctx1['globalCompositeOperation'] = 'source-in';
-            ctx1['drawImage'](getElemById(`green${wrap}`), 0x0, 0xc3 / 0x2 - 0x15e / 0x2, 0x15e, 0x15e);
+            ctx1['drawImage'](getElemById(`${wrap}0`), 0x0, 0xc3 / 0x2 - 0x15e / 0x2, 0x15e, 0x15e);
             ctx['drawImage'](canvas1, 0x0, 0x15e / 0x2 - 0xc3 / 0x2);
 
             let img = new Image();
@@ -127,7 +127,7 @@
         window.runReRender = () => {
             let name = document.getElementById("reholder");
             if (!name.value) return alert("You need to choose an existing wrap name!");
-            let redWrapTest = document.getElementById(`red${name.value}`);
+            let redWrapTest = document.getElementById(`${name.value}1`);
             if (redWrapTest === null) return alert("This wrap doesn't exist!");
             draw(name.value);
             name.value = "";
@@ -140,19 +140,19 @@
             if (redpng.files.length <= 0) return alert("Red file not filled in!");
             if (greenpng.files.length <= 0) return alert("Green file not filled in!");
             if (!name.value) return alert("Wrap needs a name!");
-            let redWrapTest = document.getElementById(`red${name.value}`);
+            let redWrapTest = document.getElementById(`${name.value}1`);
             if (redWrapTest !== null) return alert("Theres already a wrap with this name!");
 
 
             let redWrap = document.createElement("img");
             redWrap.src = URL.createObjectURL(redpng.files[0]);
-            redWrap.id = `red${name.value}`;
+            redWrap.id = `${name.value}1`;
             redWrap.style.display = "none";
             document.getElementById("wrapholders").appendChild(redWrap);
 
             let greenWrap = document.createElement("img");
             greenWrap.src = URL.createObjectURL(greenpng.files[0]);
-            greenWrap.id = `green${name.value}`;
+            greenWrap.id = `${name.value}0`;
             greenWrap.style.display = "none";
             document.getElementById("wrapholders").appendChild(greenWrap);
 
