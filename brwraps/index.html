@@ -29,6 +29,12 @@
             <br>
             <br>
             <br>
+            <!--<span id="online" style="color:white">Render In-game Wrap</span>
+            <input type="text" placeholder="wrapname" id="onholder">
+            <input onclick="runOnRender()" type="button" value="Render Game Wrap">
+            <br>
+            <br>
+            <br>-->
             <span style="color:white">Made by:</span>
             <span style="color:white">alez - coding, redgreens, sheet generator</span>
             <span style="color:white">theGiantSlug - redgreens</span>
@@ -122,6 +128,39 @@
 
         window.onload = () => {
             draw(buildInWraps[0]);
+        }
+
+        window.runOnRender = () => {
+            let name = document.getElementById("onholder");
+            if (!name.value) return alert("You need to choose a wrap name!");
+            let redWrapTest = new Image();
+            redWrapTest.src = `https://buildroyale.io/cosmetics/wraps/${name.value}0.png`;
+            redWrapTest.onerror = () => {
+                alert("Could not render in-game wrap, please make sure you're using the name it uses in the files.");
+                draw(buildInWraps[0]);
+            }
+            redWrapTest.onload = () => {
+                let wrapname = name.value;
+
+                let redimg = document.createElement("img");
+                redimg.src = `https://buildroyale.io/cosmetics/wraps/${wrapname}1.png`;
+                redimg.id = `${wrapname}1`;
+                redimg.crossOrigin = "anonymous";
+                redimg.style.display = "none";
+                document.getElementById("wrapholders").appendChild(redimg);
+
+                let greenimg = document.createElement("img");
+                greenimg.src = `https://buildroyale.io/cosmetics/wraps/${wrapname}0.png`;
+                greenimg.id = `${wrapname}0`;
+                greenimg.crossOrigin = "anonymous";
+                greenimg.style.display = "none";
+                document.getElementById("wrapholders").appendChild(greenimg);
+
+                //if (redWrapTest === null) return alert("This wrap doesn't exist!");
+                draw(name.value);
+                name.value = "";
+            }
+
         }
 
         window.runReRender = () => {
