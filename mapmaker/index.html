@@ -22,11 +22,16 @@
 
         span {
             color: white;
-            margin: 2px;
+            margin: 5px;
         }
 
         .title {
             font-size: 18px;
+            font-weight: bold;
+        }
+
+        .title1 {
+            font-size: 22px;
             font-weight: bold;
         }
 
@@ -100,11 +105,23 @@
         <textarea id="exported" class="export" cols="30" rows="10"></textarea>
     </div>
     <div id="config" class="menu">
-        <span class="title">Settings</span>
+        <span class="title1">Settings</span>
+        <br>
+        <span class="title">Defaults</span>
+        <span>Default Dimensions</span>
+        <div style="display: flex;">
+            <input style="width: 70px;" id="sett_cw" class="input" type="number" placeholder="Width" value="600">
+            <input style="width: 70px;" id="sett_ch" class="input" type="number" placeholder="Heght" value="600">
+        </div>
+        <span>Default Grid Size</span>
+        <input id="sett_gsize" class="input" type="number" placeholder="Size" value="50">
+        <span><input id="sett_expRel" type="checkbox">Default export relative</span>
+        <button class="button" onclick="window.settings.reset()">Reset settings</button>
+        <br>
+        <span class="title">Rotation</span>
         <span><input id="sett_snap" type="checkbox">Snap Rotation</span>
         <span>Rotation Snap Amount</span>
         <input id="sett_snapAmt" class="input" type="text" placeholder="Value in Degrees">
-        <span><input id="sett_expRel" type="checkbox">Export relative</span>
     </div>
 </body>
 

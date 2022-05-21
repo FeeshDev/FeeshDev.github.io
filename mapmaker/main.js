@@ -19,7 +19,23 @@ window.settings = {
     current: JSON.parse(localStorage.getItem('settings')) || {
         snap_rotation: true,
         snap_radius: 15,
-        rel_export: true
+        rel_export: true,
+        cwidth: 600,
+        cheight: 600,
+        gsize: 50
+    },
+    reset: () => {
+        settings.current = {
+            snap_rotation: true,
+            snap_radius: 15,
+            rel_export: false,
+            cwidth: 600,
+            cheight: 600,
+            gsize: 50
+        }
+        localStorage.setItem('settings', JSON.stringify(settings.current));
+        if (confirm('Your settings have been reset, would you like to reload the page for them to apply?'))
+            location.reload();
     },
     setAll: (settings) => {
         settings.current = settings;
@@ -36,16 +52,33 @@ getElem('sett_snap').onchange = (t) => {
     settings.setKey('snap_rotation', t.target.checked);
 }
 getElem('sett_snap').checked = settings.current.snap_rotation;
+
 getElem('sett_snapAmt').onchange = (t) => {
     settings.setKey('snap_radius', parseInt(t.target.value));
 }
 getElem('sett_snapAmt').value = settings.current.snap_radius;
+
 getElem('sett_expRel').onchange = (t) => {
     settings.setKey('rel_export', t.target.checked);
     getElem('center').checked = t.target.checked;
 }
 getElem('sett_expRel').checked = settings.current.rel_export;
 getElem('center').checked = settings.current.rel_export;
+
+getElem('sett_cw').onchange = (t) => {
+    settings.setKey('cwidth', parseInt(t.target.value));
+}
+getElem('sett_cw').value = settings.current.cwidth;
+
+getElem('sett_ch').onchange = (t) => {
+    settings.setKey('cheight', parseInt(t.target.value));
+}
+getElem('sett_ch').value = settings.current.cheight;
+
+getElem('sett_gsize').onchange = (t) => {
+    settings.setKey('gsize', parseInt(t.target.value));
+}
+getElem('sett_gsize').value = settings.current.gsize;
 
 
 class SnapCanvas extends fabric.Canvas {
@@ -110,16 +143,12 @@ class SnapCanvas extends fabric.Canvas {
 
 }
 
-let canvas = new SnapCanvas('c', 10, {
-    selection: false,
-    fireRightClick: true,
-    stopContextMenu: true
-});
-
 window.selected = null;
+/*window.addEventListener('beforeunload', function (event) {
+    event.returnValue = 'deez nuts';
+});*/
 
 getElem('editor').style.display = 'none';
-getElem('config').style.display = 'none';
 
 // Build using FabricJS v3.4
 
@@ -129,7 +158,7 @@ getElem('import').onclick = () => Import();
 const Import = () => {
     let json = window.prompt('Paste your JSON here.');
     let object = JSON.parse(json);
-    create(object.width, object.height, object.editorSettings.gridSize, object.editorSettings.name);
+    let c = create(object.width, object.height, object.editorSettings.gridSize, object.editorSettings.name);
 
     object.shapes.forEach(shape => {
         let width = shape.width;
@@ -138,16 +167,24 @@ const Import = () => {
         getElem('center').checked = cRel;
         let left = cRel ? shape.position.x - width / 2 + object.width / 2 : shape.position.x;
         let right = cRel ? shape.position.y - height / 2 + object.height / 2 : shape.position.y;
-        addSquare(left, right, width, height);
+        addSquare(c, left, right, width, height);
     });
 }
 
 const create = (cWidth, cHeight, gSize, bName) => {
     const cw = cWidth || getElemValue('cw', 'int');
     const ch = cHeight || getElemValue('ch', 'int');
+
+
     let htmlCanvas = getElem('c');
     htmlCanvas.width = cw;
     htmlCanvas.height = ch;
+
+    let canvas = new SnapCanvas('c', 10, {
+        selection: false,
+        fireRightClick: true,
+        stopContextMenu: true
+    });
 
     const gridSize = gSize || getElemValue('bgrid', 'int');
 
@@ -211,7 +248,7 @@ const create = (cWidth, cHeight, gSize, bName) => {
         alert('Export successful!')
     }
 
-    getElem('addSquare').onclick = () => addSquare();
+    getElem('addSquare').onclick = () => addSquare(canvas);
     canvas.on({
         'object:moving': options => {
             options.target.set({
@@ -228,12 +265,14 @@ const create = (cWidth, cHeight, gSize, bName) => {
             window.selected = t.target;
         }
     });
+
+    return canvas;
 }
 
-const addSquare = (left, top, width, height) => {
+const addSquare = (c, left, top, width, height) => {
     let rect = new fabric.Rect({
-        width: width || canvas.gridGranularity,
-        height: height || canvas.gridGranularity,
+        width: width || c.gridGranularity,
+        height: height || c.gridGranularity,
         fill: '#f00',
         opacity: 0.3,
         originX: 'center',
@@ -266,12 +305,12 @@ const addSquare = (left, top, width, height) => {
     shape.on('mousedown', (e) => {
         if (e.button === 3) {
             shapes.splice(shapes.indexOf(shape), 1);
-            canvas.remove(shape);
+            c.remove(shape);
         };
     });
-    canvas.fire('object:scaled', { target: shape })
+    c.fire('object:scaled', { target: shape })
 
-    canvas.add(shape);
+    c.add(shape);
 
     return shape;
 }
