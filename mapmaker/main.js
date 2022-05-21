@@ -69,16 +69,19 @@ getElem('sett_cw').onchange = (t) => {
     settings.setKey('cwidth', parseInt(t.target.value));
 }
 getElem('sett_cw').value = settings.current.cwidth;
+getElem('cw').value = settings.current.cwidth;
 
 getElem('sett_ch').onchange = (t) => {
     settings.setKey('cheight', parseInt(t.target.value));
 }
 getElem('sett_ch').value = settings.current.cheight;
+getElem('ch').value = settings.current.cheight;
 
 getElem('sett_gsize').onchange = (t) => {
     settings.setKey('gsize', parseInt(t.target.value));
 }
 getElem('sett_gsize').value = settings.current.gsize;
+getElem('bgrid').value = settings.current.gsize;
 
 
 class SnapCanvas extends fabric.Canvas {
