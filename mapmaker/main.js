@@ -294,8 +294,8 @@ const addSquare = (c, left, top, width, height) => {
         centeredRotation: true
     });
 
-    let x = left >= 0 || rect.width;
-    let y = top >= 0 || rect.height;
+    let x = left >= 0 ? left : rect.width;
+    let y = top >= 0 ? top : rect.height;
 
     let shape = new fabric.Group([rect, outline], {
         left: x,
