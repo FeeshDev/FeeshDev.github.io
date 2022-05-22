@@ -200,13 +200,15 @@ const create = (cWidth, cHeight, gSize, bName) => {
     window.shapes = [];
 
     // create grid
-    for (var i = 0; i < (ch / gridSize); i++) {
+    for (var i = 0; i < (cw / gridSize); i++) {
         canvas.add(new fabric.Line([i * gridSize, 0, i * gridSize, ch], {
             stroke: '#000',
             selectable: false,
             strokeWidth: 2,
             opacity: 0.25
         }));
+    }
+    for (var i = 0; i < (ch / gridSize); i++) {
         canvas.add(new fabric.Line([0, i * gridSize, cw, i * gridSize], {
             stroke: '#000',
             selectable: false,
@@ -280,7 +282,7 @@ const addSquare = (c, left, top, width, height) => {
         opacity: 0.3,
         originX: 'center',
         originY: 'center',
-        centeredRotation: true
+        centeredRotation: true,
     });
     let outline = new fabric.Rect({
         width: rect.width,
@@ -291,7 +293,7 @@ const addSquare = (c, left, top, width, height) => {
         opacity: 1,
         originX: 'center',
         originY: 'center',
-        centeredRotation: true
+        centeredRotation: true,
     });
 
     let x = left >= 0 ? left : rect.width;
@@ -302,7 +304,8 @@ const addSquare = (c, left, top, width, height) => {
         top: y,
         originX: 'left',
         originY: 'top',
-        centeredRotation: true
+        centeredRotation: true,
+        noScaleCache: false
     });
     shapes.push(shape);
     shape.on('mousedown', (e) => {
