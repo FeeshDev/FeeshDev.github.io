@@ -312,14 +312,16 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
 
     getElem('exportpng').onclick = () => ExportPNG();
     const ExportPNG = () => {
+        let keepProcess = confirm('You have started the png export process, would you like to continue?');
+        if (!keepProcess) return;
         let keepBg = confirm('Would you like to keep the background in the final exported image?');
         let keepgrid = confirm('Would you like to keep the grid in the final exported image?');
-        if (!keepBg) bgImage.visible = false;
+        if (!keepBg && bgImage) bgImage.visible = false;
         if (!keepgrid) grid.visible = false;
         let data = canvas.toDataURL();
         let bloburl = dataUrlToBlobUrl(data);
         window.open(bloburl, '_blank');
-        if (!keepBg) bgImage.visible = true;
+        if (!keepBg && bgImage) bgImage.visible = true;
         if (!keepgrid) grid.visible = true;
     }
 
@@ -330,7 +332,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
         console.log(src)
         if (src && src !== '') {
             link = src;
-        } else if (src === null || src === '' || !src || typeof(src) === 'undefined') {
+        } else if (src === null || src === '' || !src || typeof (src) === 'undefined') {
             return;
         } else {
             link = prompt('Please provide a valid cirect link to an image to use as a background.')
