@@ -13,6 +13,7 @@
     <style>
         body {
             font-family: 'Noto Sans', sans-serif;
+            text-align: center;
             display: flex;
         }
 
@@ -20,9 +21,17 @@
             border: 1px solid #000;
         }
 
+        .border {
+            border: 1px solid #000;
+        }
+
         span {
             color: white;
             margin: 5px;
+        }
+
+        span a {
+            color: lightblue;
         }
 
         .title {
@@ -68,14 +77,30 @@
             justify-content: center;
             width: 200px;
             background-color: dimgray;
-            border: 1px solid #000;
+        }
+
+        #config,
+        #editor {
+            width: 400px;
+        }
+
+        .menu-r {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            background-color: dimgray;
+            max-height: 500px;
         }
     </style>
 </head>
 
 <body style="background-color: #2d570b;">
     <canvas id="c" width="600" height="600"></canvas>
-    <div id="creation" class="menu">
+    <div id="creation" class="menu border">
+        <span class="title1">Creation Details</span>
+        <br>
         <span class="title">Building Name</span>
         <input id="bname" class="input" type="text" placeholder="Build Name" value="unnamed">
         <span class="title">Canvas Dimensions</span>
@@ -90,38 +115,87 @@
         <br>
         <button id="import" class="button">Import Building</button>
     </div>
-    <div id="editor" class="menu">
-        <span class="title">Editor</span>
-        <button class="button" id="addSquare">Add Rectangle</button>
-        <br>
-        <span class="title">Exporting</span>
-        <span>
-            <input id="center" type="checkbox" checked>
-            Relative to center?
-        </span>
-        <button class="button" id="export">Export</button>
-        <br>
+    <div id="editor" class="menu border">
+        <span class="title1">Editor</span>
+        <div class="menu-r">
+            <div class="menu">
+                <span class="title">Shapes</span>
+                <button class="button" id="addSquare">Add Rectangle</button>
+                <br>
+                <span class="title">Exporting</span>
+                <span>
+                    <input id="center" type="checkbox" checked>
+                    Relative to center?
+                </span>
+                <button class="button" id="exportjson">Export JSON</button>
+                <button class="button" id="exportpng">Export PNG</button>
+            </div>
+            <div class="menu">
+                <span class="title">Background</span>
+                <span class="title">Bring background</span>
+                <div>
+                    <button class="button" style="width: 80px; height: 30px;"
+                        onclick="if (bgImage) bgImage.bringForward()">Forwards</button>
+                    <button class="button" style="width: 80px; height: 30px;"
+                        onclick="if (bgImage) bgImage.sendBackwards()">Backwards</button>
+                </div>
+                <span><a href="https://postimages.org/" target="_blank">Upload a background</a></span>
+                <button class="button" id="importbg">Import Background</button>
+                <button class="button" id="removebg">Remove Background</button>
+            </div>
+        </div>
         <span class="title">Latest Export</span>
-        <textarea id="exported" class="export" cols="30" rows="10"></textarea>
+        <textarea disabled id="exported" class="export" cols="30" rows="10"></textarea>
     </div>
-    <div id="config" class="menu">
+    <div id="config" class="menu border">
         <span class="title1">Settings</span>
         <br>
-        <span class="title">Defaults</span>
-        <span>Default Dimensions</span>
-        <div style="display: flex;">
-            <input style="width: 70px;" id="sett_cw" class="input" type="number" placeholder="Width" value="600">
-            <input style="width: 70px;" id="sett_ch" class="input" type="number" placeholder="Heght" value="600">
+        <div class="menu-r">
+            <div class="menu">
+                <span class="title">Defaults</span>
+                <span>Default Dimensions</span>
+                <div style="display: flex;">
+                    <input style="width: 70px;" id="sett_cw" class="input" type="number" placeholder="Width"
+                        value="600">
+                    <input style="width: 70px;" id="sett_ch" class="input" type="number" placeholder="Heght"
+                        value="600">
+                </div>
+                <span>Default Grid Size</span>
+                <input id="sett_gsize" class="input" type="number" placeholder="Size" value="50">
+                <span><input id="sett_expRel" type="checkbox">Default export relative</span>
+                <span><input id="sett_askReload" type="checkbox">Ask before reloading</span>
+                <button class="button" onclick="window.settings.reset()">Reset settings</button>
+                <br>
+                <br>
+                <span class="title">Rotation</span>
+                <span><input id="sett_snap" type="checkbox">Snap Rotation</span>
+                <span>Rotation Snap Amount</span>
+                <input id="sett_snapAmt" class="input" type="text" placeholder="Value in Degrees">
+            </div>
+            <div class="menu">
+                <span class="title">Zoom</span>
+                <div>
+                    <button class="button" style="width: 30px; height: 30px;"
+                        onclick="document.body.style.zoom = parseFloat(document.body.style.zoom) - 0.1">-</button>
+                    <button class="button" style="width: 30px; height: 30px;"
+                        onclick="document.body.style.zoom = parseFloat(document.body.style.zoom) + 0.1">+</button>
+                </div>
+            </div>
         </div>
-        <span>Default Grid Size</span>
-        <input id="sett_gsize" class="input" type="number" placeholder="Size" value="50">
-        <span><input id="sett_expRel" type="checkbox">Default export relative</span>
-        <button class="button" onclick="window.settings.reset()">Reset settings</button>
+    </div>
+    <div id="info" class="menu border">
+        <span class="title1">Information</span>
+        <span class="title">Bindings</span>
+        <span>Right-click on shape to remove</span>
         <br>
-        <span class="title">Rotation</span>
-        <span><input id="sett_snap" type="checkbox">Snap Rotation</span>
-        <span>Rotation Snap Amount</span>
-        <input id="sett_snapAmt" class="input" type="text" placeholder="Value in Degrees">
+        <span class="title">Background</span>
+        <span>Backgrounds use links, you can upload your background on <a href="https://postimages.org/"
+                target="_blank">an
+                image upload site</a> then get and use the direct link when importing it</span>
+        <br>
+        <span class="title">Credits</span>
+        <span>Alez - doing everything</span>
+        <br>
     </div>
 </body>
 

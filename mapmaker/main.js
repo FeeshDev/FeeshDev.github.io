@@ -15,30 +15,51 @@ const getElemValue = (id, type) => {
     }
 }
 
+dataUrlToBlobUrl = (dataurl) => {
+    const base64ImageData = dataurl;
+    const contentType = 'image/png';
+
+    const byteCharacters = atob(base64ImageData.substr(`data:${contentType};base64,`.length));
+    const byteArrays = [];
+
+    for (let offset = 0; offset < byteCharacters.length; offset += 1024) {
+        const slice = byteCharacters.slice(offset, offset + 1024);
+
+        const byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+
+        const byteArray = new Uint8Array(byteNumbers);
+
+        byteArrays.push(byteArray);
+    }
+    const blob = new Blob(byteArrays, { type: contentType });
+    const blobUrl = URL.createObjectURL(blob);
+    return blobUrl;
+}
+
+document.body.style.zoom = 1;
 window.settings = {
-    current: JSON.parse(localStorage.getItem('settings')) || {
+    default: {
         snap_rotation: true,
         snap_radius: 15,
         rel_export: true,
         cwidth: 600,
         cheight: 600,
-        gsize: 50
+        gsize: 50,
+        ask_reload: false
     },
     reset: () => {
-        settings.current = {
-            snap_rotation: true,
-            snap_radius: 15,
-            rel_export: false,
-            cwidth: 600,
-            cheight: 600,
-            gsize: 50
+        for (const key in settings.current) {
+            settings.current.setKey(key, settings.default[key]);
         }
         localStorage.setItem('settings', JSON.stringify(settings.current));
         if (confirm('Your settings have been reset, would you like to reload the page for them to apply?'))
             location.reload();
     },
     setAll: (settings) => {
-        settings.current = settings;
+        settings.current = { ...settings };
         localStorage.setItem('settings', JSON.stringify(settings.current));
     },
     setKey: (key, value) => {
@@ -46,6 +67,25 @@ window.settings = {
         localStorage.setItem('settings', JSON.stringify(settings.current));
     }
 };
+try {
+    if (localStorage.getItem('settings') !== '{}' && localStorage.getItem('settings') !== null) {
+        settings.current = JSON.parse(localStorage.getItem('settings'));
+    } else {
+        throw 'ass';
+    }
+} catch (e) {
+    settings.current = { ...settings.default };
+}
+for (const key in settings.current) {
+    if (!Object.hasOwnProperty.call(settings.default, key)) {
+        delete settings.current[key];
+    }
+}
+for (const key in settings.default) {
+    if (!Object.hasOwnProperty.call(settings.current, key)) {
+        settings.setKey(key, settings.default[key]);
+    }
+}
 localStorage.setItem('settings', JSON.stringify(settings.current));
 
 getElem('sett_snap').onchange = (t) => {
@@ -65,20 +105,28 @@ getElem('sett_expRel').onchange = (t) => {
 getElem('sett_expRel').checked = settings.current.rel_export;
 getElem('center').checked = settings.current.rel_export;
 
+getElem('sett_askReload').onchange = (t) => {
+    settings.setKey('ask_reload', t.target.checked);
+}
+getElem('sett_askReload').checked = settings.current.ask_reload;
+
 getElem('sett_cw').onchange = (t) => {
     settings.setKey('cwidth', parseInt(t.target.value));
+    getElem('cw').value = settings.current.cwidth;
 }
 getElem('sett_cw').value = settings.current.cwidth;
 getElem('cw').value = settings.current.cwidth;
 
 getElem('sett_ch').onchange = (t) => {
     settings.setKey('cheight', parseInt(t.target.value));
+    getElem('ch').value = settings.current.cheight;
 }
 getElem('sett_ch').value = settings.current.cheight;
 getElem('ch').value = settings.current.cheight;
 
 getElem('sett_gsize').onchange = (t) => {
     settings.setKey('gsize', parseInt(t.target.value));
+    getElem('bgrid').value = settings.current.gsize;
 }
 getElem('sett_gsize').value = settings.current.gsize;
 getElem('bgrid').value = settings.current.gsize;
@@ -147,9 +195,11 @@ class SnapCanvas extends fabric.Canvas {
 }
 
 window.selected = null;
-/*window.addEventListener('beforeunload', function (event) {
-    event.returnValue = 'deez nuts';
-});*/
+window.addEventListener('beforeunload', function (event) {
+    if (settings.current.ask_reload) {
+        event.returnValue = 'deez nuts';
+    }
+});
 
 getElem('editor').style.display = 'none';
 
@@ -161,7 +211,7 @@ getElem('import').onclick = () => Import();
 const Import = () => {
     let json = window.prompt('Paste your JSON here.');
     let object = JSON.parse(json);
-    let c = create(object.width, object.height, object.editorSettings.gridSize, object.editorSettings.name);
+    let c = create(object.width, object.height, object.editorSettings.gridSize, object.editorSettings.name, object);
 
     object.shapes.forEach(shape => {
         let width = shape.width;
@@ -174,7 +224,7 @@ const Import = () => {
     });
 }
 
-const create = (cWidth, cHeight, gSize, bName) => {
+const create = (cWidth, cHeight, gSize, bName, importObj) => {
     const cw = cWidth || getElemValue('cw', 'int');
     const ch = cHeight || getElemValue('ch', 'int');
 
@@ -200,32 +250,39 @@ const create = (cWidth, cHeight, gSize, bName) => {
     window.shapes = [];
 
     // create grid
+    let gridLines = [];
     for (var i = 0; i < (cw / gridSize); i++) {
-        canvas.add(new fabric.Line([i * gridSize, 0, i * gridSize, ch], {
+        let line = new fabric.Line([i * gridSize, 0, i * gridSize, ch], {
             stroke: '#000',
             selectable: false,
-            strokeWidth: 2,
-            opacity: 0.25
-        }));
+            strokeWidth: 2
+        });
+        gridLines.push(line);
     }
     for (var i = 0; i < (ch / gridSize); i++) {
-        canvas.add(new fabric.Line([0, i * gridSize, cw, i * gridSize], {
+        let line = new fabric.Line([0, i * gridSize, cw, i * gridSize], {
             stroke: '#000',
             selectable: false,
-            strokeWidth: 2,
-            opacity: 0.25
-        }))
+            strokeWidth: 2
+        });
+        gridLines.push(line);
     }
+    let grid = new fabric.Group(gridLines, {
+        selectable: false,
+        opacity: 0.25
+    });
+    canvas.add(grid);
 
     const buildName = bName || getElemValue('bname', 'string');
-    getElem('export').onclick = () => Export();
-    const Export = () => {
+    getElem('exportjson').onclick = () => ExportJSON();
+    const ExportJSON = () => {
         let rel = getElem('center').checked;
         let mainObject = {
             editorSettings: {
                 name: buildName,
                 gridSize: gridSize,
-                posRelativeCenter: rel
+                posRelativeCenter: rel,
+                bgImageUrl: bgImage ? bgImage.getSrc() : null
             },
             width: cw,
             height: ch,
@@ -251,6 +308,58 @@ const create = (cWidth, cHeight, gSize, bName) => {
         getElem('exported').value = exported;
         console.log(exported);
         alert('Export successful!')
+    }
+
+    getElem('exportpng').onclick = () => ExportPNG();
+    const ExportPNG = () => {
+        let keepBg = confirm('Would you like to keep the background in the final exported image?');
+        let keepgrid = confirm('Would you like to keep the grid in the final exported image?');
+        if (!keepBg) bgImage.visible = false;
+        if (!keepgrid) grid.visible = false;
+        let data = canvas.toDataURL();
+        let bloburl = dataUrlToBlobUrl(data);
+        window.open(bloburl, '_blank');
+        if (!keepBg) bgImage.visible = true;
+        if (!keepgrid) grid.visible = true;
+    }
+
+    window.bgImage = null;
+    getElem('importbg').onclick = () => ImportBG();
+    const ImportBG = (src) => {
+        let link = null;
+        if (src) {
+            link = src;
+        } else if (src === null) {
+            return;
+        } else {
+            link = prompt('Please provide a valid cirect link to an image to use as a background.')
+        }
+        try {
+            fabric.Image.fromURL(link, function (img) {
+                img.selectable = false;
+                let scaleRatioX = cw / img.width;
+                let scaleRatioY = ch / img.height;
+                img.set({
+                    scaleX: scaleRatioX,
+                    scaleY: scaleRatioY
+                })
+                canvas.add(img);
+                img.center();
+                canvas.sendToBack(img);
+                bgImage = img;
+            }, { crossOrigin: 'anonymous' });
+        } catch (e) {
+            alert('There was an error loading the background image.')
+        }
+    }
+    if (importObj) {
+        ImportBG(importObj.editorSettings.bgImageUrl);
+    }
+
+    getElem('removebg').onclick = () => RemoveBG();
+    const RemoveBG = () => {
+        canvas.remove(bgImage);
+        bgImage = null;
     }
 
     getElem('addSquare').onclick = () => addSquare(canvas);
