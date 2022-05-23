@@ -327,9 +327,9 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     getElem('importbg').onclick = () => ImportBG();
     const ImportBG = (src) => {
         let link = null;
-        if (src) {
+        if (src && src !== '') {
             link = src;
-        } else if (src === null) {
+        } else if (src === null || src === '') {
             return;
         } else {
             link = prompt('Please provide a valid cirect link to an image to use as a background.')
