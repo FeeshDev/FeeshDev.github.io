@@ -282,7 +282,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                 name: buildName,
                 gridSize: gridSize,
                 posRelativeCenter: rel,
-                bgImageUrl: bgImage ? bgImage.getSrc() : null
+                bgImageUrl: bgImage && bgImage.getSrc() !== '' ? bgImage.getSrc() : null
             },
             width: cw,
             height: ch,
