@@ -326,17 +326,17 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     }
 
     window.bgImage = null;
-    getElem('importbg').onclick = () => ImportBG();
+    getElem('importbg').onclick = () => ImportBG('imp');
     const ImportBG = (src) => {
         let link = null;
-        console.log(src)
-        if (src && src !== '') {
-            link = src;
-        } else if (src === null || src === '' || !src || typeof (src) === 'undefined') {
-            return;
-        } else {
+        if (src === 'imp') {
             link = prompt('Please provide a valid cirect link to an image to use as a background.')
+        } else if (src && src !== '') {
+            link = src;
+        } else {
+            return;
         }
+        console.log(link)
         try {
             fabric.Image.fromURL(link, function (img) {
                 img.selectable = false;
