@@ -1,6 +1,5 @@
-const getElem = (id) => {
-    return document.getElementById(id);
-}
+const getElem = id => document.getElementById(id);
+
 const getElemValue = (id, type) => {
     let elem = getElem(id);
     switch (type) {
@@ -58,14 +57,15 @@ dataUrlToBlobUrl = (dataurl) => {
 document.body.style.zoom = 1;
 window.settings = {
     default: {
-        snap_rotation: true,
-        snap_radius: 15,
-        rel_export: true,
-        rel_size: false,
-        cwidth: 600,
-        cheight: 600,
-        gsize: 50,
-        ask_reload: false
+        snapRotation: true,
+        snapRadius: 15,
+        relExport: true,
+        relSize: false,
+        groupCoords: false,
+        cWidth: 600,
+        cHeight: 600,
+        gSize: 50,
+        askReload: false
     },
     reset: () => {
         for (const key in settings.current) {
@@ -82,7 +82,8 @@ window.settings = {
     setKey: (key, value) => {
         settings.current[key] = value;
         localStorage.setItem('settings', JSON.stringify(settings.current));
-    }
+    },
+    getKey: key => settings.current[key]
 };
 try {
     if (localStorage.getItem('settings') !== '{}' && localStorage.getItem('settings') !== null) {
@@ -105,56 +106,60 @@ for (const key in settings.default) {
 }
 localStorage.setItem('settings', JSON.stringify(settings.current));
 
-getElem('sett_snap').onchange = (t) => {
-    settings.setKey('snap_rotation', t.target.checked);
-}
-getElem('sett_snap').checked = settings.current.snap_rotation;
+/**
+ * Creates a new setting
+ * @description Gark wrote this
+ * @param {String} name setting name
+ * @param {('float'|'int'|'checkbox')} type setting type
+ * @param {Function} callback called with value when setting changes
+ * @param {Function} callback called with value after the function is ran
+ */
+const newSetting = (name, type, callback = () => { }, callbackFinish = () => { }) => {
+    const htmlSetting = getElem(`sett_${name}`);
+    const prop = type === 'checkbox' ? 'checked' : 'value';
+    const parse = n => type === 'checkbox' ? n : +n;
 
-getElem('sett_snapAmt').onchange = (t) => {
-    settings.setKey('snap_radius', parseInt(t.target.value));
+    htmlSetting.onchange = e => {
+        const parsedProp = parse(e.target[prop]);
+        settings.setKey(name, parsedProp);
+        callback(settings.getKey(name));
+    }
+    callbackFinish(htmlSetting[prop] = parse(settings.getKey(name)));
 }
-getElem('sett_snapAmt').value = settings.current.snap_radius;
 
-getElem('sett_expRel').onchange = (t) => {
-    settings.setKey('rel_export', t.target.checked);
-    getElem('center').checked = t.target.checked;
-}
-getElem('sett_expRel').checked = settings.current.rel_export;
-getElem('center').checked = settings.current.rel_export;
-
-getElem('sett_expRelSize').onchange = (t) => {
-    settings.setKey('rel_size', t.target.checked);
-    getElem('sizegrid').checked = t.target.checked;
-}
-getElem('sett_expRelSize').checked = settings.current.rel_size;
-getElem('sizegrid').checked = settings.current.rel_size;
-
-getElem('sett_askReload').onchange = (t) => {
-    settings.setKey('ask_reload', t.target.checked);
-}
-getElem('sett_askReload').checked = settings.current.ask_reload;
-
-getElem('sett_cw').onchange = (t) => {
-    settings.setKey('cwidth', parseInt(t.target.value));
-    getElem('cw').value = settings.current.cwidth;
-}
-getElem('sett_cw').value = settings.current.cwidth;
-getElem('cw').value = settings.current.cwidth;
-
-getElem('sett_ch').onchange = (t) => {
-    settings.setKey('cheight', parseInt(t.target.value));
-    getElem('ch').value = settings.current.cheight;
-}
-getElem('sett_ch').value = settings.current.cheight;
-getElem('ch').value = settings.current.cheight;
-
-getElem('sett_gsize').onchange = (t) => {
-    settings.setKey('gsize', parseInt(t.target.value));
-    getElem('bgrid').value = settings.current.gsize;
-}
-getElem('sett_gsize').value = settings.current.gsize;
-getElem('bgrid').value = settings.current.gsize;
-
+//newSetting('snapRotation', 'checkbox');
+//newSetting('snapRadius', 'int');
+newSetting('relExport', 'checkbox', (v) => {
+    getElem('center').checked = v;
+}, (v) => {
+    getElem('center').checked = v;
+});
+newSetting('relSize', 'checkbox', (v) => {
+    getElem('sizegrid').checked = v;
+}, (v) => {
+    getElem('sizegrid').checked = v;
+});
+newSetting('askReload', 'checkbox');
+newSetting('cWidth', 'int', (v) => {
+    getElem('cw').value = v;
+}, (v) => {
+    getElem('cw').value = v;
+});
+newSetting('cHeight', 'int', (v) => {
+    getElem('ch').value = v;
+}, (v) => {
+    getElem('ch').value = v;
+});
+newSetting('gSize', 'int', (v) => {
+    getElem('bgrid').value = v;
+}, (v) => {
+    getElem('bgrid').value = v;
+});
+newSetting('groupCoords', 'checkbox', (v) => {
+    getElem('groupcoords').checked = v;
+}, (v) => {
+    getElem('groupcoords').checked = v;
+});
 
 class SnapCanvas extends fabric.Canvas {
     constructor(canvas, size, options) {
@@ -232,7 +237,7 @@ class SnapCanvas extends fabric.Canvas {
 
 window.selected = null;
 window.addEventListener('beforeunload', function (event) {
-    if (settings.current.ask_reload) {
+    if (settings.current.askReload) {
         event.returnValue = 'deez nuts';
     }
 });
@@ -254,8 +259,9 @@ const Import = () => {
     object.shapes.forEach(shape => {
         let width = shape.width;
         let height = shape.height;
-        let x = shape.position.x;
-        let y = shape.position.y;
+        let gCoords = object.editorSettings.groupCoords;
+        let x = gCoords ? shape.position.x : shape.x;
+        let y = gCoords ? shape.position.y : shape.y;
         if (sRel) {
             width *= object.editorSettings.gridSize;
             height *= object.editorSettings.gridSize;
@@ -265,8 +271,9 @@ const Import = () => {
         getElem('center').checked = cRel;
         getElem('sizegrid').checked = sRel;
         let left = cRel ? x - width / 2 + object.width / 2 : x;
-        let right = cRel ? y - height / 2 + object.height / 2 : y;
-        addSquare(c, left, right, width, height);
+        let top = cRel ? y - height / 2 + object.height / 2 : y;
+        if (width === 150) console.log(x, width / 2, object.width / 2);
+        addSquare(c, left, top, width, height);
     });
 }
 
@@ -339,13 +346,15 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     getElem('exportjson').onclick = () => ExportJSON();
     const ExportJSON = () => {
         let relPos = getElem('center').checked;
-        let relSize = getElem('sizegrid').checked;
+        let sizeRelativeToGrid = getElem('sizegrid').checked;
+        let groupCoords = getElem('groupcoords').checked;
         let mainObject = {
             editorSettings: {
                 name: buildName,
-                gridSize: gridSize,
+                gridSize,
                 posRelativeCenter: relPos,
-                sizeRelativeToGrid: relSize,
+                sizeRelativeToGrid,
+                groupCoords,
                 bgImageUrl: bgImage && bgImage.getSrc() !== '' ? bgImage.getSrc() : null
             },
             width: cw,
@@ -372,6 +381,13 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                 group.height /= mainObject.editorSettings.gridSize;
                 group.position.x /= mainObject.editorSettings.gridSize;
                 group.position.y /= mainObject.editorSettings.gridSize;
+            });
+        };
+        if (!mainObject.editorSettings.groupCoords) {
+            mainObject.shapes.forEach(group => {
+                group.x = group.position.x;
+                group.y = group.position.y;
+                delete group.position;
             });
         };
 
@@ -447,8 +463,8 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     getElem('addSquare').onclick = () => addSquare(canvas);
     canvas.on({
         'object:rotating': options => {
-            if (!settings.current.snap_rotation) return;
-            let amt = settings.current.snap_radius || 15;
+            if (!settings.current.snapRotation) return;
+            let amt = settings.current.snapRadius || 15;
             options.target.rotate(Math.round(options.target.angle / amt) * amt)
         },
         'object:selected': (t) => {

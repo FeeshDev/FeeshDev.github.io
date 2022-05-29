@@ -131,6 +131,10 @@
                     <input id="sizegrid" type="checkbox" checked>
                     Size relative to grid?
                 </span>
+                <span>
+                    <input id="groupcoords" type="checkbox" checked>
+                    Group coordinates?
+                </span>
                 <button class="button" id="exportjson">Export JSON</button>
                 <button class="button" id="exportpng">Export PNG</button>
             </div>
@@ -162,23 +166,25 @@
                 <span class="title">Defaults</span>
                 <span>Default Dimensions</span>
                 <div style="display: flex;">
-                    <input style="width: 70px;" id="sett_cw" class="input" type="number" placeholder="Width"
+                    <input style="width: 70px;" id="sett_cWidth" class="input" type="number" placeholder="Width"
                         value="600">
-                    <input style="width: 70px;" id="sett_ch" class="input" type="number" placeholder="Heght"
+                    <input style="width: 70px;" id="sett_cHeight" class="input" type="number" placeholder="Heght"
                         value="600">
                 </div>
                 <span>Default Grid Size</span>
-                <input id="sett_gsize" class="input" type="number" placeholder="Size" value="50">
-                <span><input id="sett_expRel" type="checkbox">Position from center</span>
-                <span><input id="sett_expRelSize" type="checkbox">Size based on grid</span>
+                <input id="sett_gSize" class="input" type="number" placeholder="Size" value="50">
+                <span><input id="sett_relExport" type="checkbox">Position from center</span>
+                <span><input id="sett_relSize" type="checkbox">Size based on grid</span>
+                <span><input id="sett_groupCoords" type="checkbox">Group coordinates</span>
                 <span><input id="sett_askReload" type="checkbox">Ask before reloading</span>
                 <button class="button" onclick="window.settings.reset()">Reset settings</button>
-                <br>
+                <!-- <br>
                 <br>
                 <span class="title">Rotation</span>
-                <span><input id="sett_snap" type="checkbox">Snap Rotation</span>
+                <span><input id="sett_snapRotation" type="checkbox">Snap Rotation</span>
                 <span>Rotation Snap Amount</span>
-                <input id="sett_snapAmt" class="input" type="text" placeholder="Value in Degrees">
+                <input id="sett_snapRadius" class="input" type="text" placeholder="Value in Degrees">
+                -->
             </div>
             <div class="menu">
                 <span class="title">Zoom</span>
@@ -193,7 +199,7 @@
     </div>
     <div id="info" class="menu border">
         <span class="title1">Information</span>
-        <span class="title">Version 1.1.1</span>
+        <span class="title">Version 1.2.0</span>
         <span class="title">Bindings</span>
         <span>Right-click on shape to remove</span>
         <span>Hold Control to move and resize by half a grid size</span>
