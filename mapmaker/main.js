@@ -54,7 +54,6 @@ dataUrlToBlobUrl = (dataurl) => {
 //TODO Add object properties or windows
 //TODO Allow customizing color and opacity of objects (config)
 //TODO Allow create by image
-//TODO Allow moving and resizing by .5 of grid space
 
 document.body.style.zoom = 1;
 window.settings = {
