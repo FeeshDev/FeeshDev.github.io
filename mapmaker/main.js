@@ -45,6 +45,7 @@ window.settings = {
         snap_rotation: true,
         snap_radius: 15,
         rel_export: true,
+        rel_size: false,
         cwidth: 600,
         cheight: 600,
         gsize: 50,
@@ -104,6 +105,13 @@ getElem('sett_expRel').onchange = (t) => {
 }
 getElem('sett_expRel').checked = settings.current.rel_export;
 getElem('center').checked = settings.current.rel_export;
+
+getElem('sett_expRelSize').onchange = (t) => {
+    settings.setKey('rel_size', t.target.checked);
+    getElem('sizegrid').checked = t.target.checked;
+}
+getElem('sett_expRelSize').checked = settings.current.rel_size;
+getElem('sizegrid').checked = settings.current.rel_size;
 
 getElem('sett_askReload').onchange = (t) => {
     settings.setKey('ask_reload', t.target.checked);
@@ -211,15 +219,25 @@ getElem('import').onclick = () => Import();
 const Import = () => {
     let json = window.prompt('Paste your JSON here.');
     let object = JSON.parse(json);
+    let cRel = object.editorSettings.posRelativeCenter;
+    let sRel = object.editorSettings.sizeRelativeToGrid;
     let c = create(object.width, object.height, object.editorSettings.gridSize, object.editorSettings.name, object);
 
     object.shapes.forEach(shape => {
         let width = shape.width;
         let height = shape.height;
-        let cRel = object.editorSettings.posRelativeCenter;
+        let x = shape.position.x;
+        let y = shape.position.y;
+        if (sRel) {
+            width *= object.editorSettings.gridSize;
+            height *= object.editorSettings.gridSize;
+            x *= object.editorSettings.gridSize;
+            y *= object.editorSettings.gridSize;
+        }
         getElem('center').checked = cRel;
-        let left = cRel ? shape.position.x - width / 2 + object.width / 2 : shape.position.x;
-        let right = cRel ? shape.position.y - height / 2 + object.height / 2 : shape.position.y;
+        getElem('sizegrid').checked = sRel;
+        let left = cRel ? x - width / 2 + object.width / 2 : x;
+        let right = cRel ? y - height / 2 + object.height / 2 : y;
         addSquare(c, left, right, width, height);
     });
 }
@@ -255,7 +273,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
         let line = new fabric.Line([i * gridSize, 0, i * gridSize, ch], {
             stroke: '#000',
             selectable: false,
-            strokeWidth: 2
+            strokeWidth: 2,
         });
         gridLines.push(line);
     }
@@ -263,25 +281,39 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
         let line = new fabric.Line([0, i * gridSize, cw, i * gridSize], {
             stroke: '#000',
             selectable: false,
-            strokeWidth: 2
+            strokeWidth: 2,
         });
         gridLines.push(line);
     }
+
+    let greenbg = new fabric.Rect({
+        width: cw,
+        height: ch,
+        fill: '#2d570b',
+        opacity: 1,
+        centeredRotation: true,
+        selectable: false,
+        hoverCursor: 'default'
+    });
+    canvas.add(greenbg);
     let grid = new fabric.Group(gridLines, {
         selectable: false,
-        opacity: 0.25
+        opacity: 0.25,
+        hoverCursor: 'default'
     });
     canvas.add(grid);
 
     const buildName = bName || getElemValue('bname', 'string');
     getElem('exportjson').onclick = () => ExportJSON();
     const ExportJSON = () => {
-        let rel = getElem('center').checked;
+        let relPos = getElem('center').checked;
+        let relSize = getElem('sizegrid').checked;
         let mainObject = {
             editorSettings: {
                 name: buildName,
                 gridSize: gridSize,
-                posRelativeCenter: rel,
+                posRelativeCenter: relPos,
+                sizeRelativeToGrid: relSize,
                 bgImageUrl: bgImage && bgImage.getSrc() !== '' ? bgImage.getSrc() : null
             },
             width: cw,
@@ -296,12 +328,20 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                     width: shape.width,
                     height: shape.height,
                     position: {
-                        x: rel ? shape.left + shape.width / 2 - cw / 2 : shape.left,
-                        y: rel ? shape.top + shape.height / 2 - ch / 2 : shape.top
+                        x: relPos ? shape.left + shape.width / 2 - cw / 2 : shape.left,
+                        y: relPos ? shape.top + shape.height / 2 - ch / 2 : shape.top
                     }
                 }
             )
         });
+        if (mainObject.editorSettings.sizeRelativeToGrid) {
+            mainObject.shapes.forEach(group => {
+                group.width /= mainObject.editorSettings.gridSize;
+                group.height /= mainObject.editorSettings.gridSize;
+                group.position.x /= mainObject.editorSettings.gridSize;
+                group.position.y /= mainObject.editorSettings.gridSize;
+            });
+        };
 
         let exported = JSON.stringify(mainObject);
 
@@ -315,14 +355,18 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
         let keepProcess = confirm('You have started the png export process, would you like to continue?');
         if (!keepProcess) return;
         let keepBg = confirm('Would you like to keep the background in the final exported image?');
+        let keepRef = confirm('Would you like to keep the reference image in the final exported image?');
         let keepgrid = confirm('Would you like to keep the grid in the final exported image?');
-        if (!keepBg && bgImage) bgImage.visible = false;
+        if (!keepRef && bgImage) bgImage.visible = false;
         if (!keepgrid) grid.visible = false;
+        if (!keepBg) greenbg.visible = false;
         let data = canvas.toDataURL();
         let bloburl = dataUrlToBlobUrl(data);
         window.open(bloburl, '_blank');
-        if (!keepBg && bgImage) bgImage.visible = true;
+        alert('Image exported, if a window did not open make sure to enable pop-ups and try again!');
+        if (!keepRef && bgImage) bgImage.visible = true;
         if (!keepgrid) grid.visible = true;
+        if (!keepBg) greenbg.visible = true;
     }
 
     window.bgImage = null;
@@ -336,10 +380,12 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
         } else {
             return;
         }
+        if (link === null) return;
         console.log(link)
         try {
             fabric.Image.fromURL(link, function (img) {
                 img.selectable = false;
+                img.hoverCursor = 'default';
                 let scaleRatioX = cw / img.width;
                 let scaleRatioY = ch / img.height;
                 img.set({
@@ -349,6 +395,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                 canvas.add(img);
                 img.center();
                 canvas.sendToBack(img);
+                img.bringForward();
                 bgImage = img;
             }, { crossOrigin: 'anonymous' });
         } catch (e) {

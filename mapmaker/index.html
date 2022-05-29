@@ -52,10 +52,10 @@
         }
 
         .export {
-            width: 180px;
-            max-width: 180px;
-            height: 40px;
-            max-height: 120px;
+            width: 280px;
+            max-width: 360px;
+            height: 70px;
+            max-height: 140px;
         }
 
         .button {
@@ -96,7 +96,7 @@
     </style>
 </head>
 
-<body style="background-color: #2d570b;">
+<body style="background-color: #274b0a;">
     <canvas id="c" width="600" height="600"></canvas>
     <div id="creation" class="menu border">
         <span class="title1">Creation Details</span>
@@ -127,25 +127,32 @@
                     <input id="center" type="checkbox" checked>
                     Relative to center?
                 </span>
+                <span>
+                    <input id="sizegrid" type="checkbox" checked>
+                    Size relative to grid?
+                </span>
                 <button class="button" id="exportjson">Export JSON</button>
                 <button class="button" id="exportpng">Export PNG</button>
             </div>
             <div class="menu">
-                <span class="title">Background</span>
-                <span class="title">Bring background</span>
+                <span class="title">Reference Image</span>
+                <span class="title">Bring reference</span>
                 <div>
                     <button class="button" style="width: 80px; height: 30px;"
                         onclick="if (bgImage) bgImage.bringForward()">Forwards</button>
                     <button class="button" style="width: 80px; height: 30px;"
                         onclick="if (bgImage) bgImage.sendBackwards()">Backwards</button>
                 </div>
-                <span><a href="https://postimages.org/" target="_blank">Upload a background</a></span>
-                <button class="button" id="importbg">Import Background</button>
-                <button class="button" id="removebg">Remove Background</button>
+                <span><a href="https://postimages.org/" target="_blank">Upload a reference</a></span>
+                <button class="button" id="importbg">Import Reference</button>
+                <button class="button" id="removebg">Remove Reference</button>
             </div>
         </div>
         <span class="title">Latest JSON Export</span>
         <textarea disabled id="exported" class="export" cols="30" rows="10"></textarea>
+        <button class="button" onclick="navigator.clipboard.writeText(document.getElementById('exported').value)">Copy
+            to
+            clipboard</button>
     </div>
     <div id="config" class="menu border">
         <span class="title1">Settings</span>
@@ -162,7 +169,8 @@
                 </div>
                 <span>Default Grid Size</span>
                 <input id="sett_gsize" class="input" type="number" placeholder="Size" value="50">
-                <span><input id="sett_expRel" type="checkbox">Default export relative</span>
+                <span><input id="sett_expRel" type="checkbox">Position from center</span>
+                <span><input id="sett_expRelSize" type="checkbox">Size based on grid</span>
                 <span><input id="sett_askReload" type="checkbox">Ask before reloading</span>
                 <button class="button" onclick="window.settings.reset()">Reset settings</button>
                 <br>
@@ -185,12 +193,12 @@
     </div>
     <div id="info" class="menu border">
         <span class="title1">Information</span>
-        <span class="title">Version 1.0.6</span>
+        <span class="title">Version 1.1.0</span>
         <span class="title">Bindings</span>
         <span>Right-click on shape to remove</span>
         <br>
-        <span class="title">Background</span>
-        <span>Backgrounds use links, you can upload your background on <a href="https://postimages.org/"
+        <span class="title">Reference Image</span>
+        <span>The reference image uses a link, you can upload your reference image on <a href="https://postimages.org/"
                 target="_blank">an
                 image upload site</a> then get and use the direct link when importing it</span>
         <br>
