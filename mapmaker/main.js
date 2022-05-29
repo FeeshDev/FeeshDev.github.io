@@ -14,6 +14,18 @@ const getElemValue = (id, type) => {
             return elem.value;
     }
 }
+const basicKeybind = (key, callback) => {
+    window.addEventListener('keydown', (e) => {
+        if (e.key === key) {
+            callback(true);
+        }
+    });
+    window.addEventListener('keyup', (e) => {
+        if (e.key === key) {
+            callback(false);
+        }
+    });
+}
 
 dataUrlToBlobUrl = (dataurl) => {
     const base64ImageData = dataurl;
@@ -42,6 +54,7 @@ dataUrlToBlobUrl = (dataurl) => {
 //TODO Add object properties or windows
 //TODO Allow customizing color and opacity of objects (config)
 //TODO Allow create by image
+//TODO Allow moving and resizing by .5 of grid space
 
 document.body.style.zoom = 1;
 window.settings = {
@@ -148,12 +161,23 @@ class SnapCanvas extends fabric.Canvas {
     constructor(canvas, size, options) {
         super(canvas, options);
         this.gridGranularity = size;
+        this.bitchMode = false;
         this.on('object:scaling', this.onFabricObjectScaling.bind(this));
         this.on('object:scaled', this.onFabricObjectScaled.bind(this));
+        this.on('object:moving', this.onFabricObjectMoving.bind(this));
     }
 
     snapGrid(cord) {
-        return Math.round(cord / this.gridGranularity) * this.gridGranularity;
+        let gridSize = this.gridGranularity;
+        if (this.bitchMode) gridSize /= 2;
+        return Math.round(cord / gridSize) * gridSize;
+    }
+
+    onFabricObjectMoving(e) {
+        e.target.set({
+            left: this.snapGrid(e.target.left),
+            top: this.snapGrid(e.target.top)
+        });
     }
 
     onFabricObjectScaled(e) {
@@ -174,6 +198,7 @@ class SnapCanvas extends fabric.Canvas {
             }
         }
     }
+
 
     onFabricObjectScaling(e) {
         const active = this.getActiveObject();
@@ -255,10 +280,14 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     htmlCanvas.width = cw;
     htmlCanvas.height = ch;
 
-    let canvas = new SnapCanvas('c', 10, {
+    window.canvas = new SnapCanvas('c', 10, {
         selection: false,
         fireRightClick: true,
         stopContextMenu: true
+    });
+
+    basicKeybind('Control', state => {
+        canvas.bitchMode = state;
     });
 
     const gridSize = gSize || getElemValue('bgrid', 'int');
@@ -418,12 +447,6 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
 
     getElem('addSquare').onclick = () => addSquare(canvas);
     canvas.on({
-        'object:moving': options => {
-            options.target.set({
-                left: Math.round(options.target.left / gridSize) * gridSize,
-                top: Math.round(options.target.top / gridSize) * gridSize
-            });
-        },
         'object:rotating': options => {
             if (!settings.current.snap_rotation) return;
             let amt = settings.current.snap_radius || 15;
@@ -468,7 +491,9 @@ const addSquare = (c, left, top, width, height) => {
         originX: 'left',
         originY: 'top',
         centeredRotation: true,
-        noScaleCache: false
+        noScaleCache: false,
+        lockSkewingX: true,
+        lockSkewingY: true
     });
     shapes.push(shape);
     shape.on('mousedown', (e) => {
@@ -477,7 +502,9 @@ const addSquare = (c, left, top, width, height) => {
             c.remove(shape);
         };
     });
-    c.fire('object:scaled', { target: shape })
+    c.bitchMode = true;
+    c.fire('object:scaled', { target: shape });
+    c.bitchMode = false;
 
     c.add(shape);
 
