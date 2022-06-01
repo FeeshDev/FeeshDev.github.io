@@ -62,9 +62,7 @@ dataUrlToBlobUrl = (dataurl) => {
     return blobUrl;
 }
 
-//TODO Add object properties or windows
 //TODO Allow customizing color and opacity of objects (config)
-//TODO Bind for creating block at mouse pos
 
 document.body.style.zoom = 1;
 window.settings = {
