@@ -13,15 +13,27 @@ const getElemValue = (id, type) => {
             return elem.value;
     }
 }
-const basicKeybind = (key, callback) => {
+window.pressedBinds = [];
+const isKeyPressed = (key) => {
+    let isIn = pressedBinds.indexOf(key) > -1;
+    return isIn;
+}
+const basicKeybind = (key, callback, repeat = false) => {
     window.addEventListener('keydown', (e) => {
         if (e.key === key) {
-            callback(true);
+            if (!isKeyPressed(key)) {
+                pressedBinds.push(key);
+                callback(true, e);
+            } else if (repeat) {
+                callback(true, e);
+            }
         }
     });
     window.addEventListener('keyup', (e) => {
         if (e.key === key) {
-            callback(false);
+            let i = pressedBinds.indexOf(key);
+            pressedBinds.splice(i, 1);
+            callback(false, e);
         }
     });
 }
@@ -52,6 +64,7 @@ dataUrlToBlobUrl = (dataurl) => {
 
 //TODO Add object properties or windows
 //TODO Allow customizing color and opacity of objects (config)
+//TODO Bind for creating block at mouse pos
 
 document.body.style.zoom = 1;
 window.settings = {
@@ -168,12 +181,30 @@ class SnapCanvas extends fabric.Canvas {
         this.on('object:scaling', this.onFabricObjectScaling.bind(this));
         this.on('object:scaled', this.onFabricObjectScaled.bind(this));
         this.on('object:moving', this.onFabricObjectMoving.bind(this));
+        this.on('mouse:move', this.onFabricMouseMouseMove.bind(this));
+        this.mouse = { x: this.gridGranularity, y: this.gridGranularity };
+    }
+
+    get gridSize() {
+        return this.bitchMode ? this.gridGranularity / 2 : this.gridGranularity;
+    }
+
+    set gridSize(s) {
+        this.gridGranularity = s;
     }
 
     snapGrid(cord) {
-        let gridSize = this.gridGranularity;
-        if (this.bitchMode) gridSize /= 2;
-        return Math.round(cord / gridSize) * gridSize;
+        return Math.round(cord / this.gridSize) * this.gridSize;
+    }
+
+    getSnappedMouse() {
+        let x = this.snapGrid(this.mouse.x - this.gridSize / 2);
+        let y = this.snapGrid(this.mouse.y - this.gridSize / 2);
+        return { x, y };
+    }
+
+    onFabricMouseMouseMove(e) {
+        this.mouse = { ...e.pointer };
     }
 
     onFabricObjectMoving(e) {
@@ -238,6 +269,8 @@ window.selected = null;
 window.addEventListener('beforeunload', function (event) {
     if (settings.current.askReload) {
         event.returnValue = 'deez nuts';
+        event.stopPropagation();
+        event.preventDefault();
     }
 });
 
@@ -272,7 +305,18 @@ const Import = () => {
         let left = cRel ? x - width / 2 + object.width / 2 : x;
         let top = cRel ? y - height / 2 + object.height / 2 : y;
         if (width === 150) console.log(x, width / 2, object.width / 2);
-        addSquare(c, left, top, width, height);
+        let s = addSquare(c, left, top, width, height);
+
+        let typeset = 'blue';
+        if (shape.bullet !== undefined) {
+            if (shape.bullet) {
+                typeset = 'green';
+            } else {
+                typeset = 'red';
+            }
+        }
+
+        s.changeType(typeset);
     });
 }
 
@@ -315,12 +359,86 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     window.canvas = new SnapCanvas('c', 10, {
         selection: false,
         fireRightClick: true,
-        stopContextMenu: true
+        stopContextMenu: true,
+        centeredKey: 'ctrlKey'
     });
 
-    basicKeybind('Control', state => {
+    basicKeybind('Alt', (state, e) => {
         canvas.bitchMode = state;
     });
+    basicKeybind('r', state => {
+        if (!state) return;
+        let { x, y } = canvas.getSnappedMouse();
+        addSquare(canvas, x, y);
+    });
+    basicKeybind('e', state => {
+        if (!state) return;
+        let obj = canvas.getActiveObject();
+        if (!obj) return;
+        obj.cycleType(1);
+    });
+    basicKeybind('q', state => {
+        if (!state) return;
+        let obj = canvas.getActiveObject();
+        if (!obj) return;
+        obj.cycleType(-1);
+    });
+    /*
+    basicKeybind('w', state => {
+        if (!state) return;
+        let obj = canvas.getActiveObject();
+        if (!obj) return;
+        if (!isKeyPressed(' ')) {
+            obj.top -= canvas.gridSize;
+        } else {
+            obj.height += canvas.gridSize;
+            obj.top -= canvas.gridSize;
+            canvas.fire('object:scaled', { target: obj });
+        }
+        obj.setCoords();
+        canvas.renderAll();
+    });
+    basicKeybind('s', state => {
+        if (!state) return;
+        let obj = canvas.getActiveObject();
+        if (!obj) return;
+        if (!isKeyPressed(' ')) {
+            obj.top += canvas.gridSize;
+        } else {
+            obj.height += canvas.gridSize;
+            canvas.fire('object:scaled', { target: obj });
+        }
+        obj.setCoords();
+        canvas.renderAll();
+    });
+    basicKeybind('a', state => {
+        if (!state) return;
+        let obj = canvas.getActiveObject();
+        if (!obj) return;
+        if (!isKeyPressed(' ')) {
+            obj.left -= canvas.gridSize;
+        } else {
+            obj.width += canvas.gridSize;
+            obj.left -= canvas.gridSize;
+            canvas.fire('object:scaled', { target: obj });
+        }
+        obj.setCoords();
+        canvas.renderAll();
+    });
+    basicKeybind('d', state => {
+        if (!state) return;
+        let obj = canvas.getActiveObject();
+        if (!obj) return;
+        if (!isKeyPressed(' ')) {
+            obj.left += canvas.gridSize;
+        } else {
+            obj.width += canvas.gridSize;
+            canvas.fire('object:scaled', { target: obj });
+        }
+        obj.setCoords();
+        canvas.renderAll();
+    });
+    */
 
     const gridSize = gSize || getElemValue('bgrid', 'int');
 
@@ -328,7 +446,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     getElem('config').style.display = 'flex';
     getElem('creation').style.display = 'none';
 
-    canvas.gridGranularity = gridSize;
+    canvas.gridSize = gridSize;
 
     window.shapes = [];
 
@@ -389,11 +507,21 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
         }
 
         shapes.forEach(shape => {
+            let bullet = undefined;
+            switch (shape.shapeType) {
+                case 'red':
+                    bullet = false;
+                    break;
+                case 'green':
+                    bullet = true;
+                    break;
+            }
             mainObject.shapes.push(
                 {
                     shape: shape.item(0).type,
                     width: shape.width,
                     height: shape.height,
+                    bullet,
                     position: {
                         x: relPos ? shape.left + shape.width / 2 - cw / 2 : shape.left,
                         y: relPos ? shape.top + shape.height / 2 - ch / 2 : shape.top
@@ -503,9 +631,9 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
 
 const addSquare = (c, left, top, width, height) => {
     let rect = new fabric.Rect({
-        width: width || c.gridGranularity,
-        height: height || c.gridGranularity,
-        fill: '#f00',
+        width: width || c.gridSize,
+        height: height || c.gridSize,
+        fill: '#000',
         opacity: 0.3,
         originX: 'center',
         originY: 'center',
@@ -515,7 +643,7 @@ const addSquare = (c, left, top, width, height) => {
         width: rect.width,
         height: rect.height,
         fill: 'rgba(0,0,0,0)',
-        stroke: '#f00',
+        stroke: '#000',
         strokeWidth: 2,
         opacity: 1,
         originX: 'center',
@@ -526,7 +654,7 @@ const addSquare = (c, left, top, width, height) => {
     let x = left >= 0 ? left : rect.width;
     let y = top >= 0 ? top : rect.height;
 
-    let shape = new fabric.Group([rect, outline], {
+    let mainShape = new fabric.Group([rect, outline], {
         left: x,
         top: y,
         originX: 'left',
@@ -536,18 +664,50 @@ const addSquare = (c, left, top, width, height) => {
         lockSkewingX: true,
         lockSkewingY: true
     });
-    shapes.push(shape);
-    shape.on('mousedown', (e) => {
+    let shapeTypes = ['red', 'blue', 'green'];
+    mainShape.changeType = (type) => {
+        mainShape.shapeType = type;
+        switch (type) {
+            case 'red':
+                mainShape.item(0).set('fill', '#ff1e12');
+                mainShape.item(1).set('stroke', '#ff1e12');
+                break;
+            case 'blue':
+                mainShape.item(0).set('fill', '#2062fa');
+                mainShape.item(1).set('stroke', '#2062fa');
+                break;
+            case 'green':
+                mainShape.item(0).set('fill', '#1ddb26');
+                mainShape.item(1).set('stroke', '#1ddb26');
+                break;
+        }
+        c.renderAll();
+    }
+    mainShape.changeType(shapeTypes[0]);
+    mainShape.cycleType = (direction) => {
+        let length = shapeTypes.length;
+        let nextI = shapeTypes.indexOf(mainShape.shapeType) + direction;
+        if (length <= nextI) {
+            nextI = 0;
+        } else if (nextI < 0) {
+            nextI = shapeTypes.length - 1;
+        }
+        mainShape.changeType(shapeTypes[nextI]);
+    }
+    shapes.push(mainShape);
+    mainShape.on('mousedown', (e) => {
         if (e.button === 3) {
-            shapes.splice(shapes.indexOf(shape), 1);
-            c.remove(shape);
+            shapes.splice(shapes.indexOf(mainShape), 1);
+            c.remove(mainShape);
         };
     });
+
     c.bitchMode = true;
-    c.fire('object:scaled', { target: shape });
+    c.fire('object:scaled', { target: mainShape });
     c.bitchMode = false;
 
-    c.add(shape);
+    c.add(mainShape);
+    c.setActiveObject(mainShape);
 
-    return shape;
+    return mainShape;
 }
