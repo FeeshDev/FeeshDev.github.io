@@ -63,6 +63,11 @@ dataUrlToBlobUrl = (dataurl) => {
 }
 
 //TODO Allow customizing color and opacity of objects (config)
+//TODO Allow canvas resizing
+//TODO Allow selection / move all
+//TODO Import small images that act like objects
+//TODO Background works like objects
+//TODO Layers or something
 
 document.body.style.zoom = 1;
 window.settings = {
