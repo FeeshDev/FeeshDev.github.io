@@ -52,7 +52,6 @@ dataUrlToBlobUrl = (dataurl) => {
 
 //TODO Add object properties or windows
 //TODO Allow customizing color and opacity of objects (config)
-//TODO Allow create by image
 
 document.body.style.zoom = 1;
 window.settings = {
@@ -275,6 +274,33 @@ const Import = () => {
         if (width === 150) console.log(x, width / 2, object.width / 2);
         addSquare(c, left, top, width, height);
     });
+}
+
+getElem('importwimg').onclick = () => FromImage();
+const FromImage = () => {
+    let resume = confirm('Creating a structure from an image will use the dimensions of the image and imports it as a reference. Would you like to continue?')
+    if (!resume) return;
+    let imgSrc = prompt('Please provide the source of the image.');
+    if (!imgSrc || imgSrc === null || typeof (imgSrc) === 'undefined' || imgSrc === '') return;
+    let gSize = parseInt(prompt('Please provide the grid size (based on the original image size)', 50));
+    if (!gSize) return;
+    let res = parseInt(prompt('What should the dimensions be divided by? (also affects grid size)', 1));
+    if (!res) return;
+
+    const img = new Image();
+    img.src = imgSrc;
+    img.onload = () => {
+        const { naturalWidth: width, naturalHeight: height } = img;
+
+        let w = width / res;
+        let h = height / res;
+        let g = gSize / res;
+        let n = 'unnamed';
+        let b = { editorSettings: { bgImageUrl: imgSrc } };
+
+        create(w, h, g, n, b);
+    }
+
 }
 
 const create = (cWidth, cHeight, gSize, bName, importObj) => {
