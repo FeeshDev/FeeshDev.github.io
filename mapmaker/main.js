@@ -1,4 +1,6 @@
 const getElem = id => document.getElementById(id);
+const degToRad = deg => (deg * Math.PI) / 180.0;
+const radToDeg = rad => (rad * 180.0) / Math.PI;
 
 const getElemValue = (id, type) => {
     let elem = getElem(id);
@@ -324,7 +326,7 @@ const Import = () => {
         let left = cRel ? x - width / 2 + object.width / 2 : x;
         let top = cRel ? y - height / 2 + object.height / 2 : y;
         let s = addSquare(c, left, top, width, height);
-        s.angle = shape.angle || 0;
+        s.angle = radToDeg(shape.angle) || 0;
 
         let typeset = 'blue';
         if (shape.bullet !== undefined) {
@@ -546,7 +548,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                     width: shape.width,
                     height: shape.height,
                     bullet,
-                    angle: shape.angle,
+                    angle: degToRad(shape.angle),
                     position: {
                         x: relPos ? shape.left + shape.width / 2 - cw / 2 : shape.left,
                         y: relPos ? shape.top + shape.height / 2 - ch / 2 : shape.top
