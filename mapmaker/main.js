@@ -62,12 +62,15 @@ dataUrlToBlobUrl = (dataurl) => {
     return blobUrl;
 }
 
-//TODO Allow customizing color and opacity of objects (config)
 //TODO Allow canvas resizing
-//TODO Allow selection / move all
-//TODO Import small images that act like objects
-//TODO Background works like objects
-//TODO Layers or something
+
+//TODO Props
+//todo - act like objects DONE
+//todo - selectable while holding control DONE
+//todo - saved in editor settings 
+//todo - save their types
+//todo - clone existing
+//TODO Background acts like prop
 
 document.body.style.zoom = 1;
 window.settings = {
@@ -80,6 +83,7 @@ window.settings = {
         cWidth: 600,
         cHeight: 600,
         gSize: 50,
+        oOpacity: 1,
         askReload: false
     },
     reset: () => {
@@ -142,38 +146,44 @@ const newSetting = (name, type, callback = () => { }, callbackFinish = () => { }
     callbackFinish(htmlSetting[prop] = parse(settings.getKey(name)));
 }
 
-//newSetting('snapRotation', 'checkbox');
-//newSetting('snapRadius', 'int');
-newSetting('relExport', 'checkbox', (v) => {
+newSetting('snapRotation', 'checkbox');
+newSetting('snapRadius', 'int');
+newSetting('relExport', 'checkbox', v => {
     getElem('center').checked = v;
-}, (v) => {
+}, v => {
     getElem('center').checked = v;
 });
-newSetting('relSize', 'checkbox', (v) => {
+newSetting('relSize', 'checkbox', v => {
     getElem('sizegrid').checked = v;
-}, (v) => {
+}, v => {
     getElem('sizegrid').checked = v;
 });
 newSetting('askReload', 'checkbox');
-newSetting('cWidth', 'int', (v) => {
+newSetting('cWidth', 'int', v => {
     getElem('cw').value = v;
-}, (v) => {
+}, v => {
     getElem('cw').value = v;
 });
-newSetting('cHeight', 'int', (v) => {
+newSetting('cHeight', 'int', v => {
     getElem('ch').value = v;
-}, (v) => {
+}, v => {
     getElem('ch').value = v;
 });
-newSetting('gSize', 'int', (v) => {
+newSetting('gSize', 'int', v => {
     getElem('bgrid').value = v;
-}, (v) => {
+}, v => {
     getElem('bgrid').value = v;
 });
-newSetting('groupCoords', 'checkbox', (v) => {
+newSetting('groupCoords', 'checkbox', v => {
     getElem('groupcoords').checked = v;
-}, (v) => {
+}, v => {
     getElem('groupcoords').checked = v;
+});
+newSetting('oOpacity', 'float', v => {
+    if (shapes.length > 0) {
+        shapes.forEach(shape => shape.opacity = v);
+        canvas.renderAll();
+    }
 });
 
 class SnapCanvas extends fabric.Canvas {
@@ -219,7 +229,7 @@ class SnapCanvas extends fabric.Canvas {
 
     onFabricObjectScaled(e) {
         switch (e.target.type) {
-            case 'group': {
+            case 'group':
                 e.target.getObjects().forEach(obj => {
                     obj.set({
                         width: this.snapGrid(e.target.width * e.target.scaleX),
@@ -232,12 +242,18 @@ class SnapCanvas extends fabric.Canvas {
                     scaleX: 1,
                     scaleY: 1,
                 });
-            }
+                break;
         }
     }
 
-
     onFabricObjectScaling(e) {
+        if (e.target.type === 'activeSelection') {
+            e.target.lockScalingX = true;
+            e.target.lockScalingY = true;
+        } else {
+            e.target.lockScalingX = false;
+            e.target.lockScalingY = false;
+        }
         const active = this.getActiveObject();
         const [width, height] = [active.getScaledWidth(), active.getScaledHeight()];
 
@@ -307,8 +323,8 @@ const Import = () => {
         getElem('sizegrid').checked = sRel;
         let left = cRel ? x - width / 2 + object.width / 2 : x;
         let top = cRel ? y - height / 2 + object.height / 2 : y;
-        if (width === 150) console.log(x, width / 2, object.width / 2);
         let s = addSquare(c, left, top, width, height);
+        s.angle = shape.angle || 0;
 
         let typeset = 'blue';
         if (shape.bullet !== undefined) {
@@ -360,7 +376,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     htmlCanvas.height = ch;
 
     window.canvas = new SnapCanvas('c', 10, {
-        selection: false,
+        selection: true,
         fireRightClick: true,
         stopContextMenu: true,
         centeredKey: 'ctrlKey'
@@ -368,6 +384,10 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
 
     basicKeybind('Alt', (state, e) => {
         canvas.bitchMode = state;
+    });
+    basicKeybind('Control', (state, e) => {
+        props.forEach(prop => prop.selectable = state);
+        shapes.forEach(shape => shape.selectable = !state);
     });
     basicKeybind('r', state => {
         if (!state) return;
@@ -452,6 +472,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     canvas.gridSize = gridSize;
 
     window.shapes = [];
+    window.props = [];
 
     // create grid
     let gridLines = [];
@@ -525,6 +546,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                     width: shape.width,
                     height: shape.height,
                     bullet,
+                    angle: shape.angle,
                     position: {
                         x: relPos ? shape.left + shape.width / 2 - cw / 2 : shape.left,
                         y: relPos ? shape.top + shape.height / 2 - ch / 2 : shape.top
@@ -586,7 +608,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
             return;
         }
         if (link === null) return;
-        console.log(link)
+        console.log(link);
         try {
             fabric.Image.fromURL(link, function (img) {
                 img.selectable = false;
@@ -620,9 +642,17 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     getElem('addSquare').onclick = () => addSquare(canvas);
     canvas.on({
         'object:rotating': options => {
-            if (!settings.current.snapRotation) return;
-            let amt = settings.current.snapRadius || 15;
-            options.target.rotate(Math.round(options.target.angle / amt) * amt)
+            console.log(options.target.type)
+            switch (options.target.type) {
+                case 'group':
+                    if (!settings.current.snapRotation) return;
+                    let amt = settings.current.snapRadius || 15;
+                    options.target.rotate(Math.round(options.target.angle / amt) * amt);
+                    break;
+                case 'image':
+                    options.target.rotate(Math.round(options.target.angle / 90) * 90);
+                    break;
+            }
         },
         'object:selected': (t) => {
             window.selected = t.target;
@@ -665,9 +695,10 @@ const addSquare = (c, left, top, width, height) => {
         centeredRotation: true,
         noScaleCache: false,
         lockSkewingX: true,
-        lockSkewingY: true
+        lockSkewingY: true,
+        opacity: settings.getKey('oOpacity') || 1,
     });
-    let shapeTypes = ['red', 'blue', 'green'];
+    let shapeTypes = ['blue', 'red', 'green'];
     mainShape.changeType = (type) => {
         mainShape.shapeType = type;
         switch (type) {
@@ -710,7 +741,49 @@ const addSquare = (c, left, top, width, height) => {
     c.bitchMode = false;
 
     c.add(mainShape);
+    c.bringToFront(mainShape);
     c.setActiveObject(mainShape);
 
     return mainShape;
+}
+
+const addProp = (c, src, reqGrid) => {
+    let mainProp = fabric.Image.fromURL(src, function (mainImage) {
+        mainImage.selectable = false;
+        mainImage.hoverCursor = 'default';
+
+        let ratio = c.gridSize / reqGrid;
+
+        mainImage.set({
+            left: 0,
+            top: 0,
+            originX: 'left',
+            originY: 'top',
+            scaleX: ratio,
+            scaleY: ratio,
+            lockSkewingX: true,
+            lockSkewingY: true
+        });
+
+        props.push(mainImage);
+
+        mainImage.on('mousedown', (e) => {
+            if (e.button === 3) {
+                props.splice(props.indexOf(mainImage), 1);
+                c.remove(mainImage);
+            };
+        });
+
+        c.bitchMode = true;
+        c.fire('object:scaled', { target: mainImage });
+        c.bitchMode = false;
+
+        c.add(mainImage);
+        c.sendToBack(mainImage);
+        c.bringForward(mainImage);
+        c.bringForward(mainImage);
+        c.setActiveObject(mainImage);
+    }, { crossOrigin: 'anonymous' });
+
+    return mainProp;
 }

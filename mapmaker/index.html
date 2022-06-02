@@ -11,14 +11,27 @@
         rel="stylesheet">
     <script type="text/javascript" src="./main.js" defer> </script>
     <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
         body {
             font-family: 'Noto Sans', sans-serif;
             text-align: center;
             display: flex;
         }
 
-        canvas {
+        #c {
             border: 1px solid #000;
+            position: relative !important;
         }
 
         .border {
@@ -176,20 +189,15 @@
                     <input style="width: 70px;" id="sett_cHeight" class="input" type="number" placeholder="Heght"
                         value="600">
                 </div>
-                <span>Default Grid Size</span>
-                <input id="sett_gSize" class="input" type="number" placeholder="Size" value="50">
+                <span>Default Grid Size <input id="sett_gSize" style="width: 20px" class="input" type="number"
+                        placeholder="Size" value="50"></span>
+                <span>Rectangle Opacity <input id="sett_oOpacity" style="width: 20px" class="input" type="number"
+                        placeholder="Size" value="1"></span>
                 <span><input id="sett_relExport" type="checkbox">Position from center</span>
                 <span><input id="sett_relSize" type="checkbox">Size based on grid</span>
                 <span><input id="sett_groupCoords" type="checkbox">Group coordinates</span>
                 <span><input id="sett_askReload" type="checkbox">Ask before reloading</span>
                 <button class="button" onclick="window.settings.reset()">Reset settings</button>
-                <!-- <br>
-                <br>
-                <span class="title">Rotation</span>
-                <span><input id="sett_snapRotation" type="checkbox">Snap Rotation</span>
-                <span>Rotation Snap Amount</span>
-                <input id="sett_snapRadius" class="input" type="text" placeholder="Value in Degrees">
-                -->
             </div>
             <div class="menu">
                 <span class="title">Zoom</span>
@@ -199,6 +207,11 @@
                     <button class="button" style="width: 30px; height: 30px;"
                         onclick="document.body.style.zoom = parseFloat(document.body.style.zoom) + 0.1">+</button>
                 </div>
+                <br>
+                <span class="title">Rotation</span>
+                <span><input id="sett_snapRotation" type="checkbox">Snap Rotation</span>
+                <span>Rotation Snap Amount</span>
+                <input id="sett_snapRadius" class="input" type="text" placeholder="Value in Degrees">
             </div>
         </div>
     </div>
@@ -210,7 +223,7 @@
             green = collide bullet only<br>
             red = collide all except bullets
         </span>
-        <span class="title">Version 1.4.1</span>
+        <span class="title">Version 1.4.2</span>
         <span class="title">Bindings</span>
         <span class="small">
             Right-click on shape to remove <br>
