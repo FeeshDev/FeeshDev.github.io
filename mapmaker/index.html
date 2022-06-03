@@ -10,152 +10,67 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <script type="text/javascript" src="./main.js" defer> </script>
-    <style>
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-
-        body {
-            font-family: 'Noto Sans', sans-serif;
-            text-align: center;
-            display: flex;
-        }
-
-        #c {
-            border: 1px solid #000;
-            position: relative !important;
-        }
-
-        .border {
-            border: 1px solid #000;
-        }
-
-        span {
-            color: white;
-            margin: 5px;
-        }
-
-        span a {
-            color: lightblue;
-        }
-
-        .title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .title1 {
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .small {
-            font-size: 14px;
-        }
-
-        span input {
-            height: 14px;
-            width: 14px;
-            padding: 0px;
-            margin: 0px;
-        }
-
-        .export {
-            width: 280px;
-            max-width: 360px;
-            height: 70px;
-            max-height: 140px;
-        }
-
-        .button {
-            width: 100px;
-            height: 40px;
-            margin: 5px;
-        }
-
-        .input {
-            width: 160px;
-            height: 20px;
-            margin: 5px;
-        }
-
-        .menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-            background-color: dimgray;
-        }
-
-        #config,
-        #editor {
-            width: 400px;
-        }
-
-        .menu-r {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            width: 400px;
-            background-color: dimgray;
-            max-height: 500px;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body style="background-color: #274b0a;">
     <canvas id="c" width="600" height="600"></canvas>
     <div id="creation" class="menu border">
-        <span class="title1">Creation Details</span>
+        <span class="menu-title">Creation Details</span>
         <br>
-        <span class="title">Building Name</span>
-        <input id="bname" class="input" type="text" placeholder="Build Name" value="unnamed">
-        <span class="title">Canvas Dimensions</span>
-        <div style="display: flex;">
-            <input style="width: 70px;" id="cw" class="input" type="number" placeholder="Width" value="600">
-            <input style="width: 70px;" id="ch" class="input" type="number" placeholder="Heght" value="600">
+        <div class="menu-info">
+            <span class="title">Building Name</span>
+            <input id="bname" class="input" type="text" placeholder="Build Name" value="unnamed">
+            <br>
+            <span class="title">Canvas Dimensions</span>
+            <span style="display: flex; align-items: center;">
+                <input style="width: 50px;" id="cw" class="input" type="number" placeholder="Width" value="600">W
+                <input style="width: 50px;" id="ch" class="input" type="number" placeholder="Heght" value="600">H
+            </span>
+            <br>
+            <span class="title">Grid Size <input id="bgrid" style="width: 30px;" class="input" type="number"
+                    placeholder="Size" value="50"></span>
+            <br>
+            <button id="create" class="button">Create Structure</button>
+            <br>
+            <button id="importwimg" class="button">Create From Reference</button>
+            <br>
+            <button id="import" class="button">Import JSON</button>
         </div>
-        <span class="title">Grid Size</span>
-        <input id="bgrid" class="input" type="number" placeholder="Size" value="50">
-        <button id="create" class="button">Create Structure</button>
-        <br>
-        <button id="importwimg" class="button">Create From Reference</button>
-        <br>
-        <button id="import" class="button">Import JSON</button>
     </div>
     <div id="editor" class="menu border">
-        <span class="title1">Editor</span>
-        <div class="menu-r">
-            <div class="menu">
-                <span class="title">Shapes</span>
+        <span class="menu-title">Editor</span>
+        <div class="menu-info">
+            <button class="collapsible open">Shapes</button>
+            <div class="content cflex">
                 <button class="button" id="addSquare">Add Rectangle</button>
-                <br>
-                <span class="title">Exporting</span>
-                <span>
+            </div>
+            <button class="collapsible open">Exporting</button>
+            <div class="content cflex">
+                <span class="bspan">
                     <input id="center" type="checkbox" checked>
                     Relative to center?
                 </span>
-                <span>
+                <span class="bspan">
                     <input id="sizegrid" type="checkbox" checked>
                     Size relative to grid?
                 </span>
-                <span>
+                <span class="bspan">
                     <input id="groupcoords" type="checkbox" checked>
                     Group coordinates?
                 </span>
-                <button class="button" id="exportjson">Export JSON</button>
-                <button class="button" id="exportpng">Export PNG</button>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="sbutton" id="exportjson">Export JSON</button>
+                    <button class="sbutton" id="exportpng">Export PNG</button>
+                    <span class="title">Latest JSON Export</span>
+                    <textarea disabled id="exported" class="export" cols="30" rows="10"></textarea>
+                </div>
+                <button class="button"
+                    onclick="navigator.clipboard.writeText(document.getElementById('exported').value)">Copy
+                    to
+                    clipboard</button>
             </div>
+            <!--
             <div class="menu">
                 <span class="title">Reference Image</span>
                 <span class="title">Bring reference</span>
@@ -168,78 +83,94 @@
                 <span><a href="https://postimages.org/" target="_blank">Upload a reference</a></span>
                 <button class="button" id="importbg">Import Reference</button>
                 <button class="button" id="removebg">Remove Reference</button>
-            </div>
+            </div>-->
         </div>
-        <span class="title">Latest JSON Export</span>
-        <textarea disabled id="exported" class="export" cols="30" rows="10"></textarea>
-        <button class="button" onclick="navigator.clipboard.writeText(document.getElementById('exported').value)">Copy
-            to
-            clipboard</button>
     </div>
     <div id="config" class="menu border">
-        <span class="title1">Settings</span>
-        <br>
-        <div class="menu-r">
-            <div class="menu">
-                <span class="title">Defaults</span>
-                <span>Default Dimensions</span>
-                <div style="display: flex;">
-                    <input style="width: 70px;" id="sett_cWidth" class="input" type="number" placeholder="Width"
-                        value="600">
-                    <input style="width: 70px;" id="sett_cHeight" class="input" type="number" placeholder="Heght"
-                        value="600">
-                </div>
-                <span>Default Grid Size <input id="sett_gSize" style="width: 20px" class="input" type="number"
-                        placeholder="Size" value="50"></span>
-                <span>Rectangle Opacity <input id="sett_oOpacity" style="width: 20px" class="input" type="number"
-                        placeholder="Size" value="1"></span>
-                <span><input id="sett_relExport" type="checkbox">Position from center</span>
-                <span><input id="sett_relSize" type="checkbox">Size based on grid</span>
-                <span><input id="sett_groupCoords" type="checkbox">Group coordinates</span>
-                <span><input id="sett_askReload" type="checkbox">Ask before reloading</span>
+        <span class="menu-title">Settings</span>
+        <div class="menu-info">
+            <button class="collapsible open">Defaults</button>
+            <div class="content cflex">
+                <span class="bspan">Default Dimensions</span>
+                <span style="display: flex; align-items: center;">
+                    <input style="width: 50px;" id="sett_cWidth" class="input" type="number" placeholder="Width"
+                        value="600">W
+                    <input style="width: 50px;" id="sett_cHeight" class="input" type="number" placeholder="Heght"
+                        value="600">H
+                </span>
+                <span class="bspan">Default Grid Size <input id="sett_gSize" style="width: 20px" class="input"
+                        type="number" placeholder="Size" value="50"></span>
+                <span class="bspan">Rectangle Opacity <input id="sett_oOpacity" style="width: 20px" class="input"
+                        type="number" placeholder="Size" value="1"></span>
+                <span class="bspan"><input id="sett_relExport" type="checkbox">Position from center</span>
+                <span class="bspan"><input id="sett_relSize" type="checkbox">Size based on grid</span>
+                <span class="bspan"><input id="sett_groupCoords" type="checkbox">Group coordinates</span>
+                <span class="bspan"><input id="sett_askReload" type="checkbox">Ask before reloading</span>
                 <button class="button" onclick="window.settings.reset()">Reset settings</button>
             </div>
-            <div class="menu">
-                <span class="title">Zoom</span>
+            <button class="collapsible">Zoom</button>
+            <div class="content cflex">
                 <div>
                     <button class="button" style="width: 30px; height: 30px;"
                         onclick="document.body.style.zoom = parseFloat(document.body.style.zoom) - 0.1">-</button>
                     <button class="button" style="width: 30px; height: 30px;"
                         onclick="document.body.style.zoom = parseFloat(document.body.style.zoom) + 0.1">+</button>
                 </div>
-                <br>
-                <span class="title">Rotation</span>
-                <span><input id="sett_snapRotation" type="checkbox">Snap Rotation</span>
-                <span>Rotation Snap Amount</span>
+            </div>
+            <button class="collapsible">Rotation</button>
+            <div class="content cflex">
+                <span class="bspan"><input id="sett_snapRotation" type="checkbox">Snap Rotation</span>
+                <span class="bspan">Rotation Snap Amount</span>
                 <input id="sett_snapRadius" class="input" type="text" placeholder="Value in Degrees">
             </div>
         </div>
     </div>
     <div id="info" class="menu border">
-        <span class="title1">Information</span>
-        <span class="small">
-            Ruleset:<br>
-            blue = collide all<br>
-            green = collide bullet only<br>
-            red = collide all except bullets
-        </span>
-        <span class="title">Version 1.4.3</span>
-        <span class="title">Bindings</span>
-        <span class="small">
-            Right-click on shape to remove <br>
-            Hold Alt to move and resize by half a grid size<br>
-            Press R to add a rectangle at the mouse position<br>
-            Press Q and E to cycle between rectangle type
-        </span>
-        <br>
-        <span class="title">Reference Image</span>
-        <span class="small">The reference image uses a link, you can upload your reference image on <a
-                href="https://postimages.org/" target="_blank">an
-                image upload site</a> then get and use the direct link when importing it</span>
-        <br>
-        <span class="title">Credits</span>
-        <span>Alez - doing everything</span>
-        <br>
+        <span class="menu-title">Information</span>
+        <div class="menu-info">
+            <button class="collapsible open">Version 1.4.4</button>
+            <div class="content">
+                <span class="bspan title">1.4.4</span>
+                <span class="bspan spar spad">
+                    - Revamped Menu <br>
+                    - Version History (this) <br>
+                    - Removed References <br>
+                    - Collapsibles
+                </span>
+                <span class="bspan title">1.4.3</span>
+                <span class="bspan spar spad">
+                    - Idk old shit can't bother
+                </span>
+            </div>
+            <button class="collapsible">Ruleset</button>
+            <div class="content">
+                <span class="bspan par">
+                    blue = collide all<br>
+                    green = collide bullet only<br>
+                    red = collide all except bullets
+                </span>
+            </div>
+            <button class="collapsible">Bindings</button>
+            <div class="content">
+                <span class="bspan spar">
+                    Right-click on shape to remove <br>
+                    Hold Alt to move and resize by half a grid size<br>
+                    Press R to add a rectangle at the mouse position<br>
+                    Press Q and E to cycle between rectangle type
+                </span>
+            </div>
+            <button class="collapsible">Props</button>
+            <div class="content">
+                <span class="bspan spar">
+                    TODO Write prop info <br>
+                    TODO Write prop info <br>
+                    TODO Write prop info <br>
+                    TODO Write prop info
+                </span>
+            </div>
+            <span class="title bspan">Credits</span>
+            <span class="bspan">Alez - doing everything</span>
+        </div>
     </div>
 </body>
 

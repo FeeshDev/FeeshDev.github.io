@@ -1,4 +1,22 @@
 const getElem = id => document.getElementById(id);
+
+const coll = document.getElementsByClassName('collapsible');
+
+for (let i = 0; i < coll.length; i++) {
+    let elem = coll[i];
+    elem.toggleActive = () => {
+        elem.classList.toggle('active');
+        let content = elem.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = `${content.scrollHeight + 10}px`;
+        }
+    }
+    if (elem.classList.contains('open')) elem.toggleActive();
+    elem.addEventListener('click', () => elem.toggleActive());
+}
+
 const degToRad = deg => (deg * Math.PI) / 180.0;
 const radToDeg = rad => (rad * 180.0) / Math.PI;
 
@@ -525,7 +543,6 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                 posRelativeCenter: relPos,
                 sizeRelativeToGrid,
                 groupCoords,
-                bgImageUrl: bgImage && bgImage.getSrc() !== '' ? bgImage.getSrc() : null
             },
             width: cw,
             height: ch,
@@ -599,7 +616,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
     }
 
     window.bgImage = null;
-    getElem('importbg').onclick = () => ImportBG('imp');
+    //getElem('importbg').onclick = () => ImportBG('imp');
     const ImportBG = (src) => {
         let link = null;
         if (src === 'imp') {
