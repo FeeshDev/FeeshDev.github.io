@@ -7,10 +7,10 @@ for (let i = 0; i < coll.length; i++) {
     elem.toggleActive = () => {
         elem.classList.toggle('active');
         let content = elem.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
+        if (content.style.height) {
+            content.style.height = null;
         } else {
-            content.style.maxHeight = `${content.scrollHeight + 10}px`;
+            content.style.height = `${content.scrollHeight + 10}px`;
         }
     }
     if (elem.classList.contains('open')) elem.toggleActive();
@@ -87,8 +87,8 @@ dataUrlToBlobUrl = (dataurl) => {
 //TODO Props
 //todo - act like objects DONE
 //todo - selectable while holding control DONE
-//todo - saved in editor settings 
-//todo - save their types
+//todo - saved in editor settings DONE
+//todo - save their types DONE
 //todo - clone existing
 //TODO Background acts like prop
 
@@ -357,39 +357,37 @@ const Import = () => {
 
         s.changeType(typeset);
     });
-}
 
-getElem('importwimg').onclick = () => FromImage();
-const FromImage = () => {
-    let resume = confirm('Creating a structure from an image will use the dimensions of the image and imports it as a reference. Would you like to continue?')
-    if (!resume) return;
-    let imgSrc = prompt('Please provide the source of the image.');
-    if (!imgSrc || imgSrc === null || typeof (imgSrc) === 'undefined' || imgSrc === '') return;
-    let gSize = parseInt(prompt('Please provide the grid size (based on the original image size)', 50));
-    if (!gSize) return;
-    let res = parseInt(prompt('What should the dimensions be divided by? (also affects grid size)', 1));
-    if (!res) return;
+    object.editorSettings.props.forEach(prop => {
+        let width = prop.width;
+        let height = prop.height;
+        let propType = prop.propType;
+        let source = prop.source;
+        let gCoords = object.editorSettings.groupCoords;
+        let x = gCoords ? prop.position.x : prop.x;
+        let y = gCoords ? prop.position.y : prop.y;
+        if (sRel) {
+            width *= object.editorSettings.gridSize;
+            height *= object.editorSettings.gridSize;
+            x *= object.editorSettings.gridSize;
+            y *= object.editorSettings.gridSize;
+        }
+        let left = cRel ? x - width / 2 + object.width / 2 : x;
+        let top = cRel ? y - height / 2 + object.height / 2 : y;
+        let angle = radToDeg(prop.angle) || 0;
+        addProp(c, propType, source, undefined, left, top, angle);
+    });
 
-    const img = new Image();
-    img.src = imgSrc;
-    img.onload = () => {
-        const { naturalWidth: width, naturalHeight: height } = img;
+    for (const key in object.editorSettings.propTypes) {
+        let value = object.editorSettings.propTypes[key];
 
-        let w = width / res;
-        let h = height / res;
-        let g = gSize / res;
-        let n = 'unnamed';
-        let b = { editorSettings: { bgImageUrl: imgSrc } };
-
-        create(w, h, g, n, b);
+        addPropType(key, value);
     }
-
 }
 
 const create = (cWidth, cHeight, gSize, bName, importObj) => {
     const cw = cWidth || getElemValue('cw', 'int');
     const ch = cHeight || getElemValue('ch', 'int');
-
 
     let htmlCanvas = getElem('c');
     htmlCanvas.width = cw;
@@ -493,6 +491,7 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
 
     window.shapes = [];
     window.props = [];
+    window.propTypes = {};
 
     // create grid
     let gridLines = [];
@@ -543,6 +542,8 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                 posRelativeCenter: relPos,
                 sizeRelativeToGrid,
                 groupCoords,
+                props: [],
+                propTypes,
             },
             width: cw,
             height: ch,
@@ -573,6 +574,21 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                 }
             )
         });
+        props.forEach(prop => {
+            mainObject.editorSettings.props.push(
+                {
+                    propType: prop.propType,
+                    source: prop.source,
+                    width: prop.width,
+                    height: prop.height,
+                    angle: degToRad(prop.angle),
+                    position: {
+                        x: relPos ? prop.left + prop.width / 2 - cw / 2 : prop.left,
+                        y: relPos ? prop.top + prop.height / 2 - ch / 2 : prop.top
+                    }
+                }
+            )
+        });
         if (mainObject.editorSettings.sizeRelativeToGrid) {
             mainObject.shapes.forEach(group => {
                 group.width /= mainObject.editorSettings.gridSize;
@@ -580,12 +596,25 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
                 group.position.x /= mainObject.editorSettings.gridSize;
                 group.position.y /= mainObject.editorSettings.gridSize;
             });
+
+            mainObject.editorSettings.props.forEach(prop => {
+                prop.width /= mainObject.editorSettings.gridSize;
+                prop.height /= mainObject.editorSettings.gridSize;
+                prop.position.x /= mainObject.editorSettings.gridSize;
+                prop.position.y /= mainObject.editorSettings.gridSize;
+            });
         };
         if (!mainObject.editorSettings.groupCoords) {
             mainObject.shapes.forEach(group => {
                 group.x = group.position.x;
                 group.y = group.position.y;
                 delete group.position;
+            });
+
+            mainObject.editorSettings.props.forEach(prop => {
+                prop.x = prop.position.x;
+                prop.y = prop.position.y;
+                delete prop.position;
             });
         };
 
@@ -601,67 +630,84 @@ const create = (cWidth, cHeight, gSize, bName, importObj) => {
         let keepProcess = confirm('You have started the png export process, would you like to continue?');
         if (!keepProcess) return;
         let keepBg = confirm('Would you like to keep the background in the final exported image?');
-        let keepRef = confirm('Would you like to keep the reference image in the final exported image?');
+        //let keepRef = confirm('Would you like to keep the reference image in the final exported image?');
         let keepgrid = confirm('Would you like to keep the grid in the final exported image?');
-        if (!keepRef && bgImage) bgImage.visible = false;
+        //if (!keepRef && bgImage) bgImage.visible = false;
         if (!keepgrid) grid.visible = false;
         if (!keepBg) greenbg.visible = false;
         let data = canvas.toDataURL();
         let bloburl = dataUrlToBlobUrl(data);
         window.open(bloburl, '_blank');
         alert('Image exported, if a window did not open make sure to enable pop-ups and try again!');
-        if (!keepRef && bgImage) bgImage.visible = true;
+        //if (!keepRef && bgImage) bgImage.visible = true;
         if (!keepgrid) grid.visible = true;
         if (!keepBg) greenbg.visible = true;
     }
 
-    window.bgImage = null;
-    //getElem('importbg').onclick = () => ImportBG('imp');
-    const ImportBG = (src) => {
-        let link = null;
-        if (src === 'imp') {
-            link = prompt('Please provide a valid cirect link to an image to use as a background.')
-        } else if (src && src !== '') {
-            link = src;
-        } else {
-            return;
+    window.addPropType = (type, imgUrl) => {
+        let curType = type || getElem('cPropName').value;
+        let curUrl = imgUrl || getElem('cPropUrl').value;
+        if (curType === '' || typeof (curType) === 'undefined' || curType === null) return alert('Invalid prop name')
+        if (curUrl === '' || typeof (curUrl) === 'undefined' || curUrl === null) return alert('Invalid prop url')
+        for (const i in propTypes) {
+            if (i === curType) return alert('This prop name has been used already')
         }
-        if (link === null) return;
-        console.log(link);
-        try {
-            fabric.Image.fromURL(link, function (img) {
-                img.selectable = false;
-                img.hoverCursor = 'default';
-                let scaleRatioX = cw / img.width;
-                let scaleRatioY = ch / img.height;
-                img.set({
-                    scaleX: scaleRatioX,
-                    scaleY: scaleRatioY
-                })
-                canvas.add(img);
-                img.center();
-                canvas.sendToBack(img);
-                img.bringForward();
-                bgImage = img;
-            }, { crossOrigin: 'anonymous' });
-        } catch (e) {
-            alert('There was an error loading the background image.')
-        }
-    }
-    if (importObj) {
-        ImportBG(importObj.editorSettings.bgImageUrl);
-    }
+        propTypes[curType] = curUrl;
 
-    getElem('removebg').onclick = () => RemoveBG();
-    const RemoveBG = () => {
-        canvas.remove(bgImage);
-        bgImage = null;
+        //* HTML shit
+        let holderDiv = getElem('propTypeHolder');
+
+        let mainDiv = document.createElement('div');
+        mainDiv.style.display = 'flex';
+        mainDiv.style.justifyContent = 'space-evenly';
+
+        let nameInput = document.createElement('input');
+        nameInput.classList.add('input');
+        nameInput.disabled = true;
+        nameInput.style.width = '70px';
+        nameInput.style.margin = '0px';
+        nameInput.value = curType;
+
+        let addToScene = document.createElement('button');
+        addToScene.classList.add('sbutton');
+        addToScene.style.width = '80px';
+        addToScene.style.margin = '0px';
+        addToScene.innerHTML = 'Add Prop';
+        addToScene.onclick = () => {
+            addProp(canvas, curType, curUrl);
+        }
+
+        let removeType = document.createElement('button');
+        removeType.classList.add('sbutton');
+        removeType.style.width = '100px';
+        removeType.style.margin = '0px';
+        removeType.innerHTML = 'Remove Type';
+        removeType.onclick = () => {
+            delete propTypes[curType];
+
+            props = props.filter((prop) => {
+                if (prop.propType === curType) {
+                    canvas.remove(prop);
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        }
+
+        mainDiv.append(nameInput, addToScene, removeType);
+        holderDiv.appendChild(mainDiv);
+
+        let pHHolder = getElem('propHeightHolder');
+        if (pHHolder.style.height) {
+            pHHolder.style.height = `${pHHolder.offsetHeight + mainDiv.offsetHeight}px`;
+        }
     }
+    getElem('addCurrentProp').onclick = () => addPropType();
 
     getElem('addSquare').onclick = () => addSquare(canvas);
     canvas.on({
         'object:rotating': options => {
-            console.log(options.target.type)
             switch (options.target.type) {
                 case 'group':
                     if (!settings.current.snapRotation) return;
@@ -766,16 +812,19 @@ const addSquare = (c, left, top, width, height) => {
     return mainShape;
 }
 
-const addProp = (c, src, reqGrid) => {
+const addProp = (c, type, src, reqGrid = 50, left, top, angle) => {
     let mainProp = fabric.Image.fromURL(src, function (mainImage) {
         mainImage.selectable = false;
         mainImage.hoverCursor = 'default';
-
         let ratio = c.gridSize / reqGrid;
 
+        mainImage.source = src;
+        mainImage.propType = type;
+
         mainImage.set({
-            left: 0,
-            top: 0,
+            left: left || canvas.width / 2,
+            top: top || canvas.height / 2,
+            angle: angle || 0,
             originX: 'left',
             originY: 'top',
             scaleX: ratio,
@@ -796,6 +845,7 @@ const addProp = (c, src, reqGrid) => {
         c.bitchMode = true;
         c.fire('object:scaled', { target: mainImage });
         c.bitchMode = false;
+        c.fire('object:moving', { target: mainImage });
 
         c.add(mainImage);
         c.sendToBack(mainImage);
@@ -803,6 +853,4 @@ const addProp = (c, src, reqGrid) => {
         c.bringForward(mainImage);
         c.setActiveObject(mainImage);
     }, { crossOrigin: 'anonymous' });
-
-    return mainProp;
 }

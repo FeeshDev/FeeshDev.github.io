@@ -45,6 +45,22 @@
             <div class="content cflex">
                 <button class="button" id="addSquare">Add Rectangle</button>
             </div>
+            <button class="collapsible open">Props</button>
+            <div id="propHeightHolder" class="content cflex">
+                <div>
+                    <input id="cPropName" class="input" style="width: 70px; margin: 7px 0px 0px 5px;" type="text"
+                        placeholder="Prop Name">
+                    <input id="cPropUrl" class="input" style="width: 100px; margin: 7px 0px 0px 0px;" type="text"
+                        placeholder="Prop Image URL">
+                    <button id="addCurrentProp" style="width: 40px; margin: 7px 0px 0px 0px;"
+                        class="sbutton">Add</button>
+                    <button onclick="getElem('cPropName').value = ''; getElem('cPropUrl').value = '';"
+                        style="width: 26px; margin: 7px 5px 0px 0px;" class="sbutton">X</button>
+                </div>
+                <span class="bspan">Loaded Props</span>
+                <div id="propTypeHolder" style="width: 100%;">
+                </div>
+            </div>
             <button class="collapsible open">Exporting</button>
             <div class="content cflex">
                 <span class="bspan">
@@ -128,8 +144,14 @@
     <div id="info" class="menu border">
         <span class="menu-title">Information</span>
         <div class="menu-info">
-            <button class="collapsible open">Version 1.4.4</button>
-            <div class="content">
+            <button class="collapsible open">Version 1.5.0</button>
+            <div class="content scroll">
+                <span class="bspan title">1.5.0</span>
+                <span class="bspan spar spad">
+                    - Introducing Props (W.I.P.) <br>
+                    - You can add various images to your buildings <br>
+                    - Both the types and props used are saved in your json
+                </span>
                 <span class="bspan title">1.4.4</span>
                 <span class="bspan spar spad">
                     - Revamped Menu <br>
@@ -151,21 +173,23 @@
                 </span>
             </div>
             <button class="collapsible">Bindings</button>
-            <div class="content">
+            <div class="content scroll">
                 <span class="bspan spar">
-                    Right-click on shape to remove <br>
-                    Hold Alt to move and resize by half a grid size<br>
-                    Press R to add a rectangle at the mouse position<br>
+                    Right-click on shape/prop to remove <br><br>
+                    Hold Alt to move and resize by half a grid size<br><br>
+                    Press R to add a rectangle at the mouse position<br><br>
                     Press Q and E to cycle between rectangle type
                 </span>
             </div>
             <button class="collapsible">Props</button>
-            <div class="content">
+            <div class="content scroll">
                 <span class="bspan spar">
-                    TODO Write prop info <br>
-                    TODO Write prop info <br>
-                    TODO Write prop info <br>
-                    TODO Write prop info
+                    You can add props to your project by using the props tab <br><br>
+                    You need to add a prop type, consisting of a name and an url for the image source, to be able to add
+                    it to the scene <br><br>
+                    Props and prop types are saved to your json <br><br>
+                    You cannot resize props, you may only move and rotate them 90 Degrees <br><br>
+                    You may select props by holding Control
                 </span>
             </div>
             <span class="title bspan">Credits</span>
