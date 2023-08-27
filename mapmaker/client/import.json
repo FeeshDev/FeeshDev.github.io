@@ -1,0 +1,17 @@
+{
+	"width": 36,
+	"height": 26,
+	"others": {
+		"roof": {
+			"url": "./client/builds/gymroof.png",
+			"opacity": "0.25"
+		},
+		"background": {
+			"url": "./client/builds/gym.png",
+			"opacity": "1"
+		}
+	},
+	"walls": [],
+	"ground": [],
+	"objects": []
+}

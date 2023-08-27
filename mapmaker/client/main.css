@@ -1,0 +1,91 @@
+body {
+	margin: 0px;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+* {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+	--text: #e4ecf7;
+	--background: #08111b;
+	--primary: #1a3556;
+	--secondary: #0e1d2f;
+	--accent: #447ec5;
+}
+
+html {
+	height: 100%;
+}
+
+#container {
+	background-color: var(--background);
+	height: 100%;
+}
+
+#map {
+	top: 100px;
+	left: 525px;
+	position: absolute;
+	background-color: #2D570B;
+}
+
+.innerText {
+	transform-origin: left top;
+	resize: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	background: none;
+	position: absolute;
+	vertical-align: middle;
+	display: grid;
+	align-items: center;
+
+	outline: none;
+	border: none;
+}
+
+.propSearch {
+	resize: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	position: absolute;
+	background-color: var(--primary);
+	border-radius: 0.5em;
+	border: none;
+	outline: none;
+	color: var(--text);
+	text-indent: 0.6em;
+}
+
+.propSearch::placeholder {
+	color: var(--text);
+	filter: brightness(70%);
+}
+
+.urlInput {
+	resize: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	position: absolute;
+	background-color: var(--primary);
+	border-radius: 0.3em;
+	border: none;
+	outline: none;
+	color: var(--text);
+	text-indent: 0.6em;
+}
+
+.opacityInput {
+	resize: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	position: absolute;
+	border: none;
+	outline: none;
+}

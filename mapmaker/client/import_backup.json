@@ -1,0 +1,138 @@
+{
+	"width": 36,
+	"height": 26,
+	"others": {
+		"roof": {
+			"url": "./client/builds/gymroof.png",
+			"opacity": "0.25"
+		},
+		"background": {
+			"url": "./client/builds/gym.png",
+			"opacity": "1"
+		}
+	},
+	"walls": [
+		{
+			"x": 14.5,
+			"y": 0,
+			"width": 1,
+			"height": 20
+		},
+		{
+			"x": -14.5,
+			"y": 0,
+			"width": 1,
+			"height": 20
+		},
+		{
+			"x": 3.5,
+			"y": -9.5,
+			"width": 22,
+			"height": 1
+		},
+		{
+			"x": -3.5,
+			"y": 9.5,
+			"width": 22,
+			"height": 1
+		},
+		{
+			"x": -12.5,
+			"y": -9.5,
+			"width": 4,
+			"height": 1
+		},
+		{
+			"x": 12.5,
+			"y": 9.5,
+			"width": 4,
+			"height": 1
+		}
+	],
+	"ground": [
+		{
+			"x": 0,
+			"y": 0,
+			"width": 28,
+			"height": 18
+		},
+		{
+			"x": -9,
+			"y": -9.5,
+			"width": 4,
+			"height": 3
+		},
+		{
+			"x": 9,
+			"y": 9.5,
+			"width": 4,
+			"height": 3
+		}
+	],
+	"objects": [
+		{
+			"type": "basketballnet",
+			"extra": {
+				"x": 9,
+				"y": 0.5,
+				"rotation": 0
+			}
+		},
+		{
+			"type": "basketballnet",
+			"extra": {
+				"x": -13,
+				"y": 0.5,
+				"rotation": 2
+			}
+		},
+		{
+			"type": "bench",
+			"extra": {
+				"x": -3.5,
+				"y": -7.5,
+				"rotation": 0
+			}
+		},
+		{
+			"type": "bench",
+			"extra": {
+				"x": 4.5,
+				"y": -7.5,
+				"rotation": 0
+			}
+		},
+		{
+			"type": "bench",
+			"extra": {
+				"x": 12.5,
+				"y": 0.5,
+				"rotation": 1
+			}
+		},
+		{
+			"type": "chest",
+			"extra": {
+				"x": 12.5,
+				"y": 8,
+				"rotation": 2
+			}
+		},
+		{
+			"type": "chest",
+			"extra": {
+				"x": -13,
+				"y": -7.5,
+				"rotation": 3
+			}
+		},
+		{
+			"type": "trash",
+			"extra": {
+				"x": 12.5,
+				"y": -7.5,
+				"rotation": 0
+			}
+		}
+	]
+}

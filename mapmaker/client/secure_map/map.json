@@ -1,0 +1,4957 @@
+{
+  "houses": [
+    {
+      "type": "cherryblossoms",
+      "hasRoof": false,
+      "width": null,
+      "height": null,
+      "position": [
+        2.5,
+        -90
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "cherryblossoms",
+      "hasRoof": false,
+      "width": null,
+      "height": null,
+      "position": [
+        2.5,
+        -69
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "field",
+      "hasRoof": false,
+      "position": [
+        -110.5,
+        -17
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "field",
+      "hasRoof": false,
+      "position": [
+        -123.5,
+        -17
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "field",
+      "hasRoof": false,
+      "image": "field",
+      "position": [
+        -99,
+        -82.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "field",
+      "hasRoof": false,
+      "image": "field",
+      "position": [
+        -99,
+        -95.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "dirtcurve",
+      "hasRoof": false,
+      "position": [
+        -23,
+        -33
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirtcurve",
+      "hasRoof": false,
+      "position": [
+        -120,
+        -95
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "dirtcurve",
+      "hasRoof": false,
+      "position": [
+        -93,
+        -67
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "dirtcurve",
+      "hasRoof": false,
+      "position": [
+        -22,
+        -79
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "dirtcurve",
+      "hasRoof": false,
+      "position": [
+        -120,
+        -68
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -22.5,
+        -46.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        29.5,
+        -79.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -22.5,
+        -65.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -109.5,
+        -32.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -36.5,
+        -32.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -90.5,
+        -32.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        10.5,
+        -79.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        67.5,
+        -79.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -106.5,
+        -67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -71.5,
+        -32.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -92.5,
+        -53.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        48.5,
+        -79.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -8.5,
+        -79.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "dirt",
+      "hasRoof": false,
+      "position": [
+        -120.5,
+        -81.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "dirtbridge",
+      "hasRoof": false,
+      "position": [
+        -54,
+        -32.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "lot",
+      "hasRoof": false,
+      "position": [
+        61.5,
+        6
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "lot",
+      "hasRoof": false,
+      "position": [
+        -111,
+        53
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "lot",
+      "hasRoof": false,
+      "position": [
+        110,
+        -64
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "roadcurve",
+      "hasRoof": false,
+      "position": [
+        -110.5,
+        67
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "roadcurve",
+      "hasRoof": false,
+      "position": [
+        110.5,
+        -78
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "roadcurve",
+      "hasRoof": false,
+      "position": [
+        90,
+        56
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "roadcurve",
+      "hasRoof": false,
+      "position": [
+        -4,
+        21
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "roadcurve",
+      "hasRoof": false,
+      "position": [
+        130,
+        20
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "roadcurve",
+      "hasRoof": false,
+      "position": [
+        130,
+        -78
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "roadcurve",
+      "hasRoof": false,
+      "position": [
+        -5,
+        67
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -4.5,
+        34.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        113.5,
+        20.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        130.5,
+        -65
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        117
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        108
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -78,
+        67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        130.5,
+        -54.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        100,
+        55.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        94.5,
+        20.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -18.5,
+        67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        47.5,
+        20.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        130.5,
+        -28.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        127
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -65.25,
+        67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        28.5,
+        20.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        154,
+        55.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        141,
+        55.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -54,
+        67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        141
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        9.5,
+        20.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -97,
+        67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        118,
+        20.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        154
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        130.5,
+        7.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -4.5,
+        53.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        95
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        81
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        130.5,
+        -9.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        113,
+        55.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        127,
+        55.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        -37,
+        67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        89.5,
+        67
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        120.5,
+        -78.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "road",
+      "hasRoof": false,
+      "position": [
+        75.5,
+        20.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "roadbridge",
+      "hasRoof": false,
+      "position": [
+        -54,
+        67.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "soccerfield",
+      "hasRoof": false,
+      "position": [
+        40,
+        70
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "roadcap",
+      "hasRoof": false,
+      "position": [
+        126,
+        -41.5
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "roadsection",
+      "hasRoof": false,
+      "position": [
+        130,
+        -41.5
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "roadsection",
+      "hasRoof": false,
+      "position": [
+        61.5,
+        20
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "soccergoal",
+      "hasRoof": true,
+      "position": [
+        40,
+        54
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "soccergoal",
+      "hasRoof": true,
+      "position": [
+        40,
+        86
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "barn",
+      "hasRoof": true,
+      "position": [
+        -112,
+        -50
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        -120.5,
+        -32.5
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        101,
+        7
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        78.5,
+        -79.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        100.5,
+        -100.5
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        72.5,
+        -19.5
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        -92.5,
+        -45
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        12.5,
+        -120.5
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        -114.5,
+        -95.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        -134.5,
+        105.5
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        -70.5,
+        102.5
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        -5.5,
+        145.5
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "shack",
+      "hasRoof": true,
+      "position": [
+        72.5,
+        -9.5
+      ],
+      "rotation": 3
+    },
+    {
+      "type": "cabin",
+      "hasRoof": true,
+      "position": [
+        59,
+        -93
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "house0",
+      "hasRoof": true,
+      "position": [
+        -87,
+        -20
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "japan",
+      "hasRoof": true,
+      "position": [
+        -10,
+        -69
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "japan",
+      "hasRoof": true,
+      "position": [
+        15,
+        -69
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "japan",
+      "hasRoof": true,
+      "position": [
+        15,
+        -90
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "japan",
+      "hasRoof": true,
+      "position": [
+        -10,
+        -90
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "gym",
+      "hasRoof": true,
+      "position": [
+        -111,
+        30
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "house0",
+      "hasRoof": true,
+      "image": "house3",
+      "position": [
+        -80,
+        40
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "house0",
+      "hasRoof": true,
+      "image": "house3",
+      "position": [
+        104,
+        73
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "pavilion",
+      "hasRoof": true,
+      "position": [
+        20,
+        70
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "potatopalace",
+      "hasRoof": true,
+      "position": [
+        55,
+        -14
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "house2",
+      "hasRoof": true,
+      "position": [
+        100,
+        41
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "house1",
+      "hasRoof": true,
+      "position": [
+        104,
+        100
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "house1",
+      "hasRoof": true,
+      "image": "house5",
+      "position": [
+        74,
+        73
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "house1",
+      "hasRoof": true,
+      "image": "house4",
+      "position": [
+        74,
+        100
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "castletopleft",
+      "hasRoof": true,
+      "position": [
+        -20.5,
+        -20
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "castletopright",
+      "hasRoof": true,
+      "position": [
+        -4.5,
+        -14
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "jungle",
+      "hasRoof": true,
+      "position": [
+        -31,
+        120
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "jungle",
+      "hasRoof": true,
+      "position": [
+        -28,
+        100
+      ],
+      "rotation": 1
+    },
+    {
+      "type": "jungle",
+      "hasRoof": true,
+      "position": [
+        -14,
+        120
+      ],
+      "rotation": 2
+    },
+    {
+      "type": "castlecenter",
+      "hasRoof": true,
+      "position": [
+        -16,
+        -9
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "castlebottomright",
+      "hasRoof": true,
+      "position": [
+        -11.5,
+        2
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "castlebottomleft",
+      "hasRoof": true,
+      "position": [
+        -27.5,
+        -4
+      ],
+      "rotation": 0
+    },
+    {
+      "type": "museum",
+      "hasRoof": true,
+      "position": [
+        110,
+        -37
+      ],
+      "rotation": 3
+    }
+  ],
+  "houseCreation": {
+    "barn": {
+      "width": 20,
+      "height": 30,
+      "walls": [
+        {
+          "x": 7.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 21
+        },
+        {
+          "x": -7.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 21
+        },
+        {
+          "x": -5.5,
+          "y": -10.5,
+          "width": 5,
+          "height": 1
+        },
+        {
+          "x": 5.5,
+          "y": -10.5,
+          "width": 5,
+          "height": 1
+        },
+        {
+          "x": -5.5,
+          "y": 9.5,
+          "width": 5,
+          "height": 1
+        },
+        {
+          "x": 5,
+          "y": 9.5,
+          "width": 4,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 13,
+          "height": 19
+        },
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 8,
+          "height": 25
+        }
+      ],
+      "objects": [
+        {
+          "type": "silo",
+          "extra": {
+            "x": 12.5,
+            "y": -10
+          }
+        },
+        {
+          "type": "silo",
+          "extra": {
+            "x": 12.5,
+            "y": -2
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 0,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 3,
+            "y": 0.6,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 3,
+            "y": -1.6,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 2.6,
+            "y": 2.4
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 2.6,
+            "y": -3.4
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -3,
+            "y": 0.6,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -3,
+            "y": -1.6,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -2.6,
+            "y": 2.4
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -2.6,
+            "y": -3.4
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.35,
+          "extra": {
+            "x": 5.5,
+            "y": 8,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 3.5,
+            "y": 8,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 3.9,
+            "y": 6.2
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.35,
+          "extra": {
+            "x": -5.5,
+            "y": 8,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -3.5,
+            "y": 8,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -3.9,
+            "y": 6.2
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.35,
+          "extra": {
+            "x": 5.5,
+            "y": -9
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 3.5,
+            "y": -9,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": 3.9,
+            "y": -7.2
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.35,
+          "extra": {
+            "x": -5.5,
+            "y": -9
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -3.5,
+            "y": -9,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "hay",
+          "extra": {
+            "x": -3.9,
+            "y": -7.2
+          }
+        }
+      ]
+    },
+    "patch": {
+      "walls": [],
+      "ground": [],
+      "objects": [
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": -8.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": -4.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": 3.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": 7.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": -6.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": -2.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": 1.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": 5.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": -8.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": -4.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": 3.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": 7.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": -6.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": -2.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": 1.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": 5.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": -8.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": -4.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": 3.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": 7.5
+          }
+        }
+      ]
+    },
+    "field": {
+      "width": 11,
+      "height": 20,
+      "walls": [],
+      "ground": [],
+      "objects": [
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": -8.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": -4.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": 3.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -4,
+            "y": 7.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": -6.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": -2.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": 1.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": -2,
+            "y": 5.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": -8.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": -4.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": 3.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 0,
+            "y": 7.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": -6.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": -2.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": 1.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 2,
+            "y": 5.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": -8.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": -4.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": 3.5
+          }
+        },
+        {
+          "type": "corn",
+          "extra": {
+            "x": 4,
+            "y": 7.5
+          }
+        }
+      ]
+    },
+    "shack": {
+      "width": 9,
+      "height": 9,
+      "walls": [
+        {
+          "x": 0,
+          "y": -3,
+          "width": 6,
+          "height": 1
+        },
+        {
+          "x": 3,
+          "y": -0.5,
+          "width": 1,
+          "height": 6
+        },
+        {
+          "x": -3,
+          "y": -0.5,
+          "width": 1,
+          "height": 6
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": -2,
+          "y": 2,
+          "width": 2,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 5,
+          "height": 4
+        },
+        {
+          "x": 0,
+          "y": 2.5,
+          "width": 3,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.7,
+          "extra": {
+            "x": 0,
+            "y": -1,
+            "rotation": 4
+          }
+        }
+      ]
+    },
+    "japan": {
+      "width": 13,
+      "height": 13,
+      "walls": [
+        {
+          "x": 3.5,
+          "y": -4.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": -4.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": 4.5,
+          "y": 0,
+          "width": 1,
+          "height": 10
+        },
+        {
+          "x": -4.5,
+          "y": 0,
+          "width": 1,
+          "height": 10
+        },
+        {
+          "x": 3.5,
+          "y": 4.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": 4.5,
+          "width": 3,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 8,
+          "height": 8
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "width": 6,
+          "height": 2.5
+        },
+        {
+          "x": 0,
+          "y": -5,
+          "width": 6,
+          "height": 2.5
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.7,
+          "extra": {
+            "x": 0,
+            "y": 0,
+            "rotation": 4
+          }
+        }
+      ]
+    },
+    "house0": {
+      "width": 26,
+      "height": 20,
+      "walls": [
+        {
+          "x": -0.5,
+          "y": 0.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": -1.5,
+          "y": -3,
+          "width": 1,
+          "height": 8
+        },
+        {
+          "x": 3.5,
+          "y": -3,
+          "width": 1,
+          "height": 8
+        },
+        {
+          "x": 8,
+          "y": 0.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": -7.5,
+          "y": -7.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": 3.5,
+          "y": -7.5,
+          "width": 12,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 7.5,
+          "y": 6.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": 6.5,
+          "width": 12,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 7.5,
+          "y": -7.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": -7.5,
+          "y": 6.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 0,
+          "y": -7.5,
+          "width": 6,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 0,
+          "y": 6.5,
+          "width": 6,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 7,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": -7,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": 6,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 7,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": -7,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": 6,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 18,
+          "height": 13
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": 4,
+          "y": -8,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": -4,
+          "y": -8,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": -4,
+          "y": 7,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": 10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 0.5,
+            "y": -6,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 8,
+            "y": -1.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "couch",
+          "extra": {
+            "x": 7.7,
+            "y": 3.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": -6,
+            "y": 2.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -6,
+            "y": 0.3,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -6,
+            "y": 4.7,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -7.7,
+            "y": 2.5,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -4.3,
+            "y": 2.5,
+            "rotation": 1
+          }
+        }
+      ]
+    },
+    "house1": {
+      "width": 26,
+      "height": 20,
+      "walls": [
+        {
+          "x": 3.5,
+          "y": -3,
+          "width": 1,
+          "height": 8
+        },
+        {
+          "x": 7.5,
+          "y": 0.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": 2,
+          "width": 1,
+          "height": 8
+        },
+        {
+          "x": -7.5,
+          "y": -1.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": -7.5,
+          "y": -7.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": 3.5,
+          "y": -7.5,
+          "width": 12,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 7.5,
+          "y": 6.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": 6.5,
+          "width": 12,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 7.5,
+          "y": -7.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": -7.5,
+          "y": 6.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 0,
+          "y": -7.5,
+          "width": 6,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 0,
+          "y": 6.5,
+          "width": 6,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 7,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": -7,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": 6,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 7,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": -7,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": 6,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 18,
+          "height": 13
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": 4,
+          "y": -8,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": -4,
+          "y": -8,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": -4,
+          "y": 7,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": 10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 7.5,
+            "y": -6,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": -7.5,
+            "y": 5,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "couch",
+          "extra": {
+            "x": -7.7,
+            "y": -4.5,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "couch",
+          "extra": {
+            "x": 7.7,
+            "y": 3.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": 0,
+            "y": 2.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 0,
+            "y": 0.3,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 0,
+            "y": 4.7,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -1.7,
+            "y": 2.5,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 1.7,
+            "y": 2.5,
+            "rotation": 1
+          }
+        }
+      ]
+    },
+    "house2": {
+      "width": 26,
+      "height": 20,
+      "walls": [
+        {
+          "x": -2.5,
+          "y": 0.5,
+          "width": 13,
+          "height": 1
+        },
+        {
+          "x": 7.5,
+          "y": 0.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": -0.5,
+          "y": -4.5,
+          "width": 1,
+          "height": 5
+        },
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": -7.5,
+          "y": -7.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": 3.5,
+          "y": -7.5,
+          "width": 12,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 7.5,
+          "y": 6.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": 6.5,
+          "width": 12,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 7.5,
+          "y": -7.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": -7.5,
+          "y": 6.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 0,
+          "y": -7.5,
+          "width": 6,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 0,
+          "y": 6.5,
+          "width": 6,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 7,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": -7,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": 6,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 7,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": -7,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": 6,
+          "width": 1,
+          "height": 2,
+          "bullet": true
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 18,
+          "height": 13
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": 4,
+          "y": -8,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": -4,
+          "y": -8,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": -4,
+          "y": 7,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": 10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 1.5,
+            "y": -6,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": -8,
+            "y": 3.5,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "couch",
+          "extra": {
+            "x": -7.7,
+            "y": -4.5,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "couch",
+          "extra": {
+            "x": 7.7,
+            "y": 3.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": 6,
+            "y": -3.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 6,
+            "y": -5.7,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 6,
+            "y": -1.3,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 4.3,
+            "y": -3.5,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 7.7,
+            "y": -3.5,
+            "rotation": 1
+          }
+        }
+      ]
+    },
+    "emptyhouse": {
+      "walls": [
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15
+        },
+        {
+          "x": -7.5,
+          "y": -7.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": 3.5,
+          "y": -7.5,
+          "width": 12,
+          "height": 1
+        },
+        {
+          "x": 7.5,
+          "y": 6.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": 6.5,
+          "width": 12,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 18,
+          "height": 13
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": 4,
+          "y": -8,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": -4,
+          "y": -8,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": -4,
+          "y": 7,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": 10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": 4,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": -5,
+          "width": 1,
+          "height": 2
+        }
+      ],
+      "objects": []
+    },
+    "potatopalace": {
+      "width": 26,
+      "height": 20,
+      "walls": [
+        {
+          "x": -3.5,
+          "y": -7.5,
+          "width": 13,
+          "height": 1
+        },
+        {
+          "x": 7.5,
+          "y": -7.5,
+          "width": 5,
+          "height": 1
+        },
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15
+        },
+        {
+          "x": 6,
+          "y": 6.5,
+          "width": 8,
+          "height": 1
+        },
+        {
+          "x": -6,
+          "y": 6.5,
+          "width": 8,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 18,
+          "height": 13
+        },
+        {
+          "x": 4,
+          "y": -7.5,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": 0,
+          "y": 7.5,
+          "width": 5,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 8,
+            "y": -5.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "counter",
+          "extra": {
+            "x": 3,
+            "y": -4
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": 5.5,
+            "y": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 5.5,
+            "y": 1.3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 7.7,
+            "y": 3,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 5.5,
+            "y": 4.7,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 3.3,
+            "y": 3,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": -5.5,
+            "y": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -5.5,
+            "y": 1.3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -7.7,
+            "y": 3,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -5.5,
+            "y": 4.7,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -3.3,
+            "y": 3,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": -5.5,
+            "y": -4
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -5.5,
+            "y": -2.3,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -7.7,
+            "y": -4,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -5.5,
+            "y": -5.7
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -3.3,
+            "y": -4,
+            "rotation": 1
+          }
+        }
+      ]
+    },
+    "container": {
+      "walls": [
+        {
+          "x": 0,
+          "y": -2,
+          "width": 10.5,
+          "height": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "width": 10.5,
+          "height": 1
+        },
+        {
+          "x": -5,
+          "y": -1,
+          "width": 0.5,
+          "height": 2
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "width": 0.5,
+          "height": 2
+        },
+        {
+          "x": 6.25,
+          "y": -1,
+          "width": 2,
+          "height": 0.5,
+          "rotation": 0.5
+        },
+        {
+          "x": -6.25,
+          "y": 1,
+          "width": 2,
+          "height": 0.5,
+          "rotation": 0.5
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 12,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.4,
+          "extra": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0
+          }
+        }
+      ]
+    },
+    "jungle": {
+      "width": 12,
+      "height": 18,
+      "walls": [
+        {
+          "x": 4.5,
+          "y": 0,
+          "width": 1,
+          "height": 4
+        },
+        {
+          "x": -4.5,
+          "y": 0,
+          "width": 1,
+          "height": 4
+        },
+        {
+          "x": 4.5,
+          "y": 5.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": -4.5,
+          "y": 5.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": 3,
+          "y": 6.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": -3,
+          "y": 6.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": 4.5,
+          "y": -5.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": -4.5,
+          "y": -5.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": -2,
+          "y": -6.5,
+          "width": 6,
+          "height": 1
+        },
+        {
+          "x": 4,
+          "y": -6.5,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": 4.5,
+          "y": -3,
+          "width": 1,
+          "height": 2,
+          "bullet": false
+        },
+        {
+          "x": -4.5,
+          "y": -3,
+          "width": 1,
+          "height": 2,
+          "bullet": false
+        },
+        {
+          "x": 4.5,
+          "y": 3,
+          "width": 1,
+          "height": 2,
+          "bullet": false
+        },
+        {
+          "x": -4.5,
+          "y": 3,
+          "width": 1,
+          "height": 2,
+          "bullet": false
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 8,
+          "height": 12
+        },
+        {
+          "x": 0,
+          "y": -3,
+          "width": 12,
+          "height": 3
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "width": 12,
+          "height": 3
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "width": 4,
+          "height": 2
+        },
+        {
+          "x": 2,
+          "y": -7,
+          "width": 4,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.4,
+          "extra": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "junglecouch",
+          "extra": {
+            "x": -1.6,
+            "y": -5,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "desk",
+          "extra": {
+            "x": -2.6,
+            "y": 5.3,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "desk",
+          "extra": {
+            "x": 2.6,
+            "y": 5.3,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -2.6,
+            "y": 4,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 2.6,
+            "y": 4,
+            "rotation": 0
+          }
+        }
+      ]
+    },
+    "gym": {
+      "width": 36,
+      "height": 26,
+      "walls": [
+        {
+          "x": 14.5,
+          "y": 0,
+          "width": 1,
+          "height": 20
+        },
+        {
+          "x": -14.5,
+          "y": 0,
+          "width": 1,
+          "height": 20
+        },
+        {
+          "x": 3.5,
+          "y": -9.5,
+          "width": 22,
+          "height": 1
+        },
+        {
+          "x": -3.5,
+          "y": 9.5,
+          "width": 22,
+          "height": 1
+        },
+        {
+          "x": -12.5,
+          "y": -9.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": 12.5,
+          "y": 9.5,
+          "width": 4,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 28,
+          "height": 18
+        },
+        {
+          "x": -9,
+          "y": -9.5,
+          "width": 4,
+          "height": 3
+        },
+        {
+          "x": 9,
+          "y": 9.5,
+          "width": 4,
+          "height": 3
+        }
+      ],
+      "objects": [
+        {
+          "type": "basketballnet",
+          "extra": {
+            "x": 9,
+            "y": 0.5
+          }
+        },
+        {
+          "type": "basketballnet",
+          "extra": {
+            "x": -13,
+            "y": 0.5,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "bench",
+          "extra": {
+            "x": -3.5,
+            "y": -7.5,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "bench",
+          "extra": {
+            "x": 4.5,
+            "y": -7.5,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "trash",
+          "extra": {
+            "x": 12.5,
+            "y": -7.5,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "bench",
+          "extra": {
+            "x": 12.5,
+            "y": 0.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 12.5,
+            "y": 8,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": -13,
+            "y": -7.5,
+            "rotation": 3
+          }
+        }
+      ]
+    },
+    "cabin": {
+      "width": 26,
+      "height": 20,
+      "walls": [
+        {
+          "x": 9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": -9.5,
+          "y": -0.5,
+          "width": 1,
+          "height": 15,
+          "bullet": false
+        },
+        {
+          "x": 9.5,
+          "y": 3.75,
+          "width": 1,
+          "height": 6.5,
+          "bullet": true
+        },
+        {
+          "x": 9.5,
+          "y": -4.75,
+          "width": 1,
+          "height": 6.5,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": 3.75,
+          "width": 1,
+          "height": 6.5,
+          "bullet": true
+        },
+        {
+          "x": -9.5,
+          "y": -4.75,
+          "width": 1,
+          "height": 6.5,
+          "bullet": true
+        },
+        {
+          "x": -7.5,
+          "y": -7.5,
+          "width": 5,
+          "height": 1
+        },
+        {
+          "x": 3.5,
+          "y": -7.5,
+          "width": 13,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 0.5,
+          "y": -7.5,
+          "width": 7,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 8,
+          "y": -7.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 5.5,
+          "y": 6.5,
+          "width": 9,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": 8,
+          "y": 6.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": -5.5,
+          "y": 6.5,
+          "width": 9,
+          "height": 1,
+          "bullet": false
+        },
+        {
+          "x": -8,
+          "y": 6.5,
+          "width": 4,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 2.5,
+          "y": 6.5,
+          "width": 3,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": -2.5,
+          "y": 6.5,
+          "width": 3,
+          "height": 1,
+          "bullet": true
+        },
+        {
+          "x": 3.5,
+          "y": 2.5,
+          "width": 1,
+          "height": 9
+        },
+        {
+          "x": 8,
+          "y": -1.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": -6.5,
+          "y": 0.5,
+          "width": 3,
+          "height": 1
+        },
+        {
+          "x": -5.5,
+          "y": -3.5,
+          "width": 1,
+          "height": 9
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": -0.5,
+          "width": 18,
+          "height": 13
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": 5,
+          "y": -8,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": -4,
+          "y": -8,
+          "width": 3,
+          "height": 2
+        },
+        {
+          "x": -5,
+          "y": 7,
+          "width": 2,
+          "height": 1
+        },
+        {
+          "x": 10,
+          "y": -0.5,
+          "width": 1,
+          "height": 2
+        },
+        {
+          "x": -10,
+          "y": -0.5,
+          "width": 1,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": -7.5,
+            "y": -6,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chest",
+          "spawnRate": 0.75,
+          "extra": {
+            "x": 7.5,
+            "y": 5,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "couch",
+          "extra": {
+            "x": 7.7,
+            "y": -4.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "couch",
+          "extra": {
+            "x": -6.5,
+            "y": 4.7,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": -1,
+            "y": -0.5,
+            "rotation": 1
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -1,
+            "y": -2.7,
+            "rotation": 0
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -1,
+            "y": 1.7,
+            "rotation": 2
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -2.7,
+            "y": -0.5,
+            "rotation": 3
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": 0.7,
+            "y": -0.5,
+            "rotation": 1
+          }
+        }
+      ]
+    },
+    "dirtbridge": {
+      "width": 16,
+      "height": 7,
+      "walls": [
+        {
+          "x": 0,
+          "y": -3,
+          "width": 16,
+          "height": 1
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "width": 16,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 16,
+          "height": 5
+        }
+      ],
+      "objects": []
+    },
+    "roadbridge": {
+      "width": 16,
+      "height": 11,
+      "walls": [
+        {
+          "x": 0,
+          "y": -3,
+          "width": 16,
+          "height": 1
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "width": 16,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 16,
+          "height": 5
+        }
+      ],
+      "objects": []
+    },
+    "pool": {
+      "walls": [],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 18,
+          "height": 12
+        }
+      ],
+      "objects": []
+    },
+    "soccergoal": {
+      "width": 8,
+      "height": 4,
+      "walls": [
+        {
+          "x": 0,
+          "y": 1.5,
+          "width": 8,
+          "height": 1
+        },
+        {
+          "x": 3.5,
+          "y": 0,
+          "width": 1,
+          "height": 4
+        },
+        {
+          "x": -3.5,
+          "y": 0,
+          "width": 1,
+          "height": 4
+        }
+      ],
+      "ground": [],
+      "objects": []
+    },
+    "castletopleft": {
+      "width": 23,
+      "height": 10,
+      "walls": [
+        {
+          "x": -3,
+          "y": -2.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": -3,
+          "y": 3.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": -10,
+          "y": 0.5,
+          "width": 1,
+          "height": 9
+        },
+        {
+          "x": -6.5,
+          "y": -3.5,
+          "width": 6,
+          "height": 1
+        },
+        {
+          "x": -6.5,
+          "y": 4.5,
+          "width": 6,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": -6.5,
+          "y": 0.5,
+          "width": 6,
+          "height": 7
+        },
+        {
+          "x": -3,
+          "y": 0.5,
+          "width": 2,
+          "height": 4
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.7,
+          "extra": {
+            "x": -6.5,
+            "y": 0.5,
+            "rotation": 3
+          }
+        }
+      ]
+    },
+    "castletopright": {
+      "width": 9,
+      "height": 22,
+      "walls": [
+        {
+          "x": -4,
+          "y": -8.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": -4,
+          "y": -2.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": 3,
+          "y": -5.5,
+          "width": 1,
+          "height": 9
+        },
+        {
+          "x": -0.5,
+          "y": -9.5,
+          "width": 6,
+          "height": 1
+        },
+        {
+          "x": -0.5,
+          "y": -1.5,
+          "width": 6,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": -0.5,
+          "y": -5.5,
+          "width": 6,
+          "height": 7
+        },
+        {
+          "x": -4,
+          "y": -5.5,
+          "width": 2,
+          "height": 4
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.7,
+          "extra": {
+            "x": -0.5,
+            "y": -5.5,
+            "rotation": 1
+          }
+        }
+      ]
+    },
+    "castlecenter": {
+      "width": 14,
+      "height": 12,
+      "walls": [
+        {
+          "x": -2,
+          "y": -4.5,
+          "width": 8,
+          "height": 1
+        },
+        {
+          "x": 5.5,
+          "y": 0,
+          "width": 1,
+          "height": 10
+        },
+        {
+          "x": -5.5,
+          "y": 0,
+          "width": 1,
+          "height": 10
+        },
+        {
+          "x": 4,
+          "y": 4.5,
+          "width": 4,
+          "height": 1
+        },
+        {
+          "x": -4,
+          "y": 4.5,
+          "width": 4,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 10,
+          "height": 8
+        },
+        {
+          "x": 0,
+          "y": 4.5,
+          "width": 5,
+          "height": 2
+        },
+        {
+          "x": 3,
+          "y": -4.5,
+          "width": 4,
+          "height": 2
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.7,
+          "extra": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0
+          }
+        }
+      ]
+    },
+    "castlebottomleft": {
+      "width": 9,
+      "height": 22,
+      "walls": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": 4,
+          "y": 8.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": -3,
+          "y": 5.5,
+          "width": 1,
+          "height": 9
+        },
+        {
+          "x": 0.5,
+          "y": 1.5,
+          "width": 6,
+          "height": 1
+        },
+        {
+          "x": 0.5,
+          "y": 9.5,
+          "width": 6,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0.5,
+          "y": 5.5,
+          "width": 6,
+          "height": 7
+        },
+        {
+          "x": 4,
+          "y": 5.5,
+          "width": 2,
+          "height": 4
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.7,
+          "extra": {
+            "x": 0.5,
+            "y": 5.5,
+            "rotation": 3
+          }
+        }
+      ]
+    },
+    "castlebottomright": {
+      "width": 23,
+      "height": 10,
+      "walls": [
+        {
+          "x": 3,
+          "y": -3.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": 3,
+          "y": 2.5,
+          "width": 1,
+          "height": 3
+        },
+        {
+          "x": 10,
+          "y": -0.5,
+          "width": 1,
+          "height": 9
+        },
+        {
+          "x": 6.5,
+          "y": -4.5,
+          "width": 6,
+          "height": 1
+        },
+        {
+          "x": 6.5,
+          "y": 3.5,
+          "width": 6,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 6.5,
+          "y": -0.5,
+          "width": 6,
+          "height": 7
+        },
+        {
+          "x": 3,
+          "y": -0.5,
+          "width": 2,
+          "height": 4
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "spawnRate": 0.7,
+          "extra": {
+            "x": 6.5,
+            "y": -0.5,
+            "rotation": 1
+          }
+        }
+      ]
+    },
+    "pavilion": {
+      "width": 20,
+      "height": 14,
+      "walls": [
+        {
+          "x": -7.5,
+          "y": 4.5,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "x": 7.5,
+          "y": 4.5,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "x": -7.5,
+          "y": -4.5,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "x": 7.5,
+          "y": -4.5,
+          "width": 1,
+          "height": 1
+        }
+      ],
+      "ground": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 18,
+          "height": 12
+        }
+      ],
+      "objects": [
+        {
+          "type": "metalbench",
+          "extra": {
+            "x": -4,
+            "y": -3
+          }
+        },
+        {
+          "type": "metalbench",
+          "extra": {
+            "x": 4,
+            "y": -3
+          }
+        },
+        {
+          "type": "metalbench",
+          "extra": {
+            "x": -4,
+            "y": 3
+          }
+        },
+        {
+          "type": "metalbench",
+          "extra": {
+            "x": 4,
+            "y": 3
+          }
+        }
+      ]
+    },
+    "brokenshabbyhalf": {
+      "walls": [
+        {
+          "width": 1,
+          "height": 2,
+          "x": -5,
+          "y": 7.5
+        },
+        {
+          "width": 4,
+          "height": 1,
+          "x": -6.5,
+          "y": 8
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "x": -8.5,
+          "y": 2
+        },
+        {
+          "width": 1,
+          "height": 5,
+          "x": 10,
+          "y": 4
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 9.5,
+          "y": 2
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "x": -2,
+          "y": -8
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "x": -3,
+          "y": -3
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 2.5,
+          "y": -2
+        },
+        {
+          "width": 1,
+          "height": 2,
+          "x": 3,
+          "y": -2.5
+        }
+      ],
+      "ground": [],
+      "objects": [
+        {
+          "type": "barrier",
+          "extra": {
+            "x": -12,
+            "y": 5
+          }
+        },
+        {
+          "type": "barrier",
+          "extra": {
+            "x": -12,
+            "y": -6
+          }
+        },
+        {
+          "type": "barrier",
+          "extra": {
+            "x": 12,
+            "y": 5
+          }
+        },
+        {
+          "type": "barrier",
+          "extra": {
+            "rotation": 1,
+            "x": -5,
+            "y": -10
+          }
+        },
+        {
+          "type": "barrier",
+          "extra": {
+            "rotation": 1,
+            "x": 5,
+            "y": -10
+          }
+        },
+        {
+          "type": "barrier",
+          "extra": {
+            "x": 12,
+            "y": -6
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 3,
+            "x": -8,
+            "y": 5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "x": 0,
+            "y": -6
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 1,
+            "x": 8,
+            "y": 5
+          }
+        }
+      ]
+    },
+    "foundation": {
+      "walls": [
+        {
+          "width": 3.5,
+          "height": 1,
+          "x": -18.25,
+          "y": -8.5
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "bullet": false,
+          "x": -15,
+          "y": -8.5
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "bullet": false,
+          "x": -5.5,
+          "y": -13.5
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "bullet": false,
+          "x": 4.5,
+          "y": -13.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "bullet": false,
+          "x": 9.5,
+          "y": -4
+        },
+        {
+          "width": 2.5,
+          "height": 1,
+          "x": -12.25,
+          "y": -8.5
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": -8,
+          "y": -13.5
+        },
+        {
+          "width": 1,
+          "height": 2,
+          "x": -8.5,
+          "y": -12
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": -10,
+          "y": -11.5
+        },
+        {
+          "width": 1,
+          "height": 9,
+          "x": -10.5,
+          "y": -6.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "x": -3.5,
+          "y": 0.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "x": 2.5,
+          "y": 0.5
+        },
+        {
+          "width": 19,
+          "height": 1,
+          "x": -0.5,
+          "y": 2.5
+        },
+        {
+          "width": 1,
+          "height": 8.5,
+          "x": 9.5,
+          "y": 1.75
+        },
+        {
+          "width": 1,
+          "height": 5.5,
+          "x": 9.5,
+          "y": -8.25
+        },
+        {
+          "width": 1,
+          "height": 5,
+          "x": 9.5,
+          "y": 11.5
+        },
+        {
+          "width": 8,
+          "height": 1,
+          "x": 5,
+          "y": 13.5
+        },
+        {
+          "width": 18,
+          "height": 1,
+          "x": -11,
+          "y": 13.5
+        },
+        {
+          "width": 1,
+          "height": 4,
+          "x": -10.5,
+          "y": 11
+        },
+        {
+          "width": 1,
+          "height": 21,
+          "x": -19.5,
+          "y": 2.5
+        },
+        {
+          "width": 1,
+          "height": 5,
+          "x": -10.5,
+          "y": 3.5
+        },
+        {
+          "width": 2,
+          "height": 2,
+          "x": -5,
+          "y": 6
+        },
+        {
+          "width": 2,
+          "height": 2,
+          "x": 4,
+          "y": 6
+        },
+        {
+          "width": 2,
+          "height": 2,
+          "x": 4,
+          "y": -8
+        },
+        {
+          "width": 2,
+          "height": 2,
+          "x": -5,
+          "y": -8
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": -3,
+          "y": -13.5
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 2,
+          "y": -13.5
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 7,
+          "y": -13.5
+        },
+        {
+          "width": 1,
+          "height": 2,
+          "x": 7.5,
+          "y": -12
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 9,
+          "y": -11.5
+        }
+      ],
+      "ground": [],
+      "objects": [
+        {
+          "type": "specialdumpster",
+          "extra": {
+            "rotation": 1.5,
+            "x": 19,
+            "y": 12
+          }
+        },
+        {
+          "type": "planks",
+          "extra": {
+            "rotation": 3,
+            "x": -17,
+            "y": -11
+          }
+        },
+        {
+          "type": "planks",
+          "extra": {
+            "x": -8,
+            "y": -8
+          }
+        },
+        {
+          "type": "steel",
+          "extra": {
+            "x": -17,
+            "y": -2
+          }
+        },
+        {
+          "type": "steel",
+          "extra": {
+            "x": -18,
+            "y": -3
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 1,
+            "x": 7,
+            "y": -9
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 1.5,
+            "x": 19,
+            "y": 12
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 2,
+            "x": 6.5,
+            "y": 11.5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 2,
+            "x": -13,
+            "y": 11.5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 2,
+            "x": -8,
+            "y": 11.5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 2,
+            "x": -0.5,
+            "y": 1
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 2,
+            "x": -17,
+            "y": 11.5
+          }
+        },
+        {
+          "type": "metalbench",
+          "extra": {
+            "rotation": 3,
+            "x": 16.5,
+            "y": -2
+          }
+        },
+        {
+          "type": "metalbench",
+          "extra": {
+            "rotation": 3,
+            "x": 16.5,
+            "y": 3
+          }
+        },
+        {
+          "type": "barrier",
+          "extra": {
+            "rotation": 3,
+            "x": -0.5,
+            "y": -0.5
+          }
+        },
+        {
+          "type": "crate",
+          "extra": {
+            "rotation": 1,
+            "x": 7.5,
+            "y": 4.5
+          }
+        },
+        {
+          "type": "crate",
+          "extra": {
+            "rotation": 1,
+            "x": -15,
+            "y": -6
+          }
+        },
+        {
+          "type": "crate",
+          "extra": {
+            "x": -8.5,
+            "y": 0.5
+          }
+        },
+        {
+          "type": "trash",
+          "extra": {
+            "x": 7.5,
+            "y": 0.5
+          }
+        },
+        {
+          "type": "brickpile",
+          "extra": {
+            "x": -12.5,
+            "y": -6
+          }
+        },
+        {
+          "type": "table",
+          "extra": {
+            "x": -0.5,
+            "y": 8.5
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "rotation": 3,
+            "x": -3,
+            "y": 8.5
+          }
+        },
+        {
+          "type": "chair",
+          "extra": {
+            "x": -0.5,
+            "y": 6.5
+          }
+        },
+        {
+          "type": "bluecontainer",
+          "extra": {
+            "x": 19,
+            "y": -9
+          }
+        },
+        {
+          "type": "redcontainer",
+          "extra": {
+            "x": 14,
+            "y": -9
+          }
+        },
+        {
+          "type": "marble",
+          "extra": {
+            "x": -0.5,
+            "y": -4
+          }
+        }
+      ]
+    },
+    "museum": {
+      "width": 38,
+      "height": 32,
+      "walls": [
+        {
+          "width": 3.5,
+          "height": 1,
+          "x": -13.25,
+          "y": -8.5
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "bullet": false,
+          "x": -10,
+          "y": -8.5
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "bullet": false,
+          "x": -0.5,
+          "y": -13.5
+        },
+        {
+          "width": 3,
+          "height": 1,
+          "bullet": false,
+          "x": 9.5,
+          "y": -13.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "bullet": false,
+          "x": 14.5,
+          "y": -1.5
+        },
+        {
+          "width": 2.5,
+          "height": 1,
+          "x": -7.25,
+          "y": -8.5
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": -3,
+          "y": -13.5
+        },
+        {
+          "width": 1,
+          "height": 2,
+          "x": -3.5,
+          "y": -12
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": -5,
+          "y": -11.5
+        },
+        {
+          "width": 1,
+          "height": 9,
+          "x": -5.5,
+          "y": -6.5
+        },
+        {
+          "width": 19,
+          "height": 1,
+          "x": 4.5,
+          "y": 2.5
+        },
+        {
+          "width": 1,
+          "height": 6,
+          "x": 14.5,
+          "y": 3
+        },
+        {
+          "width": 1,
+          "height": 2,
+          "x": 14.5,
+          "y": -10
+        },
+        {
+          "width": 1,
+          "height": 5,
+          "x": 14.5,
+          "y": 11.5
+        },
+        {
+          "width": 6,
+          "height": 1,
+          "x": 11,
+          "y": 13.5
+        },
+        {
+          "width": 16,
+          "height": 1,
+          "x": -7,
+          "y": 13.5
+        },
+        {
+          "width": 1,
+          "height": 4,
+          "x": -5.5,
+          "y": 11
+        },
+        {
+          "width": 1,
+          "height": 21,
+          "x": -14.5,
+          "y": 2.5
+        },
+        {
+          "width": 1,
+          "height": 5,
+          "x": -5.5,
+          "y": 3.5
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 2,
+          "y": -13.5
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 7,
+          "y": -13.5
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 12,
+          "y": -13.5
+        },
+        {
+          "width": 1,
+          "height": 2,
+          "x": 12.5,
+          "y": -12
+        },
+        {
+          "width": 2,
+          "height": 1,
+          "x": 14,
+          "y": -11.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "bullet": false,
+          "x": 14.5,
+          "y": -7.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "x": 14.5,
+          "y": -4.5
+        }
+      ],
+      "ground": [
+        {
+          "width": 8,
+          "height": 21,
+          "x": -10,
+          "y": 2.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "x": -5.5,
+          "y": -0.5
+        },
+        {
+          "width": 1,
+          "height": 3,
+          "x": -5.5,
+          "y": 7.5
+        },
+        {
+          "width": 19,
+          "height": 10,
+          "x": 4.5,
+          "y": 8
+        },
+        {
+          "width": 2,
+          "height": 3,
+          "x": 15,
+          "y": 7.5
+        },
+        {
+          "width": 7,
+          "height": 2,
+          "x": 4.5,
+          "y": 14
+        },
+        {
+          "width": 3,
+          "height": 2,
+          "x": 4.5,
+          "y": -14
+        },
+        {
+          "width": 15,
+          "height": 2,
+          "x": 4.5,
+          "y": -12
+        },
+        {
+          "width": 19,
+          "height": 13,
+          "x": 4.5,
+          "y": -4.5
+        },
+        {
+          "width": 1.5,
+          "height": 3,
+          "x": 14.75,
+          "y": -7.5
+        },
+        {
+          "width": 1.5,
+          "height": 3,
+          "x": 14.75,
+          "y": -1.5
+        },
+        {
+          "width": 3,
+          "height": 1.5,
+          "x": -10,
+          "y": -8.75
+        },
+        {
+          "width": 3,
+          "height": 1.5,
+          "x": -0.5,
+          "y": -13.75
+        },
+        {
+          "width": 3,
+          "height": 1.5,
+          "x": 9.5,
+          "y": -13.75
+        }
+      ],
+      "objects": [
+        {
+          "type": "chest",
+          "extra": {
+            "x": -2.5,
+            "y": 5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": -1,
+            "x": -13,
+            "y": -1.5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "x": 11.5,
+            "y": 5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 2,
+            "x": -12.5,
+            "y": 12
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "x": 4.5,
+            "y": -5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 3,
+            "x": 17.5,
+            "y": 11.5
+          }
+        },
+        {
+          "type": "chest",
+          "extra": {
+            "rotation": 2,
+            "x": 11.5,
+            "y": 11
+          }
+        },
+        {
+          "type": "ropebarrier",
+          "extra": {
+            "x": 3,
+            "y": -1.5
+          }
+        },
+        {
+          "type": "ropebarrier",
+          "extra": {
+            "rotation": 1,
+            "x": 7.5,
+            "y": 0
+          }
+        },
+        {
+          "type": "ropebarrier",
+          "extra": {
+            "rotation": 3,
+            "x": 1.5,
+            "y": 0
+          }
+        },
+        {
+          "type": "ropebarrier",
+          "extra": {
+            "x": 6,
+            "y": -1.5
+          }
+        },
+        {
+          "type": "crate",
+          "extra": {
+            "x": -3,
+            "y": 11
+          }
+        },
+        {
+          "type": "crate",
+          "extra": {
+            "rotation": 1,
+            "x": -1,
+            "y": 11
+          }
+        },
+        {
+          "type": "specialdumpster",
+          "extra": {
+            "rotation": 3,
+            "x": 17.5,
+            "y": 11.5
+          }
+        },
+        {
+          "type": "largeamber",
+          "extra": {
+            "rotation": 1,
+            "x": 4.5,
+            "y": 0.5
+          }
+        },
+        {
+          "type": "museumcase",
+          "extra": {
+            "x": -10,
+            "y": -5.5
+          }
+        },
+        {
+          "type": "museumcounter",
+          "extra": {
+            "x": -11,
+            "y": 10
+          }
+        },
+        {
+          "type": "rack",
+          "extra": {
+            "rotation": 2,
+            "x": -9,
+            "y": 4
+          }
+        },
+        {
+          "type": "rack",
+          "extra": {
+            "x": -13,
+            "y": 4
+          }
+        },
+        {
+          "type": "trikeskull",
+          "extra": {
+            "x": 4.5,
+            "y": -8
+          }
+        }
+      ]
+    },
+    "cherryblossoms": {
+      "walls": [],
+      "ground": [],
+      "objects": [
+        {
+          "type": "cherryblossom",
+          "extra": {
+            "x": 0,
+            "y": -2
+          }
+        },
+        {
+          "type": "cherryblossom",
+          "extra": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "type": "cherryblossom",
+          "extra": {
+            "x": -4,
+            "y": 2
+          }
+        }
+      ]
+    },
+    "lot": {
+      "width": 30,
+      "height": 20,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    },
+    "dirt": {
+      "width": 19,
+      "height": 5,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    },
+    "dirtcurve": {
+      "width": 8,
+      "height": 8,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    },
+    "road": {
+      "width": 19,
+      "height": 7,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    },
+    "roadcurve": {
+      "width": 8,
+      "height": 8,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    },
+    "roadsection": {
+      "width": 9,
+      "height": 8,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    },
+    "roadcap": {
+      "width": 7,
+      "height": 1,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    },
+    "soccerfield": {
+      "width": 20,
+      "height": 30,
+      "walls": [],
+      "ground": [],
+      "objects": []
+    }
+  }
+}

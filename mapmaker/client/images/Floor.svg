@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="floor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <path d="m165,67v66c0,2.76-2.24,5-5,5H40c-2.76,0-5-2.24-5-5v-66c0-2.76,2.24-5,5-5h120c2.76,0,5,2.24,5,5Z"/>
+</svg>
