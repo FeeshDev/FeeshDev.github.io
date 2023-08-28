@@ -2363,7 +2363,7 @@ const createProp = (group, type, x, y, rotation = 0) => {
 			y: y,
 			name: 'selectable'
 		});
-		box.exportibleType = 'prop';
+		finalProp.exportibleType = 'prop';
 		finalProp.propType = type;
 		finalProp.grouped = true;
 		image.setAttrs({
